@@ -1,0 +1,91 @@
+$date
+	Wed Jan 08 16:42:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module SampleFSM_Test $end
+$var wire 1 ! X_s $end
+$var reg 1 " B_s $end
+$var reg 1 # Clk_s $end
+$var reg 1 $ Rst_s $end
+$scope module CompToTest $end
+$var wire 1 " B $end
+$var wire 1 # Clk $end
+$var wire 1 $ Rst $end
+$var parameter 32 % S_Off $end
+$var parameter 32 & S_On1 $end
+$var parameter 32 ' S_On2 $end
+$var parameter 32 ( S_On3 $end
+$var reg 2 ) State [1:0] $end
+$var reg 2 * StateNext [1:0] $end
+$var reg 1 ! X $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 (
+b10 '
+b1 &
+b0 %
+$end
+#0
+$dumpvars
+bx *
+bx )
+1$
+0#
+0"
+x!
+$end
+#10
+b0 *
+0!
+b0 )
+1#
+#15
+0$
+#20
+0#
+#30
+1#
+#35
+b1 *
+1"
+#40
+0#
+#50
+b10 *
+1!
+b1 )
+1#
+#55
+0"
+#60
+0#
+#70
+b11 *
+b10 )
+1#
+#80
+0#
+#90
+b0 *
+b11 )
+1#
+#100
+0#
+#110
+0!
+b0 )
+1#
+#120
+0#
+#130
+1#
+#140
+0#

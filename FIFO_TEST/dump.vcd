@@ -1,0 +1,75 @@
+$date
+	Wed Jan 08 16:06:57 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test $end
+$var reg 1 ! clk $end
+$var reg 4 " fifo [3:0] $end
+$var reg 1 # in $end
+$var reg 8 $ m0 [7:0] $end
+$var reg 8 % m1 [7:0] $end
+$var reg 8 & m2 [7:0] $end
+$var reg 8 ' m3 [7:0] $end
+$var reg 1 ( out $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0(
+b10101011 '
+b11101111 &
+b11001101 %
+b10101011 $
+1#
+b0 "
+0!
+$end
+#5
+b1 "
+1!
+#10
+0!
+#15
+b11 "
+1!
+#20
+0!
+#25
+b111 "
+1!
+#30
+0!
+#35
+b1111 "
+1!
+#40
+0!
+#45
+1(
+1!
+#50
+0!
+#55
+1!
+#60
+0!
+#65
+1!
+#70
+0!
+#75
+1!
+#80
+0!
+#85
+1!
+#90
+0!
