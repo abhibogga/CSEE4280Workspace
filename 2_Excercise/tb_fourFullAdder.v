@@ -34,7 +34,7 @@ module tb_fourFullAdder();
    // Test cases
     initial begin
         $dumpvars(0, tb_fourFullAdder); // To capture waveform data
-
+        /*
         // Test case 1: Add 0 + 0 with carry-in 0
         a = 16'b0000000000000000;
         b = 16'b0000000000000000; //We want blocking assingment so it is sequential logic
@@ -62,6 +62,10 @@ module tb_fourFullAdder();
         // Test case 5: Add alternating bits
         a = 16'b0000111100001111;
         b = 16'b1111000011110000;
+        cIn = 0;
+        */
+        a = 16'b1100101110101001;
+        b = 16'b1000011101100101;
         cIn = 0;
         @(posedge Clk);
 

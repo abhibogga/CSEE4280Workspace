@@ -32,7 +32,7 @@ module tb_fullAdder(); //Keep in mind that most tb will not have any sort of par
     initial begin //When we are making a testbench we want to make our test cases with an intial begin, keep in mind that intial begin cannot be synthsized onto FPGA
         $dumpvars(0, tb_fullAdder);
 
-        // Test case 1
+        /* Test case 1
         a_tb = 4'b0000; b_tb = 4'b0000; cIn_tb = 1'b0;
         @(posedge Clk_s);
 
@@ -56,7 +56,11 @@ module tb_fullAdder(); //Keep in mind that most tb will not have any sort of par
         a_tb = 4'b1001; b_tb = 4'b0110; cIn_tb = 1'b1;
         @(posedge Clk_s);
 
-        // Finish simulation
+        */ 
+        //Adding C to 3
+        a_tb = 4'b1011; b_tb = 4'b0011; cIn_tb = 1'b0;
+        @(posedge Clk_s);
+        //Finish simulation
         $finish;
     end
 endmodule
