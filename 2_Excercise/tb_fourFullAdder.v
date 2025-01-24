@@ -25,22 +25,45 @@ module tb_fourFullAdder();
 
     //Get clock going
     always begin 
-        Clk <= 0;
+        Clk = 0;
         #1;
-        Clk <= 1; //Here i am using the non blocking since i am in one of those blocks
+        Clk = 1; 
         #1;
     end
 
    // Test cases
     initial begin
         $dumpvars(0, tb_fourFullAdder); // To capture waveform data
-        /*
-        // Test case 1: Add 0 + 0 with carry-in 0
+        integer i;
+        integer j; 
+        for(i = 0; i < 100; i++) begin 
+            a = i; 
+            for (j = 0; j < 100; j++) begin 
+                b = j; 
+                cIn = 0; 
+                //Run the test case
+                @(posedge Clk)
+
+                //Check if it is equalavlent or not
+                if (j + i != sumFinal) begin
+                    $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", i, j, i + j, sumFinal);
+                end
+
+            end
+        end
+        
+        // Forcing an error
+
         a = 16'b0000000000000000;
         b = 16'b0000000000000000; //We want blocking assingment so it is sequential logic
         cIn = 0;
         @(posedge Clk);
 
+        //Forced error
+        if (10 == sumFinal) begin
+                    $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", i, j, i + j, sumFinal);
+                end
+        /*
         // Test case 2: Add maximum values without carry-in
         a = 16'b1111111111111111;
         b = 16'b1111111111111111;
@@ -63,11 +86,14 @@ module tb_fourFullAdder();
         a = 16'b0000111100001111;
         b = 16'b1111000011110000;
         cIn = 0;
-        */
+        
         a = 16'b1100101110101001;
         b = 16'b1000011101100101;
         cIn = 0;
         @(posedge Clk);
+        */
+
+        
 
         // Finish simulation
         $finish;
