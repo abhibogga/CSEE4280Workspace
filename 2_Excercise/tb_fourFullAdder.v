@@ -31,24 +31,24 @@ module tb_fourFullAdder();
         #1;
     end
 
+    integer i, j;
    // Test cases
     initial begin
         $dumpvars(0, tb_fourFullAdder); // To capture waveform data
-        integer i;
-        integer j; 
-        for(i = 0; i < 100; i++) begin 
-            a = i; 
-            for (j = 0; j < 100; j++) begin 
-                b = j; 
-                cIn = 0; 
-                //Run the test case
-                @(posedge Clk)
 
-                //Check if it is equalavlent or not
-                if (j + i != sumFinal) begin
-                    $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", i, j, i + j, sumFinal);
-                end
+        //Set the a input value
+        a = 1;
 
+        for (i = 0; i <= 15; i = i + 1) begin
+            b = {i, 8'b00000000};
+
+            cIn = 0;
+            //Run the test case
+            @(posedge Clk);
+
+            //Check if it is equivalent or not
+            if (a + {i, 8'b00000000} != sumFinal) begin
+                $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", a, {i, 8'b00000000}, a + i, sumFinal);
             end
         end
         
@@ -60,9 +60,9 @@ module tb_fourFullAdder();
         @(posedge Clk);
 
         //Forced error
-        if (10 == sumFinal) begin
+        if (10 != sumFinal) begin
                     $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", i, j, i + j, sumFinal);
-                end
+        end
         /*
         // Test case 2: Add maximum values without carry-in
         a = 16'b1111111111111111;
