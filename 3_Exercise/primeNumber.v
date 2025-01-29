@@ -63,7 +63,12 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
         numberOfPrimes = count; 
 
         //update count
-        i++; 
+        if (i == 2) begin 
+            i ++; 
+        end
+        else begin 
+            i = i + 2; 
+        end
     end 
 
 

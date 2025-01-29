@@ -54,7 +54,7 @@ module tb_primeNumber();
 
 
         //Singular Test Cases
-        numMax = 35; 
+        numMax = 100; 
         rst = 0; 
 
         //Now we need to run the clock cycles since this is a flop based design
