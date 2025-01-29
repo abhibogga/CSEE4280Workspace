@@ -11,6 +11,9 @@ module tb_fourFullAdder();
     wire [3:0] cOutFinal; 
     wire [15:0] sumFinal;
 
+    //Wire for Self Checking
+    reg rightWrong; 
+
     //Intialize a fourFullAdderObject
     fourFullAdder fa(
         .a(a), 
@@ -38,17 +41,26 @@ module tb_fourFullAdder();
 
         //Set the a input value
         a = 1;
+        for (j = 0; j < 100; j++) begin
+            a = j;
+            for (i = 0; i <= 15; i = i + 1) begin
+                b = {i, 8'b00000000};
 
-        for (i = 0; i <= 15; i = i + 1) begin
-            b = {i, 8'b00000000};
+                cIn = 0;
+                //Run the test case
+                @(posedge Clk);
 
-            cIn = 0;
-            //Run the test case
-            @(posedge Clk);
+                //Check if it is equivalent or not
+                if (a + {i, 8'b00000000} != sumFinal) begin
+                    $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", a, {i, 8'b00000000}, a + i, sumFinal);
+                    rightWrong = 0; 
+                end
 
-            //Check if it is equivalent or not
-            if (a + {i, 8'b00000000} != sumFinal) begin
-                $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", a, {i, 8'b00000000}, a + i, sumFinal);
+                else begin
+                    rightWrong = 1;
+                end
+
+                a++; 
             end
         end
         
@@ -61,7 +73,8 @@ module tb_fourFullAdder();
 
         //Forced error
         if (10 != sumFinal) begin
-                    $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", i, j, i + j, sumFinal);
+                    $display("You Failed!: a=%d, b=%d, Value Expected=%d, Got=%d", a, b, 10, sumFinal);
+                    rightWrong = 0; 
         end
         /*
         // Test case 2: Add maximum values without carry-in

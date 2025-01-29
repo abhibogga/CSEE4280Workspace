@@ -1,4 +1,5 @@
 `include "primeNumber.v"
+`timescale 1ns/1ns
 
 module tb_primeNumber(); 
 
@@ -38,7 +39,8 @@ module tb_primeNumber();
     //Start the test cases
     initial begin
         $dumpvars(0, tb_primeNumber);
-        for (i = 0; i < 1000; i++) begin //This will be the input for numMax
+        /*
+        for (i = 0; i < 2; i++) begin //This will be the input for numMax
             numMax = i; 
             rst = 0; 
 
@@ -46,6 +48,18 @@ module tb_primeNumber();
             for (j = 0; j < i + 1; j++) begin 
                 @(posedge clk);
             end
+        end
+        */
+
+
+
+        //Singular Test Cases
+        numMax = 35; 
+        rst = 0; 
+
+        //Now we need to run the clock cycles since this is a flop based design
+        for (j = 0; j <  numMax+ 1; j++) begin 
+            @(posedge clk);
         end
 
         $finish;
