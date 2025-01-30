@@ -10,7 +10,7 @@ module tb_primeNumber();
 
 
     //Define the outputs as wires
-    wire [10:0] prime; //Again we only need 10 bits but we'll use 11 just in case
+    wire prime; //Again we only need 10 bits but we'll use 11 just in case
     wire [10:0] numberChecked; 
     wire [10:0] numberOfPrimes; //There is no need for this many bits to be used, if we were to optimize this project, than maybe this number would be smaller
 
@@ -39,6 +39,8 @@ module tb_primeNumber();
     //Start the test cases
     initial begin
         $dumpvars(0, tb_primeNumber);
+
+        //Code for self checking tb
         /*
         for (i = 0; i < 2; i++) begin //This will be the input for numMax
             numMax = i; 
