@@ -14,6 +14,7 @@ module tb_primeNumber();
     wire [10:0] numberChecked; 
     wire [10:0] numberOfPrimes; //There is no need for this many bits to be used, if we were to optimize this project, than maybe this number would be smaller
 
+    //Create a reg to prove that it is correct or not. 
 
     //Initialize primeNumber module
     primeNumber pn(
@@ -35,24 +36,32 @@ module tb_primeNumber();
         #10;
     end
 
+    integer k, primeOrNah;
+
+    always @(numberChecked) begin
+        if (numberChecked <= 1) begin
+            primeOrNah = 0;  // Not prime
+        end 
+        else if (numberChecked <= 3) begin
+            primeOrNah = 1;  // 2 and 3 are prime
+        end 
+        else if (numberChecked % 2 == 0) begin
+            primeOrNah = 0;  // Even numbers (except 2) are not prime
+        end 
+        else begin
+            primeOrNah = 1;  // Assume prime
+            for (k = 3; k * k <= numberChecked; k = k + 2) begin
+                if (numberChecked % k == 0) begin
+                    primeOrNah = 0;  // Found a divisor, not prime
+                end
+            end
+        end
+    end
+
     integer i, j; 
     //Start the test cases
     initial begin
         $dumpvars(0, tb_primeNumber);
-
-        //Code for self checking tb
-        /*
-        for (i = 0; i < 2; i++) begin //This will be the input for numMax
-            numMax = i; 
-            rst = 0; 
-
-            //Now we need to run the clock cycles since this is a flop based design
-            for (j = 0; j < i + 1; j++) begin 
-                @(posedge clk);
-            end
-        end
-        */
-
 
 
         //Singular Test Cases
@@ -60,9 +69,11 @@ module tb_primeNumber();
         rst = 0; 
 
         //Now we need to run the clock cycles since this is a flop based design
-        for (j = 0; j <  numMax+ 1; j++) begin 
+        for (j = 0; j < numMax+1; j++) begin 
             @(posedge clk);
         end
+
+        
 
         $finish;
     end
