@@ -64,6 +64,10 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
         case (state)
 
             sIdle: begin 
+                //Drive outputs: 
+                outRST = rst; 
+                pwmOut = 0; 
+
                 //sIdle needs to only go to sInit, when rst = 0, else stay on sIdle
                 if (rst == 0) begin 
                     stateNext = sInit;
@@ -73,6 +77,10 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
             end
 
             sInit: begin 
+                //Drive outputs: 
+                outRST = rst; 
+                pwmOut = 0; 
+
                 //sInit should always move to sOn unless rst goes back on
                 if (rst == 1) begin
                     //go back to sIdle
@@ -100,7 +108,7 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
             sOn: begin
                 //Drive output
                 pwmOut = 1;
-
+                outRST = rst; 
 
                 /* There are 3 options for movement within this stage
                     - sOn has not finished its duty cycle so it goes back to sOn
@@ -123,7 +131,7 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
             sOff: begin
                 //Drive output
                 pwmOut = 0;
-
+                outRST = rst; 
 
                 /* There are 3 options for movement within this stage
                     - sOff has not finished its duty cycle so it goes back to sOf
@@ -149,6 +157,7 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
             sOnBurst: begin
                 //Drive output
                 pwmOut = 0;
+                outRST = rst; 
 
                 if (rst == 1) begin 
                     stateNext = sIdle;

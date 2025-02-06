@@ -45,6 +45,7 @@ module tb_pwm;
 
 
         #5000;
+
         $finish;
     end
 
