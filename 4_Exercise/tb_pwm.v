@@ -45,8 +45,8 @@ module tb_pwm;
         //2Mhz = 500
         //50Mhz = 20
 
-        period = 500;  // Set period
-        dutyCycle = 90;    // Set duty cycle
+        period = 256;  // Set period
+        dutyCycle = 50;    // Set duty cycle
 
 
         #50000;
