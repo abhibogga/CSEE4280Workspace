@@ -28,16 +28,6 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
     reg [32:0] burstDiv; 
     reg [32:0] burstCounter; 
     reg [32:0] tickTime;
-    initial begin 
-        $display(1000000000/period);
-        if (typeBurst == 1) begin 
-            burstDiv = 32; 
-            burstCounter = 16; 
-        end else begin 
-            burstDiv = 16; 
-            burstCounter = 8; 
-        end
-    end
     
          
     
@@ -86,6 +76,13 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
                     //go back to sIdle
                     stateNext = sIdle; 
                 end else begin 
+                    if (typeBurst == 1) begin 
+                        burstDiv = 32; 
+                        burstCounter = 16; 
+                    end else begin 
+                        burstDiv = 16; 
+                        burstCounter = 8; 
+                    end
 
                     if (modeBurst) begin 
                         stateNext = sOnBurst; 

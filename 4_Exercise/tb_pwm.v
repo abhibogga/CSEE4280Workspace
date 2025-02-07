@@ -36,16 +36,20 @@ module tb_pwm;
     initial begin
         $dumpvars(0, tb_pwm);
 
-        typeBurst = 0; 
-        modeBurst = 0; 
+        typeBurst = 1; //0 = 8 pulse     1 = 16 pulse
+        modeBurst = 1; //This turns burst on
         // Set initial values
         rst = 0;
-        //Transfer Function: MHz / 1G
-        period = 1000;  // Set period
-        dutyCycle = 50;    // Set duty cycle
+        //Transfer Function:  1G/MHz 
+        //1Mhz = 1000
+        //2Mhz = 500
+        //50Mhz = 20
+
+        period = 500;  // Set period
+        dutyCycle = 90;    // Set duty cycle
 
 
-        #5000;
+        #50000;
 
         $finish;
     end
