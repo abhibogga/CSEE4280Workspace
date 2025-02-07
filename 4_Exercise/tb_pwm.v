@@ -37,10 +37,11 @@ module tb_pwm;
         $dumpvars(0, tb_pwm);
 
         typeBurst = 0; 
-        modeBurst = 1; 
+        modeBurst = 0; 
         // Set initial values
         rst = 0;
-        period = 20;  // Set period
+        //Transfer Function: MHz / 1G
+        period = 1000;  // Set period
         dutyCycle = 50;    // Set duty cycle
 
 
