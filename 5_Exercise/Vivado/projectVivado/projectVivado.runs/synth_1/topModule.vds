@@ -1,0 +1,519 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Feb 12 21:06:24 2025
+# Process ID         : 54276
+# Current directory  : C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.runs/synth_1
+# Command line       : vivado.exe -log topModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl
+# Log file           : C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.runs/synth_1/topModule.vds
+# Journal file       : C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-191C9FV
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16856 MB
+# Swap memory        : 19332 MB
+# Total Virtual      : 36189 MB
+# Available Virtual  : 6902 MB
+#-----------------------------------------------------------
+source topModule.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.srcs/utils_1/imports/synth_1/topModule.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.srcs/utils_1/imports/synth_1/topModule.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top topModule -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 35400
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1049.660 ; gain = 468.570
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'pwm' [C:/CSEE4280Workpace/5_Exercise/pwm.v:217]
+INFO: [Synth 8-9937] previous definition of design element 'pwm' is here [C:/CSEE4280Workpace/5_Exercise/pwm.v:217]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'pwm' [C:/CSEE4280Workpace/5_Exercise/pwm.v:217]
+INFO: [Synth 8-9937] previous definition of design element 'pwm' is here [C:/CSEE4280Workpace/5_Exercise/pwm.v:217]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'led' [C:/CSEE4280Workpace/5_Exercise/led.v:125]
+INFO: [Synth 8-9937] previous definition of design element 'led' is here [C:/CSEE4280Workpace/5_Exercise/led.v:125]
+INFO: [Synth 8-6157] synthesizing module 'topModule' [C:/CSEE4280Workpace/5_Exercise/topMod.v:2]
+INFO: [Synth 8-6157] synthesizing module 'led' [C:/CSEE4280Workpace/5_Exercise/led.v:2]
+INFO: [Synth 8-6157] synthesizing module 'pwm' [C:/CSEE4280Workpace/5_Exercise/pwm.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'pwm' (0#1) [C:/CSEE4280Workpace/5_Exercise/pwm.v:2]
+WARNING: [Synth 8-7071] port 'outRST' of module 'pwm' is unconnected for instance 'rLight' [C:/CSEE4280Workpace/5_Exercise/led.v:36]
+WARNING: [Synth 8-7023] instance 'rLight' of module 'pwm' has 8 connections declared, but only 7 given [C:/CSEE4280Workpace/5_Exercise/led.v:36]
+WARNING: [Synth 8-7071] port 'outRST' of module 'pwm' is unconnected for instance 'gLight' [C:/CSEE4280Workpace/5_Exercise/led.v:46]
+WARNING: [Synth 8-7023] instance 'gLight' of module 'pwm' has 8 connections declared, but only 7 given [C:/CSEE4280Workpace/5_Exercise/led.v:46]
+WARNING: [Synth 8-7071] port 'outRST' of module 'pwm' is unconnected for instance 'bLight' [C:/CSEE4280Workpace/5_Exercise/led.v:56]
+WARNING: [Synth 8-7023] instance 'bLight' of module 'pwm' has 8 connections declared, but only 7 given [C:/CSEE4280Workpace/5_Exercise/led.v:56]
+INFO: [Synth 8-226] default block is never used [C:/CSEE4280Workpace/5_Exercise/led.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'led' (0#1) [C:/CSEE4280Workpace/5_Exercise/led.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'topModule' (0#1) [C:/CSEE4280Workpace/5_Exercise/topMod.v:2]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/5_Exercise/pwm.v:43]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/5_Exercise/pwm.v:50]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1156.930 ; gain = 575.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1156.930 ; gain = 575.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1156.930 ; gain = 575.840
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1156.930 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModule_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/topModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1244.645 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1244.645 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1244.645 ; gain = 663.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1244.645 ; gain = 663.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1244.645 ; gain = 663.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1244.645 ; gain = 663.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 18    
++---Registers : 
+	               33 Bit    Registers := 15    
+	               30 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 3     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 11    
++---Multipliers : 
+	               8x30  Multipliers := 6     
+	              30x33  Multipliers := 6     
++---Muxes : 
+	   7 Input   33 Bit        Muxes := 15    
+	   2 Input   33 Bit        Muxes := 15    
+	   2 Input    6 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 33    
+	   4 Input    3 Bit        Muxes := 3     
+	   3 Input    3 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 3     
+	   7 Input    1 Bit        Muxes := 27    
+	   2 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP onTime1, operation Mode is: A2*B.
+DSP Report: register onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register tickTime_reg is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: A*B.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B2.
+DSP Report: register tickTime_reg is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register tickTime_reg is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A2*B.
+DSP Report: register offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: A2*B.
+DSP Report: register onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: A*B.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B2.
+DSP Report: register offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A2*B.
+DSP Report: register offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register onTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+WARNING: [Synth 8-3936] Found unconnected internal register 'onTime1' and it is trimmed from '17' to '16' bits. [C:/CSEE4280Workpace/5_Exercise/pwm.v:124]
+DSP Report: Generating DSP onTime1, operation Mode is: A2*B.
+DSP Report: register onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: A*B.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP onTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: operator onTime1 is absorbed into DSP onTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B2.
+DSP Report: register offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A2*B.
+DSP Report: register offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register onTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+DSP Report: operator offTime1 is absorbed into DSP offTime1.
+WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__6) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__7) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__8) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__9) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__10) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/gDutyCycle_reg__6) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/gDutyCycle_reg__7) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/gDutyCycle_reg__8) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/gDutyCycle_reg__9) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/gDutyCycle_reg__10) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__6) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__7) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__8) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__9) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__10) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__11) is unused and will be removed from module topModule.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:24 . Memory (MB): peak = 1264.094 ; gain = 683.004
+---------------------------------------------------------------------------------
+ Sort Area is  offTime1_c : 0 0 : 3119 6173 : Used 1 time 0
+ Sort Area is  offTime1_c : 0 1 : 3054 6173 : Used 1 time 0
+ Sort Area is  offTime1_6 : 0 0 : 3101 6137 : Used 1 time 0
+ Sort Area is  offTime1_6 : 0 1 : 3036 6137 : Used 1 time 0
+ Sort Area is  offTime1_19 : 0 0 : 3119 5120 : Used 1 time 0
+ Sort Area is  offTime1_19 : 0 1 : 2001 5120 : Used 1 time 0
+ Sort Area is  offTime1_21 : 0 0 : 3119 5120 : Used 1 time 0
+ Sort Area is  offTime1_21 : 0 1 : 2001 5120 : Used 1 time 0
+ Sort Area is  offTime1_16 : 0 0 : 3101 5085 : Used 1 time 0
+ Sort Area is  offTime1_16 : 0 1 : 1984 5085 : Used 1 time 0
+ Sort Area is  offTime1_1e : 0 0 : 3101 5085 : Used 1 time 0
+ Sort Area is  offTime1_1e : 0 1 : 1984 5085 : Used 1 time 0
+ Sort Area is  offTime1_f : 0 0 : 2474 4917 : Used 1 time 0
+ Sort Area is  offTime1_f : 0 1 : 2443 4917 : Used 1 time 0
+ Sort Area is  offTime1_9 : 0 0 : 2460 4889 : Used 1 time 0
+ Sort Area is  offTime1_9 : 0 1 : 2429 4889 : Used 1 time 0
+ Sort Area is  onTime1_3 : 0 0 : 1641 3165 : Used 1 time 0
+ Sort Area is  onTime1_3 : 0 1 : 1524 3165 : Used 1 time 0
+ Sort Area is  onTime1_0 : 0 0 : 1623 3133 : Used 1 time 0
+ Sort Area is  onTime1_0 : 0 1 : 1510 3133 : Used 1 time 0
+ Sort Area is  onTime1_14 : 0 0 : 1641 2550 : Used 1 time 0
+ Sort Area is  onTime1_14 : 0 1 : 909 2550 : Used 1 time 0
+ Sort Area is  onTime1_1d : 0 0 : 1641 2550 : Used 1 time 0
+ Sort Area is  onTime1_1d : 0 1 : 909 2550 : Used 1 time 0
+ Sort Area is  onTime1_12 : 0 0 : 1623 2518 : Used 1 time 0
+ Sort Area is  onTime1_12 : 0 1 : 895 2518 : Used 1 time 0
+ Sort Area is  onTime1_1c : 0 0 : 1623 2518 : Used 1 time 0
+ Sort Area is  onTime1_1c : 0 1 : 895 2518 : Used 1 time 0
+ Sort Area is  offTime1_1b : 0 0 : 2474 2474 : Used 1 time 0
+ Sort Area is  offTime1_18 : 0 0 : 2460 2460 : Used 1 time 0
+ Sort Area is  offTime1_22 : 0 0 : 1720 1720 : Used 1 time 0
+ Sort Area is  offTime1_1f : 0 0 : 1706 1706 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|pwm         | A2*B            | 18     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A2*B | 14     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 14     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B2            | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B2 | 17     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A2*B            | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A2*B | 18     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 17     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 18     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A2*B            | 18     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A2*B | 14     | 9      | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 14     | 9      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B2            | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A2*B            | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A2*B | 16     | 16     | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A2*B            | 18     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A2*B | 14     | 9      | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 14     | 9      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B2            | 16     | 14     | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A2*B            | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A2*B | 16     | 16     | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 16     | 14     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:33 . Memory (MB): peak = 1427.082 ; gain = 845.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:49 . Memory (MB): peak = 1623.785 ; gain = 1042.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 1641.750 ; gain = 1060.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:57 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:57 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|pwm         | A'*B'         | 7      | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B' | 0      | 7      | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B'          | 7      | 7      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B' | 0      | 7      | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 30     | 0      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A'*B          | 7      | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A'*B | 7      | 16     | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 30     | 0      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 7      | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B  | 7      | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A'*B'         | 7      | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B' | 0      | 7      | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B'          | 7      | 7      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B' | 0      | 7      | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 30     | 0      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A'*B          | 7      | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A'*B | 7      | 16     | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 30     | 0      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 7      | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B  | 7      | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A'*B'         | 7      | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B' | 0      | 7      | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B'          | 7      | 7      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B' | 0      | 7      | -      | -      | 16     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 30     | 0      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A'*B          | 7      | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A'*B | 7      | 16     | -      | -      | 16     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 30     | 0      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | A*B           | 7      | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pwm         | PCIN>>17+A*B  | 7      | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |  1275|
+|3     |DSP48E1 |    30|
+|7     |LUT1    |   392|
+|8     |LUT2    |  1964|
+|9     |LUT3    |  2171|
+|10    |LUT4    |  1227|
+|11    |LUT5    |   661|
+|12    |LUT6    |  1226|
+|13    |FDRE    |   233|
+|14    |IBUF    |    18|
+|15    |OBUF    |     3|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:57 . Memory (MB): peak = 1793.047 ; gain = 1124.242
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1793.047 ; gain = 1211.957
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 1806.730 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1305 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1810.422 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 873609fa
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 26 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:01:08 . Memory (MB): peak = 1810.422 ; gain = 1438.184
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1810.422 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.runs/synth_1/topModule.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file topModule_utilization_synth.rpt -pb topModule_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 12 21:07:42 2025...

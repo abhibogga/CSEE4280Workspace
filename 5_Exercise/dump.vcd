@@ -1,0 +1,231 @@
+$date
+	Wed Feb 12 21:04:54 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_led $end
+$var wire 1 ! rLED $end
+$var wire 1 " gLED $end
+$var wire 1 # bLED $end
+$var reg 1 $ clk $end
+$var reg 1 % rst $end
+$var reg 16 & switchPanel [15:0] $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 1 % rst $end
+$var wire 16 ' switchPanel [15:0] $end
+$var wire 1 ( rpwm $end
+$var wire 5 ) rIn [4:0] $end
+$var wire 1 * gpwm $end
+$var wire 5 + gIn [4:0] $end
+$var wire 1 , bpwm $end
+$var wire 6 - bIn [5:0] $end
+$var parameter 32 . sIdle $end
+$var parameter 32 / sOn $end
+$var reg 8 0 bDutyCycle [7:0] $end
+$var reg 1 # bLED $end
+$var reg 8 1 gDutyCycle [7:0] $end
+$var reg 1 " gLED $end
+$var reg 8 2 rDutyCycle [7:0] $end
+$var reg 1 ! rLED $end
+$var reg 1 3 state $end
+$var reg 1 4 stateNext $end
+$scope module bLight $end
+$var wire 1 $ clk $end
+$var wire 8 5 dutyCycle [7:0] $end
+$var wire 1 6 modeBurst $end
+$var wire 16 7 period [15:0] $end
+$var wire 1 % rst $end
+$var wire 1 8 typeBurst $end
+$var parameter 32 9 sIdle $end
+$var parameter 32 : sInit $end
+$var parameter 32 ; sOff $end
+$var parameter 32 < sOffBurst $end
+$var parameter 32 = sOn $end
+$var parameter 32 > sOnBurst $end
+$var reg 33 ? burstCounter [32:0] $end
+$var reg 33 @ burstDiv [32:0] $end
+$var reg 33 A burst_offTime [32:0] $end
+$var reg 33 B burst_onTime [32:0] $end
+$var reg 33 C offTime [32:0] $end
+$var reg 33 D onTime [32:0] $end
+$var reg 1 E outRST $end
+$var reg 1 , pwmOut $end
+$var reg 3 F state [2:0] $end
+$var reg 3 G stateNext [2:0] $end
+$var reg 33 H tickTime [32:0] $end
+$upscope $end
+$scope module gLight $end
+$var wire 1 $ clk $end
+$var wire 8 I dutyCycle [7:0] $end
+$var wire 1 J modeBurst $end
+$var wire 16 K period [15:0] $end
+$var wire 1 % rst $end
+$var wire 1 L typeBurst $end
+$var parameter 32 M sIdle $end
+$var parameter 32 N sInit $end
+$var parameter 32 O sOff $end
+$var parameter 32 P sOffBurst $end
+$var parameter 32 Q sOn $end
+$var parameter 32 R sOnBurst $end
+$var reg 33 S burstCounter [32:0] $end
+$var reg 33 T burstDiv [32:0] $end
+$var reg 33 U burst_offTime [32:0] $end
+$var reg 33 V burst_onTime [32:0] $end
+$var reg 33 W offTime [32:0] $end
+$var reg 33 X onTime [32:0] $end
+$var reg 1 Y outRST $end
+$var reg 1 * pwmOut $end
+$var reg 3 Z state [2:0] $end
+$var reg 3 [ stateNext [2:0] $end
+$var reg 33 \ tickTime [32:0] $end
+$upscope $end
+$scope module rLight $end
+$var wire 1 $ clk $end
+$var wire 8 ] dutyCycle [7:0] $end
+$var wire 1 ^ modeBurst $end
+$var wire 16 _ period [15:0] $end
+$var wire 1 % rst $end
+$var wire 1 ` typeBurst $end
+$var parameter 32 a sIdle $end
+$var parameter 32 b sInit $end
+$var parameter 32 c sOff $end
+$var parameter 32 d sOffBurst $end
+$var parameter 32 e sOn $end
+$var parameter 32 f sOnBurst $end
+$var reg 33 g burstCounter [32:0] $end
+$var reg 33 h burstDiv [32:0] $end
+$var reg 33 i burst_offTime [32:0] $end
+$var reg 33 j burst_onTime [32:0] $end
+$var reg 33 k offTime [32:0] $end
+$var reg 33 l onTime [32:0] $end
+$var reg 1 m outRST $end
+$var reg 1 ( pwmOut $end
+$var reg 3 n state [2:0] $end
+$var reg 3 o stateNext [2:0] $end
+$var reg 33 p tickTime [32:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 f
+b10 e
+b101 d
+b11 c
+b1 b
+b0 a
+b100 R
+b10 Q
+b101 P
+b11 O
+b1 N
+b0 M
+b100 >
+b10 =
+b101 <
+b11 ;
+b1 :
+b0 9
+b1 /
+b0 .
+$end
+#0
+$dumpvars
+bx p
+bx o
+bx n
+xm
+bx l
+bx k
+bx j
+bx i
+bx h
+bx g
+0`
+b1010 _
+0^
+bx ]
+bx \
+bx [
+bx Z
+xY
+bx X
+bx W
+bx V
+bx U
+bx T
+bx S
+0L
+b1010 K
+0J
+bx I
+bx H
+bx G
+bx F
+xE
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+08
+b1010 7
+06
+bx 5
+x4
+x3
+bx 2
+bx 1
+bx 0
+b0 -
+x,
+b0 +
+x*
+b0 )
+x(
+b0 '
+b0 &
+1%
+0$
+x#
+x"
+x!
+$end
+#5000
+03
+b0 o
+0(
+1m
+b0 n
+b0 [
+0*
+1Y
+b0 Z
+b0 G
+0,
+1E
+b0 F
+04
+1$
+#10000
+0$
+#15000
+0!
+0"
+0#
+b0 0
+b0 5
+b0 1
+b0 I
+b0 2
+b0 ]
+1$
+#20000
+0$
