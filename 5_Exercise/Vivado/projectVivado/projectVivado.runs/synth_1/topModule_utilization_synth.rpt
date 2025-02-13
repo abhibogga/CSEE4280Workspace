@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Wed Feb 12 21:07:42 2025
+| Date         : Thu Feb 13 12:33:52 2025
 | Host         : DESKTOP-191C9FV running 64-bit major release  (build 9200)
 | Command      : report_utilization -file topModule_utilization_synth.rpt -pb topModule_utilization_synth.pb
 | Design       : topModule
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 6149 |     0 |          0 |     63400 |  9.70 |
-|   LUT as Logic          | 6149 |     0 |          0 |     63400 |  9.70 |
+| Slice LUTs*             | 6189 |     0 |          0 |     63400 |  9.76 |
+|   LUT as Logic          | 6189 |     0 |          0 |     63400 |  9.76 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
 | Slice Registers         |  233 |     0 |          0 |    126800 |  0.18 |
 |   Register as Flip Flop |  233 |     0 |          0 |    126800 |  0.18 |
@@ -150,12 +150,12 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT3     | 2171 |                 LUT |
-| LUT2     | 1964 |                 LUT |
+| LUT3     | 2203 |                 LUT |
+| LUT2     | 1916 |                 LUT |
+| LUT6     | 1347 |                 LUT |
 | CARRY4   | 1275 |          CarryLogic |
-| LUT4     | 1227 |                 LUT |
-| LUT6     | 1226 |                 LUT |
-| LUT5     |  661 |                 LUT |
+| LUT4     | 1247 |                 LUT |
+| LUT5     |  570 |                 LUT |
 | LUT1     |  392 |                 LUT |
 | FDRE     |  233 |        Flop & Latch |
 | DSP48E1  |   30 |    Block Arithmetic |

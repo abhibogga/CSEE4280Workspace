@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ns
 `include "led.v"
 module tb_led();
     // Testbench signals
@@ -25,11 +25,11 @@ module tb_led();
         $dumpvars(0, tb_led);
         // Initialize signals
         clk = 0;
-        rst = 1;
-        switchPanel = 16'b0000000000000000;
+        rst = 0;
+        switchPanel = 16'b1111100000000000;
 
         
-        #20 
+        #2000
         /*
         rst = 0;
         

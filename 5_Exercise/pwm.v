@@ -103,9 +103,16 @@ module pwm (clk, rst, period, dutyCycle, modeBurst, typeBurst, pwmOut, outRST);
             end
 
             sOn: begin
-                //Drive output
-                pwmOut = 1;
-                outRST = rst; 
+
+                if (dutyCycle == 0) begin
+                    pwmOut = 0;
+                end else begin 
+                    //Drive output
+                    pwmOut = 1;
+                    outRST = rst; 
+                end
+
+
 
                 /* There are 3 options for movement within this stage
                     - sOn has not finished its duty cycle so it goes back to sOn
