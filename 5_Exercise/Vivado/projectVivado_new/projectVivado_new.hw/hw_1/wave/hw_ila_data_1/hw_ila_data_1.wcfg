@@ -10,12 +10,10 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="10"></ZoomEndTime>
+      <ZoomEndTime time="3"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="388"></NameColumnWidth>
-      <ValueColumnWidth column_width="294"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="4" />
    <wvobject fp_name="SW_IBUF" type="array">

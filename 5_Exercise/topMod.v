@@ -14,6 +14,8 @@ module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD);
     output wire [7:0] AN;
 
 
+    wire [4:0] JA;
+
     wire [31:0] encoded;
     assign encoded[3:0] = 4'h0;
     assign encoded[7:4] = 4'h0;
@@ -42,6 +44,12 @@ module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD);
         .sevenSeg(SD), 
         .commonAnode(AN)
     ); */
+
+    assign JA[0] = LED16_R;
+    assign JA[1] = LED16_B; 
+    assign JA[2] = LED16_B;
+    assign JA[3] = CLK100MHZ;
+
 
 
 
