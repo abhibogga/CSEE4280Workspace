@@ -1,4 +1,4 @@
-iverilog -o test .\topMod.v
+iverilog -o test .\tb_ssd.v
 
 vvp .\test
 

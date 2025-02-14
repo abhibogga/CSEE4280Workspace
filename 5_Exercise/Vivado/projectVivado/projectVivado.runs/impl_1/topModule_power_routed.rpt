@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Thu Feb 13 23:35:38 2025
+| Date             : Thu Feb 13 23:50:34 2025
 | Host             : DESKTOP-191C9FV running 64-bit major release  (build 9200)
 | Command          : report_power -file topModule_power_routed.rpt -pb topModule_power_summary_routed.pb -rpx topModule_power_routed.rpx
 | Design           : topModule
@@ -64,7 +64,7 @@ Table of Contents
 | Signals                  |     0.082 |    11424 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |       135 |            0.74 |
 | DSPs                     |     0.014 |       30 |       240 |           12.50 |
-| I/O                      |    <0.001 |       37 |       210 |           17.62 |
+| I/O                      |    <0.001 |       35 |       210 |           16.67 |
 | Static Power             |     0.098 |          |           |                 |
 | Total                    |     0.285 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+

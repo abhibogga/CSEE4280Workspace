@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Thu Feb 13 23:35:34 2025
+| Date         : Thu Feb 13 23:50:31 2025
 | Host         : DESKTOP-191C9FV running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file topModule_timing_summary_routed.rpt -pb topModule_timing_summary_routed.pb -rpx topModule_timing_summary_routed.rpx -warn_on_violation
 | Design       : topModule
@@ -46,7 +46,7 @@ Rule       Severity  Description                                  Violations
 LUTAR-1    Warning   LUT drives async reset alert                 4           
 SYNTH-10   Warning   Wide multiplier                              18          
 TIMING-16  Warning   Large setup violation                        162         
-TIMING-18  Warning   Missing input or output delay                28          
+TIMING-18  Warning   Missing input or output delay                27          
 XDCB-5     Warning   Runtime inefficient way to find pin objects  2           
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.

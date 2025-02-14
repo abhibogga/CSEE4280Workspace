@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-
+`include "seven_segment.v"
 module tb_ssd;
   // Parameters
   parameter NUM_SEGMENTS = 8;
@@ -34,16 +34,22 @@ module tb_ssd;
   reg [7:0] expected_cathode[7:0];
   reg [NUM_SEGMENTS-1:0] expected_anode;
   
+  reg goodOrNot; 
   // Task to check outputs
   task check_outputs;
     input [NUM_SEGMENTS-1:0] expected_anode;
     input [7:0] expected_cathode;
     begin
       if (anode !== expected_anode) begin
+        goodOrNot = 0; 
         $display("ERROR: At time %0t, expected anode=%b, got %b", $time, expected_anode, anode);
       end
-      if (cathode !== expected_cathode) begin
+      else if (cathode !== expected_cathode) begin
         $display("ERROR: At time %0t, expected cathode=%b, got %b", $time, expected_cathode, cathode);
+      end
+
+      else begin 
+        goodOrNot = 1; 
       end
     end
   endtask

@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Feb 13 23:29:31 2025
+  **** Start of session at: Thu Feb 13 23:44:59 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -25,9 +25,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 53100
+INFO: [Synth 8-7075] Helper process launched with PID 47108
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1049.719 ; gain = 468.406
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1050.145 ; gain = 468.969
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'pwm' [C:/CSEE4280Workpace/5_Exercise/pwm.v:224]
 INFO: [Synth 8-9937] previous definition of design element 'pwm' is here [C:/CSEE4280Workpace/5_Exercise/pwm.v:224]
@@ -51,61 +51,60 @@ INFO: [Synth 8-226] default block is never used [C:/CSEE4280Workpace/5_Exercise/
 INFO: [Synth 8-6155] done synthesizing module 'led' (0#1) [C:/CSEE4280Workpace/5_Exercise/led.v:2]
 INFO: [Synth 8-6157] synthesizing module 'ssd' [C:/CSEE4280Workpace/5_Exercise/ssd.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'ssd' (0#1) [C:/CSEE4280Workpace/5_Exercise/ssd.v:1]
-WARNING: [Synth 8-689] width (8) of port connection 'sevenSeg' does not match port width (7) of module 'ssd' [C:/CSEE4280Workpace/5_Exercise/topMod.v:28]
-WARNING: [Synth 8-689] width (8) of port connection 'commonAnode' does not match port width (7) of module 'ssd' [C:/CSEE4280Workpace/5_Exercise/topMod.v:29]
 INFO: [Synth 8-6155] done synthesizing module 'topModule' (0#1) [C:/CSEE4280Workpace/5_Exercise/topMod.v:3]
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/5_Exercise/pwm.v:43]
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/5_Exercise/pwm.v:50]
-WARNING: [Synth 8-3917] design topModule has port AN[7] driven by constant 0
-WARNING: [Synth 8-3917] design topModule has port SD[7] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1157.117 ; gain = 575.805
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1157.051 ; gain = 575.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1157.117 ; gain = 575.805
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1157.051 ; gain = 575.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1157.117 ; gain = 575.805
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1157.051 ; gain = 575.875
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1157.117 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1157.051 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'AN[7]'. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModule_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/topModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1249.223 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1245.828 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1249.223 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1245.828 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1249.223 ; gain = 667.910
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1245.828 ; gain = 664.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1249.223 ; gain = 667.910
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1245.828 ; gain = 664.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1249.223 ; gain = 667.910
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1245.828 ; gain = 664.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1249.223 ; gain = 667.910
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1245.828 ; gain = 664.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -264,8 +263,6 @@ DSP Report: operator offTime1 is absorbed into DSP offTime1.
 DSP Report: Generating DSP offTime1, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator offTime1 is absorbed into DSP offTime1.
 DSP Report: operator offTime1 is absorbed into DSP offTime1.
-WARNING: [Synth 8-3917] design topModule has port AN[7] driven by constant 0
-WARNING: [Synth 8-3917] design topModule has port SD[7] driven by constant 0
 WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__6) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__7) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (leftLED/rDutyCycle_reg__8) is unused and will be removed from module topModule.
@@ -283,7 +280,7 @@ WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__9) is unused
 WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__10) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (leftLED/bDutyCycle_reg__11) is unused and will be removed from module topModule.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1260.191 ; gain = 678.879
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 1261.297 ; gain = 680.121
 ---------------------------------------------------------------------------------
  Sort Area is  offTime1_c : 0 0 : 3119 6173 : Used 1 time 0
  Sort Area is  offTime1_c : 0 1 : 3054 6173 : Used 1 time 0
@@ -367,19 +364,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:35 . Memory (MB): peak = 1424.832 ; gain = 843.520
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:33 . Memory (MB): peak = 1426.859 ; gain = 845.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:03 . Memory (MB): peak = 1603.383 ; gain = 1022.070
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 1604.523 ; gain = 1023.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:01:07 . Memory (MB): peak = 1621.445 ; gain = 1040.133
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:53 . Memory (MB): peak = 1622.512 ; gain = 1041.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -397,37 +394,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:01:12 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:57 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:01:12 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:57 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:01:13 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:58 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:01:13 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:58 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:01:13 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:58 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:01:13 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:58 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -491,31 +488,31 @@ Report Cell Usage:
 |12    |LUT6    |  1348|
 |13    |FDRE    |   234|
 |14    |IBUF    |    18|
-|15    |OBUF    |    19|
+|15    |OBUF    |    17|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:01:13 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:58 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:01:11 . Memory (MB): peak = 1773.137 ; gain = 1099.719
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:01:14 . Memory (MB): peak = 1773.137 ; gain = 1191.824
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:57 . Memory (MB): peak = 1773.938 ; gain = 1103.984
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:59 . Memory (MB): peak = 1773.938 ; gain = 1192.762
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1786.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1788.160 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1305 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1790.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1791.848 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 58a2e7b7
+Synth Design complete | Checksum: e2263e4c
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 32 Warnings, 4 Critical Warnings and 0 Errors encountered.
+34 Infos, 27 Warnings, 5 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:01:22 . Memory (MB): peak = 1790.172 ; gain = 1418.461
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:01:06 . Memory (MB): peak = 1791.848 ; gain = 1419.844
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1790.172 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1791.848 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado/projectVivado.runs/synth_1/topModule.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file topModule_utilization_synth.rpt -pb topModule_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Feb 13 23:31:01 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 13 23:46:13 2025...
