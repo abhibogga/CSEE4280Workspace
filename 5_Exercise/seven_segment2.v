@@ -7,7 +7,7 @@
 // anode driver.
 `timescale 1ns/1ps
 `include "cathode_top.v"
-module seven_segment
+module seven_segment2
   #
   (
    parameter NUM_SEGMENTS = 8,
@@ -37,33 +37,55 @@ module seven_segment
   cathode_top ct_6(Clk, encoded[27:24], segments[6]);
   cathode_top ct_7(Clk, encoded[31:28], segments[7]);
 
-
-  
+    parameter sIdle = 0; sOn = 1; 
+    reg state, stateNext; 
 
   initial begin
     refresh_count = 0;
     anode_count   = 0;
   end
 
-  always @(posedge Clk) begin
-    if (refresh_count == INTERVAL) begin
-      refresh_count          <= 0;
-      anode_count            <= anode_count + 1'b1;
-    end else refresh_count <= refresh_count + 1'b1;
-    anode[0]                   <= 1;
-    anode[1]                   <= 1;
-    anode[2]                   <= 1;
-    anode[3]                   <= 1;
-    anode[4]                   <= 1;
-    anode[5]                   <= 1;
-    anode[6]                   <= 1;
-    anode[7]                   <= 1;
-    anode[anode_count]       <= 0;
-    cathode                  <= segments[anode_count];
-    if (Reset) begin
-      refresh_count          <= 0;
-      anode_count            <= 0;
+
+    always @(posedge clk) begin 
+        state <= stateNext; 
     end
+  always @(posedge Clk) begin
+    
+    if (reset == 1) begin 
+        stateNext = sOff;
+    end
+
+    case (state)
+        sOff: begin 
+            if (rst == 1) begin 
+                anode = 0; 
+                cathode = 0; 
+            end 
+        end
+        sOn: begin 
+            if (reset) stateNext = sOff
+            if (refresh_count == INTERVAL) begin
+                refresh_count          <= 0;
+                anode_count            <= anode_count + 1'b1;
+            end else refresh_count <= refresh_count + 1'b1;
+            anode[0]                   <= 1;
+            anode[1]                   <= 1;
+            anode[2]                   <= 1;
+            anode[3]                   <= 1;
+            anode[4]                   <= 1;
+            anode[5]                   <= 1;
+            anode[6]                   <= 1;
+            anode[7]                   <= 1;
+            anode[anode_count]       <= 0;
+            cathode                  <= segments[anode_count];
+            if (Reset) begin
+                refresh_count          <= 0;
+                anode_count            <= 0;
+            end
+        end
+        default: stateNext = sOn; 
+    endcase
+   
   end
 
 endmodule
