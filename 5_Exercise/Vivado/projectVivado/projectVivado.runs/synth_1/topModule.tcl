@@ -78,6 +78,7 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/CSEE4280Workpace/5_Exercise/pwm.v
   C:/CSEE4280Workpace/5_Exercise/led.v
+  C:/CSEE4280Workpace/5_Exercise/ssd.v
   C:/CSEE4280Workpace/5_Exercise/topMod.v
 }
 OPTRACE "Adding files" END { }

@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="22"></ZoomEndTime>
-      <Cursor1Time time="140"></Cursor1Time>
+      <ZoomEndTime time="9"></ZoomEndTime>
+      <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="388"></NameColumnWidth>
-      <ValueColumnWidth column_width="318"></ValueColumnWidth>
+      <ValueColumnWidth column_width="306"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="4" />
-   <wave_markers>
-   </wave_markers>
    <wvobject fp_name="SW_IBUF" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">SW_IBUF[15:0]</obj_property>

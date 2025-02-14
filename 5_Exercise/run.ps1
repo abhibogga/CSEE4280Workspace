@@ -1,4 +1,4 @@
-iverilog -o test .\tb_led.v
+iverilog -o test .\topMod.v
 
 vvp .\test
 
