@@ -1,7 +1,7 @@
 `include "led.v"
 `include "ssd.v"
 `include "seven_segment.v"
-module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD);
+module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD, JA);
 
     //Define the inputs here
     input [15:0] SW; 
@@ -13,8 +13,7 @@ module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD);
     output wire [7:0] SD; // ask herring about this: why do i need wire and not reg
     output wire [7:0] AN;
 
-
-    wire [4:0] JA;
+    output wire [4:1] JA;
 
     wire [31:0] encoded;
     assign encoded[3:0] = 4'h0;
@@ -27,6 +26,7 @@ module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD);
     assign encoded[31:28] = {3'b0, SW[15]};
     
     //Create led controller obj
+    
     led leftLED(
         .switchPanel(SW), 
         .rLED(LED16_R), 
@@ -45,10 +45,10 @@ module topModule(SW, LED16_B, LED16_G, LED16_R, CLK100MHZ, BTNC, AN, SD);
         .commonAnode(AN)
     ); */
 
-    assign JA[0] = LED16_R;
-    assign JA[1] = LED16_B; 
-    assign JA[2] = LED16_B;
-    assign JA[3] = CLK100MHZ;
+    assign JA[1] = LED16_R; //ch0
+    assign JA[2] = LED16_B; //ch1
+    assign JA[3] = LED16_G; //ch2
+    assign JA[4] = CLK100MHZ;
 
 
 

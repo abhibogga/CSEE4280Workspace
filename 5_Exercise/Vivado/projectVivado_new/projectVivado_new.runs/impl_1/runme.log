@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Fri Feb 14 13:58:58 2025
+  **** Start of session at: Fri Feb 14 15:04:18 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -17,33 +17,21 @@ Command: link_design -top topModule -part xc7a100tcsg324-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 589.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 589.395 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1309 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2024.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'JA[1]'. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:87]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:87]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JA[2]'. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:88]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:88]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JA[3]'. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:89]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:89]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JA[4]'. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:90]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc:90]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/CSEE4280Workpace/5_Exercise/Nexys-A7-100T-Master.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 735.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 734.508 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-7 Infos, 4 Warnings, 4 Critical Warnings and 0 Errors encountered.
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 735.031 ; gain = 368.895
+link_design: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 734.508 ; gain = 367.676
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -54,137 +42,114 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 767.242 ; gain = 32.211
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 765.027 ; gain = 30.520
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 2230377f6
+Ending Cache Timing Information Task | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1322.383 ; gain = 555.141
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1320.914 ; gain = 555.887
 
 Starting Logic Optimization Task
 
 Phase 1 Initialization
 
 Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 158e493d1
 
-Phase 1.1.1 Generate And Synthesize Debug Cores
-INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
-INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_0 
-INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_0_CV.
-INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = 4e1f155e41d6a517.
-INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:ila:6.2, cache-ID = 83c18cfbb48a7655.
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1755.531 ; gain = 0.000
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1755.531 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1766.039 ; gain = 0.000
-Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: 25041317e
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:37 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Phase 1.1 Core Generation And Design Setup | Checksum: 25041317e
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:37 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 1.2 Setup Constraints And Sort Netlist
-Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 25041317e
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:37 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Phase 1 Initialization | Checksum: 25041317e
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 1 Initialization | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:37 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2 Timer Update And Timing Data Collection
 
 Phase 2.1 Timer Update
-Phase 2.1 Timer Update | Checksum: 25041317e
+Phase 2.1 Timer Update | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:37 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.317 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2.2 Timing Data Collection
-Phase 2.2 Timing Data Collection | Checksum: 25041317e
+Phase 2.2 Timing Data Collection | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Phase 2 Timer Update And Timing Data Collection | Checksum: 25041317e
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.340 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.342 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3 Retarget
 INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
 INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 3 Retarget | Checksum: 2c82ab5bd
+Phase 3 Retarget | Checksum: 158e493d1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Retarget | Checksum: 2c82ab5bd
-INFO: [Opt 31-389] Phase Retarget created 6 cells and removed 13 cells
-INFO: [Opt 31-1021] In phase Retarget, 84 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.477 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Retarget | Checksum: 158e493d1
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 4 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 4 Constant propagation | Checksum: 2ed759160
+Phase 4 Constant propagation | Checksum: 14620d081
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Constant propagation | Checksum: 2ed759160
-INFO: [Opt 31-389] Phase Constant propagation created 1 cells and removed 62 cells
-INFO: [Opt 31-1021] In phase Constant propagation, 49 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.592 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Constant propagation | Checksum: 14620d081
+INFO: [Opt 31-389] Phase Constant propagation created 1 cells and removed 46 cells
 
 Phase 5 Sweep
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1766.039 ; gain = 0.000
-INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1766.039 ; gain = 0.000
-Phase 5 Sweep | Checksum: 262bda1ed
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 5 Sweep | Checksum: 1f0132189
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Sweep | Checksum: 262bda1ed
-INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 46 cells
-INFO: [Opt 31-1021] In phase Sweep, 876 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.763 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Sweep | Checksum: 1f0132189
+INFO: [Opt 31-389] Phase Sweep created 3 cells and removed 0 cells
 
 Phase 6 BUFG optimization
-Phase 6 BUFG optimization | Checksum: 262bda1ed
+Phase 6 BUFG optimization | Checksum: 1f0132189
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-BUFG optimization | Checksum: 262bda1ed
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.915 . Memory (MB): peak = 1724.664 ; gain = 0.000
+BUFG optimization | Checksum: 1f0132189
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 7 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 7 Shift Register Optimization | Checksum: 262bda1ed
+Phase 7 Shift Register Optimization | Checksum: 1f0132189
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Shift Register Optimization | Checksum: 262bda1ed
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.929 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Shift Register Optimization | Checksum: 1f0132189
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 8 Post Processing Netlist
-Phase 8 Post Processing Netlist | Checksum: 262bda1ed
+Phase 8 Post Processing Netlist | Checksum: 20917a1fd
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Post Processing Netlist | Checksum: 262bda1ed
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.955 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Post Processing Netlist | Checksum: 20917a1fd
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
-INFO: [Opt 31-1021] In phase Post Processing Netlist, 57 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 9 Finalization
 
 Phase 9.1 Finalizing Design Cores and Updating Shapes
-Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1e9ba2da7
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 25aeda196
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 9.2 Verifying Netlist Connectivity
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1766.039 ; gain = 0.000
-Phase 9.2 Verifying Netlist Connectivity | Checksum: 1e9ba2da7
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 25aeda196
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 1766.039 ; gain = 41.242
-Phase 9 Finalization | Checksum: 1e9ba2da7
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 9 Finalization | Checksum: 25aeda196
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1724.664 ; gain = 0.000
 Opt_design Change Summary
 =========================
 
@@ -192,74 +157,59 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |               6  |              13  |                                             84  |
-|  Constant propagation         |               1  |              62  |                                             49  |
-|  Sweep                        |               0  |              46  |                                            876  |
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               1  |              46  |                                              0  |
+|  Sweep                        |               3  |               0  |                                              0  |
 |  BUFG optimization            |               0  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
-|  Post Processing Netlist      |               0  |               0  |                                             57  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
-Ending Logic Optimization Task | Checksum: 1e9ba2da7
+Ending Logic Optimization Task | Checksum: 25aeda196
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 1766.039 ; gain = 41.242
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-INFO: [Pwropt 34-9] Applying IDT optimizations ...
-INFO: [Pwropt 34-10] Applying ODC optimizations ...
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-Running Vector-less Activity Propagation...
+Ending Power Optimization Task | Checksum: 25aeda196
 
-Finished Running Vector-less Activity Propagation
-
-
-Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
-INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 1 newly gated: 0 Total Ports: 2
-Ending PowerOpt Patch Enables Task | Checksum: 1ac11235a
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 1ac11235a
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1851.391 ; gain = 85.352
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 1ac11235a
+Ending Final Cleanup Task | Checksum: 25aeda196
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 23099f67a
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 25aeda196
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1724.664 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-55 Infos, 6 Warnings, 4 Critical Warnings and 0 Errors encountered.
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:54 . Memory (MB): peak = 1851.391 ; gain = 1116.359
+opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1724.664 ; gain = 990.156
 INFO: [Vivado 12-24828] Executing command : report_drc -file topModule_drc_opted.rpt -pb topModule_drc_opted.pb -rpx topModule_drc_opted.rpx
 Command: report_drc -file topModule_drc_opted.rpt -pb topModule_drc_opted.pb -rpx topModule_drc_opted.rpx
-INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_drc_opted.rpt.
 report_drc completed successfully
-INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1724.664 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1724.664 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_opt.dcp' has been generated.
-INFO: [Chipscope 16-240] Debug cores have already been implemented
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -278,72 +228,72 @@ Starting Placer Task
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 16a4e0582
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1ab026ef4
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 2041fa5ef
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1af8d2b0a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.701 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 2044dafd0
+Phase 1.3 Build Placer Netlist Model | Checksum: 2821b3c90
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 2044dafd0
+Phase 1.4 Constrain Clocks/Macros | Checksum: 2821b3c90
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 2044dafd0
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 2821b3c90
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 262c46633
+Phase 2.1 Floorplanning | Checksum: 29c498a76
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 2b9236f95
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 297f30481
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 2b9236f95
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 297f30481
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2.4 Global Place Phase1
-Phase 2.4 Global Place Phase1 | Checksum: 1968cbbd9
+Phase 2.4 Global Place Phase1 | Checksum: 2a868eb82
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2.5 Global Place Phase2
 
 Phase 2.5.1 UpdateTiming Before Physical Synthesis
-Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 1af1ab6ab
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 3082c3554
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 2.5.2 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 136 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 21 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-1138] End 1 Pass. Optimized 60 nets or LUTs. Breaked 0 LUT, combined 60 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 8 nets or LUTs. Breaked 0 LUT, combined 8 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-INFO: [Physopt 32-46] Identified 2 candidate nets for critical-cell optimization.
-INFO: [Physopt 32-81] Processed net leftLED/rDutyCycle[0]. Replicated 1 times.
-INFO: [Physopt 32-81] Processed net leftLED/bDutyCycle[0]. Replicated 1 times.
-INFO: [Physopt 32-232] Optimized 2 nets. Created 2 new instances.
-INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 2 new cells, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1851.391 ; gain = 0.000
+INFO: [Physopt 32-46] Identified 1 candidate net for critical-cell optimization.
+INFO: [Physopt 32-81] Processed net leftLED/bDutyCycle[0]. Replicated 2 times.
+INFO: [Physopt 32-232] Optimized 1 net. Created 2 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 2 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1724.664 ; gain = 0.000
 INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
@@ -359,7 +309,7 @@ INFO: [Physopt 32-846] No candidate cells for URAM register optimization found i
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -368,79 +318,79 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |             60  |                    60  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |              8  |                     8  |           0  |           1  |  00:00:00  |
 |  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Critical Cell                                    |            2  |              0  |                     2  |           0  |           1  |  00:00:00  |
+|  Critical Cell                                    |            2  |              0  |                     1  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            2  |             60  |                    62  |           0  |          10  |  00:00:00  |
+|  Total                                            |            2  |              8  |                     9  |           0  |          10  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.5.2 Physical Synthesis In Placer | Checksum: 22d58b00e
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 2ca8b1cac
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 2.5 Global Place Phase2 | Checksum: 16b1fdc8b
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 1cb1335ff
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 16b1fdc8b
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1cb1335ff
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 23cbba055
+Phase 3.1 Commit Multi Column Macros | Checksum: 168128fd1
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 19e3f7e79
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 217263675
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 200f9ad5b
+Phase 3.3 Area Swap Optimization | Checksum: 28d0bb8c0
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 174415a00
+Phase 3.4 Pipeline Register Optimization | Checksum: 291f82df5
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 193d2853f
+Phase 3.5 Fast Optimization | Checksum: 2bb82bbb6
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 24eb3ab74
+Phase 3.6 Small Shape Detail Placement | Checksum: 23f78757b
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 20cacf217
+Phase 3.7 Re-assign LUT pins | Checksum: 201bc4c70
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:31 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 24815d798
+Phase 3.8 Pipeline Register Optimization | Checksum: 20269d63f
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:31 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 3.9 Fast Optimization
-Phase 3.9 Fast Optimization | Checksum: 271035f0c
+Phase 3.9 Fast Optimization | Checksum: 150f3b6cc
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:40 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 271035f0c
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1724.664 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 150f3b6cc
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:40 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1724.664 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -448,7 +398,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 18ae5744c
+Post Placement Optimization Initialization | Checksum: 20e132bf7
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -456,33 +406,33 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-14.920 | TNS=-2040.137 |
-Phase 1 Physical Synthesis Initialization | Checksum: 74c2f8d1
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-14.522 | TNS=-2065.735 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1cd327860
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.536 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.180 . Memory (MB): peak = 1747.078 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
-Ending Physical Synthesis Task | Checksum: 17e12d5c2
+Ending Physical Synthesis Task | Checksum: 20699af9a
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.626 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: 18ae5744c
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.243 . Memory (MB): peak = 1747.078 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 20e132bf7
 
-Time (s): cpu = 00:00:22 ; elapsed = 00:00:46 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1747.078 ; gain = 22.414
 
 Phase 4.1.1.2 Post Placement Timing Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=-13.759. For the most accurate timing information please run report_timing.
-Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1d9ef6fb7
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-13.509. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 291802114
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:10 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:10 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 1d9ef6fb7
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
+Phase 4.1 Post Commit Optimization | Checksum: 291802114
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:10 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 1d9ef6fb7
+Phase 4.2 Post Placement Cleanup | Checksum: 291802114
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
 
 Phase 4.3 Placer Reporting
 
@@ -494,51 +444,51 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |___________|___________________|___________________|
 |      North|                1x1|                2x2|
 |___________|___________________|___________________|
-|      South|                1x1|                2x2|
+|      South|                1x1|                1x1|
 |___________|___________________|___________________|
 |       East|                1x1|                1x1|
 |___________|___________________|___________________|
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: 1d9ef6fb7
+Phase 4.3.1 Print Estimated Congestion | Checksum: 291802114
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 4.3 Placer Reporting | Checksum: 1d9ef6fb7
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
+Phase 4.3 Placer Reporting | Checksum: 291802114
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1747.078 ; gain = 0.000
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1db369883
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2603c74c3
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Ending Placer Task | Checksum: 1678c8196
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
+Ending Placer Task | Checksum: 24b501fe8
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1851.391 ; gain = 0.000
-104 Infos, 6 Warnings, 4 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1747.078 ; gain = 22.414
+76 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:33 ; elapsed = 00:01:13 . Memory (MB): peak = 1851.391 ; gain = 0.000
+place_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:54 . Memory (MB): peak = 1747.078 ; gain = 22.414
 INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
 Running report generation with 2 threads.
 INFO: [Vivado 12-24828] Executing command : report_io -file topModule_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 1851.391 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.079 . Memory (MB): peak = 1747.078 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file topModule_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1851.391 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1747.078 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file topModule_utilization_placed.rpt -pb topModule_utilization_placed.pb
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1747.250 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 1749.172 ; gain = 1.922
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1749.172 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1851.391 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1749.172 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1749.172 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1749.172 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 1749.172 ; gain = 1.922
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_placed.dcp' has been generated.
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
@@ -546,255 +496,504 @@ INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc
 
 Starting Initial Update Timing Task
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1851.391 ; gain = 0.000
-INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 2.00s |  WALL: 2.33s
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1851.391 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.981 . Memory (MB): peak = 1761.730 ; gain = 12.559
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 0.00s |  WALL: 1.03s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1761.730 ; gain = 0.000
 
 Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.759 | TNS=-1993.715 |
-Phase 1 Physical Synthesis Initialization | Checksum: 121b1fe31
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.509 | TNS=-2009.830 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1cd0466e4
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1852.688 ; gain = 1.297
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.759 | TNS=-1993.715 |
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1763.957 ; gain = 2.227
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.509 | TNS=-2009.830 |
 
 Phase 2 DSP Register Optimization
 INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Phase 2 DSP Register Optimization | Checksum: 121b1fe31
+Phase 2 DSP Register Optimization | Checksum: 1cd0466e4
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1852.688 ; gain = 1.297
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1763.957 ; gain = 2.227
 
 Phase 3 Critical Path Optimization
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.759 | TNS=-1993.715 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.509 | TNS=-2009.830 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[8]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-81] Processed net leftLED/rDutyCycle[4]. Replicated 1 times.
 INFO: [Physopt 32-735] Processed net leftLED/rDutyCycle[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.753 | TNS=-1993.553 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.500 | TNS=-2009.480 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net leftLED/bDutyCycle[2]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net leftLED/bDutyCycle[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.496 | TNS=-2008.913 |
 INFO: [Physopt 32-702] Processed net leftLED/rDutyCycle[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[8]_i_2_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_11_n_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_37_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.731 | TNS=-1993.129 |
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_33_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_77_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_12_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_80_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_38_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_81_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_158_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.493 | TNS=-2008.871 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_151_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_206_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.490 | TNS=-2008.828 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_199_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_251_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.489 | TNS=-2008.815 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_244_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_290_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.479 | TNS=-2008.619 |
+INFO: [Physopt 32-702] Processed net leftLED/bDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[7]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_103__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.479 | TNS=-2008.619 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_95_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_173__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.475 | TNS=-2007.470 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_12_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 25 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_39_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.474 | TNS=-2007.456 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[18]_i_6_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[14]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[6]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_45_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.451 | TNS=-2007.152 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_37_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_12_n_6. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_38_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_86_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.448 | TNS=-2006.588 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[21]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net leftLED/gDutyCycle[2]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net leftLED/gDutyCycle[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.437 | TNS=-2006.021 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/rLight/offTime[12]_i_1_n_0. Critical path length was reduced through logic transformation on cell leftLED/rLight/offTime[12]_i_1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.427 | TNS=-2005.972 |
+INFO: [Physopt 32-702] Processed net leftLED/gDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[21]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[21]_i_1__0_comp.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[21]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.420 | TNS=-2005.637 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[10]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[10]_i_1__0_comp.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[10]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.412 | TNS=-2005.315 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[16]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[16]_i_3_n_0.  Re-placed instance leftLED/rLight/offTime[16]_i_3
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[16]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.406 | TNS=-2005.232 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[0]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[0]_i_1__0_comp.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.402 | TNS=-2004.870 |
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_82_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_9_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_30_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.394 | TNS=-2004.788 |
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_31_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
 INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_27_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.678 | TNS=-1992.190 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_30_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.626 | TNS=-1990.954 |
-INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[20]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net leftLED/bDutyCycle[1].  Re-placed instance leftLED/bDutyCycle_reg__4
-INFO: [Physopt 32-735] Processed net leftLED/bDutyCycle[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.597 | TNS=-1987.632 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[21]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[21]_i_3_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_17_n_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_59_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_117_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.597 | TNS=-1987.632 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_109_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_187_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.597 | TNS=-1987.632 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_179_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_234_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.597 | TNS=-1987.632 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_226_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_273_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.591 | TNS=-1986.812 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_80_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.588 | TNS=-1986.763 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_72_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_150_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.585 | TNS=-1986.718 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_142_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_198_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.582 | TNS=-1986.672 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_190_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_243_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.581 | TNS=-1986.557 |
-INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/gDutyCycle[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[3]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[3]_i_1__0_comp.
-INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[3]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.574 | TNS=-1986.163 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_32_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-571] Net leftLED/rLight/offTime[26]_i_28_n_0 was not replicated.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_28_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_68_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[22]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[18]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[14]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_56_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_82_n_4. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[6]_i_80_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 28 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[6]_i_103_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.574 | TNS=-1986.163 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_196_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_281_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.555 | TNS=-1985.778 |
-INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[18]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[18]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[18]_i_1__0_comp.
-INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[18]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.543 | TNS=-1985.612 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[6]_i_99_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__5[25]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_160_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_208_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 9 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_255_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.538 | TNS=-1985.082 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_63_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.518 | TNS=-1984.731 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_114_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_16_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_51_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_101_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_7_n_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_23_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.518 | TNS=-1983.838 |
-INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[9]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[9]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[9]_i_1__0_comp.
-INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[9]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.503 | TNS=-1983.549 |
-INFO: [Physopt 32-81] Processed net leftLED/bDutyCycle[2]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net leftLED/bDutyCycle[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.498 | TNS=-1983.414 |
-INFO: [Physopt 32-601] Processed net leftLED/bDutyCycle[0]_repN. Net driver leftLED/bDutyCycle_reg__5_replica was replaced.
-INFO: [Physopt 32-735] Processed net leftLED/bDutyCycle[0]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.492 | TNS=-1982.982 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_255_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__4_n_105. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net leftLED/rLight/offTime1__2_i_2_n_0. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime1__2_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.491 | TNS=-1982.896 |
-INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[2]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.386 | TNS=-2004.645 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/gLight/offTime[5]_i_1__0_n_0. Critical path length was reduced through logic transformation on cell leftLED/gLight/offTime[5]_i_1__0_comp.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[5]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.380 | TNS=-2004.349 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[7]_i_3_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_49_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
 INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_103__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.483 | TNS=-1982.399 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__2_i_2_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1_i_10_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__3_n_106. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ_IBUF. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.380 | TNS=-2004.349 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_95_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_173__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.380 | TNS=-2004.349 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_165_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_221__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.377 | TNS=-2002.676 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[2]_i_19_n_0.  Re-placed instance leftLED/rLight/offTime[2]_i_19
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_19_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.376 | TNS=-2002.604 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[5]_i_3_n_0.  Re-placed instance leftLED/rLight/offTime[5]_i_3
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[5]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.374 | TNS=-2002.529 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[17]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/rLight/offTime[17]_i_1_n_0. Critical path length was reduced through logic transformation on cell leftLED/rLight/offTime[17]_i_1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.372 | TNS=-2002.511 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[9]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[9]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.367 | TNS=-2002.382 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[10]_i_17_n_0.  Re-placed instance leftLED/rLight/offTime[10]_i_17
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[10]_i_17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.367 | TNS=-2002.382 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[6]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[6]_i_26_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_46_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_94_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[2]_i_172_n_0.  Re-placed instance leftLED/rLight/offTime[2]_i_172
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_172_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.366 | TNS=-2002.200 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[5]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[5]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.363 | TNS=-2001.916 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[24]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime0[24]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_11_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_31__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.361 | TNS=-2000.975 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[7]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_53__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.350 | TNS=-2000.845 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[7]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rDutyCycle[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[7]_i_3_n_0.  Re-placed instance leftLED/rLight/offTime[7]_i_3
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[7]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.348 | TNS=-2000.819 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_221__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.348 | TNS=-2000.819 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_265__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.347 | TNS=-2000.495 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[12]_i_3_n_0.  Re-placed instance leftLED/rLight/offTime[12]_i_3
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[12]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.342 | TNS=-2000.490 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[12]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.341 | TNS=-2000.489 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_117_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.341 | TNS=-2000.489 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_187_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.338 | TNS=-1999.247 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[8]_i_2_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_11_n_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_77_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_12_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_82_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_9_n_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_32_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_28_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_68_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_56_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_82_n_4. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[6]_i_99_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__5[25]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_255_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__4_n_105. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__2_i_2_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1_i_10_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ_IBUF. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.483 | TNS=-1982.399 |
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1860.746 ; gain = 0.000
-Phase 3 Critical Path Optimization | Checksum: 121b1fe31
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_80_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_38_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[18]_i_6_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[6]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[6]_i_26_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[2]_i_98_n_0.  Re-placed instance leftLED/rLight/offTime[2]_i_98
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_98_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.320 | TNS=-1999.064 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[10]_i_17_n_0.  Re-placed instance leftLED/rLight/offTime[10]_i_17
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[10]_i_17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.316 | TNS=-1999.028 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[14]_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[14]_i_26_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[6]_i_54_n_0.  Re-placed instance leftLED/rLight/offTime[6]_i_54
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[6]_i_54_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.315 | TNS=-1999.019 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[2]_i_100_n_0.  Re-placed instance leftLED/rLight/offTime[2]_i_100
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_100_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.312 | TNS=-1998.975 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_76__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.311 | TNS=-1998.954 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_138__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.311 | TNS=-1998.954 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_197__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.310 | TNS=-1998.869 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[6]_i_53_n_0.  Re-placed instance leftLED/rLight/offTime[6]_i_53
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[6]_i_53_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.310 | TNS=-1998.869 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_45_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_41_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_94_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_254_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_251_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_374_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__5[21]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 9 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_255_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.307 | TNS=-1998.312 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_73__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_13_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/bLight/offTime[26]_i_84_n_0.  Re-placed instance leftLED/bLight/offTime[26]_i_84
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_84_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.307 | TNS=-1997.977 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_103__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_56_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/bLight/offTime[26]_i_231_n_0.  Re-placed instance leftLED/bLight/offTime[26]_i_231
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_231_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.304 | TNS=-1997.441 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.304 | TNS=-1997.441 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1771.965 ; gain = 0.000
+Phase 3 Critical Path Optimization | Checksum: 237ed1e6f
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1860.746 ; gain = 9.355
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1771.965 ; gain = 10.234
 
 Phase 4 Critical Path Optimization
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.483 | TNS=-1982.399 |
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.304 | TNS=-1997.441 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[7]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_95_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_165_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_213_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_265_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.303 | TNS=-1997.422 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_53__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.290 | TNS=-1996.140 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[24]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[24]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[24]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[24]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.281 | TNS=-1996.131 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[24]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_103__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_56_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_109_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_179_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_227_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_269_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_309_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.279 | TNS=-1996.123 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_228_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.278 | TNS=-1996.075 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[22]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[22]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[22]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[22]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.276 | TNS=-1995.827 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[16]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[16]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[16]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[16]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.276 | TNS=-1995.602 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rDutyCycle[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_2_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_11_n_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_33_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_77_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_12_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_38_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_82_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_9_n_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_32_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-571] Net leftLED/rLight/offTime[26]_i_28_n_0 was not replicated.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_28_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_68_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[22]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[18]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[14]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_26_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_56_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_82_n_4. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[6]_i_80_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[6]_i_99_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__5[25]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_160_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_208_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_255_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__4_n_105. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__2_i_2_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1_i_10_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__3_n_106. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ_IBUF. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_63_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.275 | TNS=-1995.530 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[2]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[2]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.273 | TNS=-1995.312 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_59_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_109_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_179_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_234_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.273 | TNS=-1995.312 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_226_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_273_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.273 | TNS=-1995.312 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_265_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_309_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.267 | TNS=-1993.044 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[18]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net leftLED/bLight/offTime[18]_i_1__1_n_0. Critical path length was reduced through logic transformation on cell leftLED/bLight/offTime[18]_i_1__1_comp.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime0[18]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.265 | TNS=-1992.735 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime0[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_11_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_244__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.265 | TNS=-1992.307 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[24]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[24]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_103__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_56_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_231_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[14]_i_5_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 25 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[2]_i_43_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.244 | TNS=-1991.682 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_73__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_13_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 15 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_86_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.230 | TNS=-1991.360 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_83_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.227 | TNS=-1991.107 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gDutyCycle[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[7]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_304__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.219 | TNS=-1990.803 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[26]_i_86_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[22]_i_4_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[6]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[6]_i_22_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[2]_i_61_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[6]_i_77_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/bLight/offTime[2]_i_233_n_0.  Re-placed instance leftLED/bLight/offTime[2]_i_233
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[2]_i_233_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.215 | TNS=-1990.714 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[2]_i_233_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[26]_i_139_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 9 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_247_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.208 | TNS=-1988.132 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[26]_i_103__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_56_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_271_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.202 | TNS=-1987.876 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[8]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rDutyCycle[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[8]_i_2_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_11_n_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_77_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_12_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_82_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_9_n_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_32_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_28_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_68_n_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_56_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_82_n_4. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[6]_i_99_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__5[25]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_255_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[12]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_80_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_38_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[18]_i_6_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_45_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_41_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_94_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_254_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[2]_i_251_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[2]_i_374_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__5[21]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 9 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_254_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.192 | TNS=-1987.631 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_273_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.185 | TNS=-1987.519 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_181_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.169 | TNS=-1987.063 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[10]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_117_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_51_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[26]_i_218_n_0.  Re-placed instance leftLED/rLight/offTime[26]_i_218
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_218_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.164 | TNS=-1986.874 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[6]_i_18_n_0.  Re-placed instance leftLED/rLight/offTime[6]_i_18
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[6]_i_18_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.160 | TNS=-1986.826 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_221_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[10]_i_4_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[10]_i_9_n_0.  Re-placed instance leftLED/rLight/offTime[10]_i_9
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[10]_i_9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.156 | TNS=-1986.164 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[14]_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[14]_i_26_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[6]_i_55_n_0.  Re-placed instance leftLED/rLight/offTime[6]_i_55
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[6]_i_55_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.155 | TNS=-1986.040 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[26]_i_100_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[26]_i_18_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/gLight/offTime[26]_i_112_n_0.  Re-placed instance leftLED/gLight/offTime[26]_i_112
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[26]_i_112_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.155 | TNS=-1986.040 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[26]_i_230_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime_reg[10]_i_5_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 25 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime[2]_i_43_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.152 | TNS=-1984.494 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[10]_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[10]_i_25_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/bLight/offTime[6]_i_55_n_0.  Re-placed instance leftLED/bLight/offTime[6]_i_55
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[6]_i_55_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.139 | TNS=-1984.403 |
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[6]_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[6]_i_25_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[2]_i_96_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime_reg[6]_i_79_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime[2]_i_276_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/bLight/offTime1__5[21]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 9 pins.
+INFO: [Physopt 32-735] Processed net leftLED/bLight/offTime[26]_i_268_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.137 | TNS=-1984.008 |
+INFO: [Physopt 32-702] Processed net leftLED/gLight/offTime[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net leftLED/gLight/offTime0[20].  Re-placed instance leftLED/gLight/offTime[20]_i_3
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime0[20]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.137 | TNS=-1984.000 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[2]_i_171_n_0.  Re-placed instance leftLED/rLight/offTime[2]_i_171
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[2]_i_171_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.129 | TNS=-1983.862 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-735] Processed net leftLED/gLight/offTime0[20]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.128 | TNS=-1983.651 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_114_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_16_n_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[26]_i_101_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime_reg[26]_i_7_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_23_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.114 | TNS=-1983.084 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[8]_i_1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.101 | TNS=-1983.071 |
+INFO: [Physopt 32-663] Processed net leftLED/rLight/offTime[26]_i_326_n_0.  Re-placed instance leftLED/rLight/offTime[26]_i_326
+INFO: [Physopt 32-735] Processed net leftLED/rLight/offTime[26]_i_326_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.096 | TNS=-1982.877 |
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[22]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[22]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime[22]_i_1_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__4_n_105. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__2_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1__3_i_1_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net leftLED/rLight/offTime1_i_10_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net CLK100MHZ_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net JA_OBUF[4]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net CLK100MHZ. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.483 | TNS=-1982.399 |
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1860.746 ; gain = 0.000
-Phase 4 Critical Path Optimization | Checksum: 121b1fe31
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-13.096 | TNS=-1982.877 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1771.969 ; gain = 0.000
+Phase 4 Critical Path Optimization | Checksum: 1928ede48
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:17 . Memory (MB): peak = 1860.746 ; gain = 9.355
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1860.746 ; gain = 0.000
-INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-13.483 | TNS=-1982.399 |
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1771.969 ; gain = 10.238
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1771.969 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-13.096 | TNS=-1982.877 |
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -804,30 +1003,30 @@ Summary of Physical Synthesis Optimizations
 |  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 |  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Critical Path  |          0.276  |         11.316  |            4  |              0  |                    25  |           0  |           2  |  00:00:15  |
-|  Total          |          0.276  |         11.316  |            4  |              0  |                    25  |           0  |           3  |  00:00:16  |
+|  Critical Path  |          0.413  |         26.954  |            3  |              0  |                    88  |           0  |           2  |  00:00:07  |
+|  Total          |          0.413  |         26.954  |            3  |              0  |                    88  |           0  |           3  |  00:00:08  |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1860.746 ; gain = 0.000
-Ending Physical Synthesis Task | Checksum: 1596cf65c
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1771.969 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 2ac5b1c78
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:17 . Memory (MB): peak = 1860.746 ; gain = 9.355
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1771.969 ; gain = 10.238
 INFO: [Common 17-83] Releasing license: Implementation
-334 Infos, 6 Warnings, 4 Critical Warnings and 0 Errors encountered.
+555 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
-phys_opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1860.746 ; gain = 9.355
+phys_opt_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1771.969 ; gain = 22.797
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1877.027 ; gain = 8.992
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1882.438 ; gain = 14.375
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1882.438 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1779.613 ; gain = 0.039
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.975 . Memory (MB): peak = 1781.543 ; gain = 1.930
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1781.543 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1882.438 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1882.438 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1882.438 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1882.438 ; gain = 14.375
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1781.543 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1781.543 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1781.543 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 1781.543 ; gain = 1.930
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
@@ -841,43 +1040,31 @@ Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
 
 Phase 1 Build RT Design
-Checksum: PlaceDB: 445435d1 ConstDB: 0 ShapeSum: 1678066a RouteDB: b1d25f96
-Post Restoration Checksum: NetGraph: e86a473e | NumContArr: a809a594 | Constraints: c2a8fa9d | Timing: c2a8fa9d
-Phase 1 Build RT Design | Checksum: 315c5e20c
+Checksum: PlaceDB: f6c48c54 ConstDB: 0 ShapeSum: 595a0525 RouteDB: b1d25f96
+Post Restoration Checksum: NetGraph: 9d4bdbd3 | NumContArr: f6e7d550 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 31985a65d
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:56 . Memory (MB): peak = 1991.980 ; gain = 109.543
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:43 . Memory (MB): peak = 1898.910 ; gain = 110.301
 
 Phase 2 Router Initialization
 
 Phase 2.1 Fix Topology Constraints
-Phase 2.1 Fix Topology Constraints | Checksum: 315c5e20c
+Phase 2.1 Fix Topology Constraints | Checksum: 31985a65d
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:56 . Memory (MB): peak = 1992.082 ; gain = 109.645
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:43 . Memory (MB): peak = 1898.910 ; gain = 110.301
 
 Phase 2.2 Pre Route Cleanup
-Phase 2.2 Pre Route Cleanup | Checksum: 315c5e20c
+Phase 2.2 Pre Route Cleanup | Checksum: 31985a65d
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:56 . Memory (MB): peak = 1992.082 ; gain = 109.645
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:43 . Memory (MB): peak = 1898.910 ; gain = 110.301
  Number of Nodes with overlaps = 0
 
 Phase 2.3 Update Timing
-Phase 2.3 Update Timing | Checksum: 2a2c60e44
+Phase 2.3 Update Timing | Checksum: 276ccfd16
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:01:00 . Memory (MB): peak = 2043.863 ; gain = 161.426
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-13.213| TNS=-1941.556| WHS=-0.194 | THS=-76.607|
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:46 . Memory (MB): peak = 1952.090 ; gain = 163.480
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-12.826| TNS=-1940.854| WHS=-0.129 | THS=-1.678 |
 
-
-Phase 2.4 Update Timing for Bus Skew
-
-Phase 2.4.1 Update Timing
-Phase 2.4.1 Update Timing | Checksum: 305955f0f
-
-Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2050.844 ; gain = 168.406
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-13.213| TNS=-1982.391| WHS=-0.085 | THS=-0.085 |
-
-Phase 2.4 Update Timing for Bus Skew | Checksum: 2c83afeab
-
-Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2055.137 ; gain = 172.699
 
 Router Utilization Summary
   Global Vertical Routing Utilization    = 0 %
@@ -885,109 +1072,125 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 11481
+  Number of Failed Nets               = 8783
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 11481
+  Number of Unrouted Nets             = 8783
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 2 Router Initialization | Checksum: 30138f02f
+Phase 2 Router Initialization | Checksum: 34657132a
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:01:04 . Memory (MB): peak = 2061.199 ; gain = 178.762
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:47 . Memory (MB): peak = 1952.090 ; gain = 163.480
 
 Phase 3 Global Routing
-Phase 3 Global Routing | Checksum: 30138f02f
+Phase 3 Global Routing | Checksum: 34657132a
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:01:04 . Memory (MB): peak = 2061.199 ; gain = 178.762
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:47 . Memory (MB): peak = 1952.090 ; gain = 163.480
 
 Phase 4 Initial Routing
 
 Phase 4.1 Initial Net Routing Pass
-Phase 4.1 Initial Net Routing Pass | Checksum: 25f6c9b50
+Phase 4.1 Initial Net Routing Pass | Checksum: 1cd5d7716
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:01:07 . Memory (MB): peak = 2061.199 ; gain = 178.762
-Phase 4 Initial Routing | Checksum: 25f6c9b50
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 1952.090 ; gain = 163.480
+Phase 4 Initial Routing | Checksum: 1cd5d7716
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:01:07 . Memory (MB): peak = 2061.199 ; gain = 178.762
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 1952.090 ; gain = 163.480
+INFO: [Route 35-580] Design has 4 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+==================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                              |
++====================+===================+==================================+
+| sys_clk_pin        | sys_clk_pin       | leftLED/bLight/offTime_reg[0]/D  |
+| sys_clk_pin        | sys_clk_pin       | leftLED/bLight/offTime_reg[22]/D |
+| sys_clk_pin        | sys_clk_pin       | leftLED/gLight/onTime_reg[0]/D   |
+| sys_clk_pin        | sys_clk_pin       | leftLED/bLight/onTime_reg[0]/D   |
++--------------------+-------------------+----------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
 
 Phase 5 Rip-up And Reroute
 
 Phase 5.1 Global Iteration 0
- Number of Nodes with overlaps = 4140
- Number of Nodes with overlaps = 1573
- Number of Nodes with overlaps = 705
- Number of Nodes with overlaps = 312
- Number of Nodes with overlaps = 119
- Number of Nodes with overlaps = 45
- Number of Nodes with overlaps = 18
- Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 3801
+ Number of Nodes with overlaps = 1615
+ Number of Nodes with overlaps = 693
+ Number of Nodes with overlaps = 339
+ Number of Nodes with overlaps = 137
+ Number of Nodes with overlaps = 61
+ Number of Nodes with overlaps = 30
  Number of Nodes with overlaps = 5
- Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.715| TNS=-2069.739| WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.230| TNS=-2088.931| WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Global Iteration 0 | Checksum: 2ebf7df05
+Phase 5.1 Global Iteration 0 | Checksum: 26c468430
 
-Time (s): cpu = 00:01:00 ; elapsed = 00:01:42 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:37 ; elapsed = 00:01:15 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 5.2 Global Iteration 1
- Number of Nodes with overlaps = 639
- Number of Nodes with overlaps = 476
- Number of Nodes with overlaps = 188
- Number of Nodes with overlaps = 107
- Number of Nodes with overlaps = 43
- Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 1148
+ Number of Nodes with overlaps = 657
+ Number of Nodes with overlaps = 385
+ Number of Nodes with overlaps = 171
+ Number of Nodes with overlaps = 47
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.756| TNS=-2075.225| WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.517| TNS=-2103.739| WHS=N/A    | THS=N/A    |
 
-Phase 5.2 Global Iteration 1 | Checksum: 26fda57b2
+Phase 5.2 Global Iteration 1 | Checksum: 2fd6b86f0
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:01:57 . Memory (MB): peak = 2104.012 ; gain = 221.574
-Phase 5 Rip-up And Reroute | Checksum: 26fda57b2
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:30 . Memory (MB): peak = 1993.156 ; gain = 204.547
+Phase 5 Rip-up And Reroute | Checksum: 2fd6b86f0
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:01:57 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:30 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 6 Delay and Skew Optimization
 
 Phase 6.1 Delay CleanUp
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 29990d368
+Phase 6.1.1 Update Timing | Checksum: 26fcb3a3c
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:01:58 . Memory (MB): peak = 2104.012 ; gain = 221.574
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.636| TNS=-2060.885| WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:30 . Memory (MB): peak = 1993.156 ; gain = 204.547
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.214| TNS=-2081.517| WHS=N/A    | THS=N/A    |
 
  Number of Nodes with overlaps = 0
-Phase 6.1 Delay CleanUp | Checksum: 310f67024
+Phase 6.1 Delay CleanUp | Checksum: 25603dbcc
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:01:58 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:30 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 6.2 Clock Skew Optimization
-Phase 6.2 Clock Skew Optimization | Checksum: 310f67024
+Phase 6.2 Clock Skew Optimization | Checksum: 25603dbcc
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:01:58 . Memory (MB): peak = 2104.012 ; gain = 221.574
-Phase 6 Delay and Skew Optimization | Checksum: 310f67024
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:30 . Memory (MB): peak = 1993.156 ; gain = 204.547
+Phase 6 Delay and Skew Optimization | Checksum: 25603dbcc
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:01:58 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:30 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 7 Post Hold Fix
 
 Phase 7.1 Hold Fix Iter
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.297| TNS=-2041.001| WHS=0.057  | THS=0.000  |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.119| TNS=-2068.419| WHS=0.117  | THS=0.000  |
 
-Phase 7.1 Hold Fix Iter | Checksum: 2bad2eff3
+Phase 7.1 Hold Fix Iter | Checksum: 27f418c5d
 
-Time (s): cpu = 00:01:11 ; elapsed = 00:01:59 . Memory (MB): peak = 2104.012 ; gain = 221.574
-Phase 7 Post Hold Fix | Checksum: 2bad2eff3
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:31 . Memory (MB): peak = 1993.156 ; gain = 204.547
+Phase 7 Post Hold Fix | Checksum: 27f418c5d
 
-Time (s): cpu = 00:01:11 ; elapsed = 00:01:59 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:31 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 8 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 1.78165 %
-  Global Horizontal Routing Utilization  = 2.39564 %
+  Global Vertical Routing Utilization    = 1.59277 %
+  Global Horizontal Routing Utilization  = 2.08795 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -1001,10 +1204,10 @@ Router Utilization Summary
 --GLOBAL Congestion:
 Utilization threshold used for congestion level computation: 0.85
 Congestion Report
-North Dir 1x1 Area, Max Cong = 51.3514%, No Congested Regions.
-South Dir 1x1 Area, Max Cong = 72.0721%, No Congested Regions.
-East Dir 1x1 Area, Max Cong = 70.5882%, No Congested Regions.
-West Dir 1x1 Area, Max Cong = 70.5882%, No Congested Regions.
+North Dir 1x1 Area, Max Cong = 63.0631%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 63.0631%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 67.6471%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 69.1176%, No Congested Regions.
 
 ------------------------------
 Reporting congestion hotspots
@@ -1026,99 +1229,97 @@ Direction: West
 Congested clusters found at Level 0
 Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
 
-Phase 8 Route finalize | Checksum: 2bad2eff3
+Phase 8 Route finalize | Checksum: 27f418c5d
 
-Time (s): cpu = 00:01:11 ; elapsed = 00:01:59 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:45 ; elapsed = 00:01:31 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 9 Verifying routed nets
 
  Verification completed successfully
-Phase 9 Verifying routed nets | Checksum: 2bad2eff3
+Phase 9 Verifying routed nets | Checksum: 27f418c5d
 
-Time (s): cpu = 00:01:11 ; elapsed = 00:01:59 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:46 ; elapsed = 00:01:31 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 10 Depositing Routes
-Phase 10 Depositing Routes | Checksum: 28f764699
+Phase 10 Depositing Routes | Checksum: 275f9f2e6
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:02:00 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 11 Post Process Routing
-Phase 11 Post Process Routing | Checksum: 28f764699
+Phase 11 Post Process Routing | Checksum: 275f9f2e6
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:02:00 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Phase 12 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=-14.297| TNS=-2041.001| WHS=0.057  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-14.119| TNS=-2068.419| WHS=0.117  | THS=0.000  |
 
 WARNING: [Route 35-328] Router estimated timing not met.
 Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
-Phase 12 Post Router Timing | Checksum: 28f764699
+Phase 12 Post Router Timing | Checksum: 275f9f2e6
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:02:01 . Memory (MB): peak = 2104.012 ; gain = 221.574
-Total Elapsed time in route_design: 120.527 secs
+Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1993.156 ; gain = 204.547
+Total Elapsed time in route_design: 91.754 secs
 
 Phase 13 Post-Route Event Processing
-Phase 13 Post-Route Event Processing | Checksum: d337bf8c
+Phase 13 Post-Route Event Processing | Checksum: 1a2efeca1
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:02:01 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1993.156 ; gain = 204.547
 INFO: [Route 35-16] Router Completed Successfully
-Ending Routing Task | Checksum: d337bf8c
+Ending Routing Task | Checksum: 1a2efeca1
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:02:01 . Memory (MB): peak = 2104.012 ; gain = 221.574
+Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1993.156 ; gain = 204.547
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-350 Infos, 7 Warnings, 4 Critical Warnings and 0 Errors encountered.
+571 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:01:13 ; elapsed = 00:02:02 . Memory (MB): peak = 2104.012 ; gain = 221.574
+route_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:33 . Memory (MB): peak = 1993.156 ; gain = 211.613
 INFO: [Vivado 12-24828] Executing command : report_drc -file topModule_drc_routed.rpt -pb topModule_drc_routed.pb -rpx topModule_drc_routed.rpx
 Command: report_drc -file topModule_drc_routed.rpt -pb topModule_drc_routed.pb -rpx topModule_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_drc_routed.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2104.012 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_methodology -file topModule_methodology_drc_routed.rpt -pb topModule_methodology_drc_routed.pb -rpx topModule_methodology_drc_routed.rpx
 Command: report_methodology -file topModule_methodology_drc_routed.rpt -pb topModule_methodology_drc_routed.pb -rpx topModule_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
 INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2111.109 ; gain = 7.098
+report_methodology: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2008.566 ; gain = 15.410
 INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -report_unconstrained -file topModule_timing_summary_routed.rpt -pb topModule_timing_summary_routed.pb -rpx topModule_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
 CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
-WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
 INFO: [Vivado 12-24838] Running report commands "report_incremental_reuse, report_route_status" in parallel.
 Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file topModule_route_status.rpt -pb topModule_route_status.pb
 INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file topModule_incremental_reuse_routed.rpt
 INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
-INFO: [Vivado 12-24828] Executing command : report_route_status -file topModule_route_status.rpt -pb topModule_route_status.pb
 INFO: [Vivado 12-24828] Executing command : report_power -file topModule_power_routed.rpt -pb topModule_power_summary_routed.pb -rpx topModule_power_routed.rpx
 Command: report_power -file topModule_power_routed.rpt -pb topModule_power_summary_routed.pb -rpx topModule_power_routed.rpx
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-367 Infos, 8 Warnings, 5 Critical Warnings and 0 Errors encountered.
+588 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
 INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file topModule_clock_utilization_routed.rpt
 INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file topModule_bus_skew_routed.rpt -pb topModule_bus_skew_routed.pb -rpx topModule_bus_skew_routed.rpx
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-generate_parallel_reports: Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2118.871 ; gain = 14.859
+generate_parallel_reports: Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2016.449 ; gain = 23.293
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 2145.684 ; gain = 10.871
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2151.734 ; gain = 6.051
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2151.734 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2016.961 ; gain = 0.512
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2020.867 ; gain = 4.418
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2020.867 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.245 . Memory (MB): peak = 2151.734 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2151.734 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2151.734 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2151.734 ; gain = 16.922
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.160 . Memory (MB): peak = 2020.867 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2020.867 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2020.867 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2020.867 ; gain = 4.418
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/impl_1/topModule_routed.dcp' has been generated.
 Command: write_bitstream -force topModule.bit
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
@@ -1139,7 +1340,7 @@ Writing bitstream ./topModule.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 INFO: [Common 17-83] Releasing license: Implementation
-382 Infos, 8 Warnings, 5 Critical Warnings and 0 Errors encountered.
+603 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 2657.535 ; gain = 505.801
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 14 14:04:46 2025...
+write_bitstream: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 2537.781 ; gain = 516.914
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 14 15:08:10 2025...

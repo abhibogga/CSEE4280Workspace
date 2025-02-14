@@ -14,13 +14,13 @@ module led(switchPanel, rLED, gLED, bLED, clk, rst);
     assign rIn = switchPanel[15:11];
     reg [7:0] rDutyCycle;
 
-    wire [5:0] bIn; 
-    assign bIn = switchPanel[10:5];
-    reg [7:0] bDutyCycle;
-
-    wire [4:0] gIn; 
-    assign gIn = switchPanel[4:0];
+    wire [5:0] gIn; 
+    assign gIn = switchPanel[10:5];
     reg [7:0] gDutyCycle;
+
+    wire [4:0] bIn; 
+    assign bIn = switchPanel[4:0];
+    reg [7:0] bDutyCycle;
 
 
     //Define case statements
@@ -111,8 +111,8 @@ module led(switchPanel, rLED, gLED, bLED, clk, rst);
                 rLED = rpwm;
 
                 rDutyCycle = (rIn*100) >> 5; 
-                gDutyCycle = (gIn*100) >> 5;
-                bDutyCycle = (bIn*100) >> 6;
+                gDutyCycle = (gIn*100) >> 6;
+                bDutyCycle = (bIn*100) >> 5;
 
             end
             

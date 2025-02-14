@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Feb 14 13:56:11 2025
-# Process ID         : 47624
+# Start of session at: Fri Feb 14 15:02:27 2025
+# Process ID         : 7176
 # Current directory  : C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/synth_1
 # Command line       : vivado.exe -log topModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl
 # Log file           : C:/CSEE4280Workpace/5_Exercise/Vivado/projectVivado_new/projectVivado_new.runs/synth_1/topModule.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16856 MB
-# Swap memory        : 18399 MB
-# Total Virtual      : 35256 MB
-# Available Virtual  : 6166 MB
+# Swap memory        : 19339 MB
+# Total Virtual      : 36195 MB
+# Available Virtual  : 6677 MB
 #-----------------------------------------------------------
 source topModule.tcl -notrace

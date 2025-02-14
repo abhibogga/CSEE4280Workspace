@@ -1,0 +1,8 @@
++====================+===================+==================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                              |
++====================+===================+==================================+
+| sys_clk_pin        | sys_clk_pin       | leftLED/bLight/offTime_reg[0]/D  |
+| sys_clk_pin        | sys_clk_pin       | leftLED/bLight/offTime_reg[22]/D |
+| sys_clk_pin        | sys_clk_pin       | leftLED/gLight/onTime_reg[0]/D   |
+| sys_clk_pin        | sys_clk_pin       | leftLED/bLight/onTime_reg[0]/D   |
++--------------------+-------------------+----------------------------------+

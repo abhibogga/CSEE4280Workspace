@@ -8,6 +8,7 @@ module tb_led();
     wire rLED, gLED, bLED;
 
     // Instantiate the LED module
+    //AGAIN WE MADE A MISTAKE IN OUR CODE, THIS WAS THE QUICK FIX
     led uut (
         .switchPanel(switchPanel),
         .rLED(rLED),
@@ -16,6 +17,7 @@ module tb_led();
         .clk(clk),
         .rst(rst)
     );
+
 
     // Clock generation
     always #5 clk = ~clk; // 10ns period (100MHz clock)
@@ -26,7 +28,9 @@ module tb_led();
         // Initialize signals
         clk = 0;
         rst = 0;
-        switchPanel = 16'b1111100000000000;
+        switchPanel = 16'b0000100000100001;
+
+
 
         
         #2000
