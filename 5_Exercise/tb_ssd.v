@@ -39,17 +39,16 @@ module tb_ssd;
     input [NUM_SEGMENTS-1:0] expected_anode;
     input [7:0] expected_cathode;
     begin
-      if (anode == expected_anode) begin
-        goodOrNot = 0;
-        $display("Looks Good: At time %0t, expected anode=%b, got %b", $time, expected_anode, anode);
-      end else if (cathode == expected_cathode) begin
-        goodOrNot = 0;
-        $display("Looks Good: At time %0t, expected cathode=%b, got %b", $time, expected_cathode, cathode);
+      if (anode === expected_anode && cathode === expected_cathode) begin
+        $display("PASS: At time %0t, anode=%b, cathode=%b", $time, anode, cathode);
       end else begin
-        goodOrNot = 1;
+        $display("FAIL: At time %0t, expected anode=%b, got %b | expected cathode=%b, got %b", 
+                 $time, expected_anode, anode, expected_cathode, cathode);
+        $stop; // Halt simulation on failure
       end
     end
   endtask
+
 
   // Test Sequence
   initial begin
