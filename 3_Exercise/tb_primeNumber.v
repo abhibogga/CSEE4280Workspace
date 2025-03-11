@@ -63,13 +63,15 @@ module tb_primeNumber();
     initial begin
         $dumpvars(0, tb_primeNumber);
 
-
+        @(posedge clk)
+        rst = 1; 
+        @(posedge clk)
         //Singular Test Cases
-        numMax = 100; 
+        numMax = 10; 
         rst = 0; 
 
         //Now we need to run the clock cycles since this is a flop based design
-        for (j = 0; j < numMax+1; j++) begin 
+        for (j = 0; j < numMax + 5; j++) begin 
             @(posedge clk);
         end
 

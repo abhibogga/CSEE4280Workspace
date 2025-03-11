@@ -15,7 +15,7 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
     integer i;
     integer loopMax;
     integer count;  
-    integer primeTemp; 
+    integer primeTemp = 0; 
 
     //Parameters for states
     parameter sOff = 0, sInit = 1, sCalc = 2, sSet = 3, sDone = 4; 
@@ -25,6 +25,7 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
     //Memory State
     always @(posedge clk) begin 
         state <= stateNext; 
+        
     end
 
 
@@ -37,6 +38,7 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
             state = stateNext;
         end
 
+        prime <= primeTemp;
 
         case(state)
 
@@ -51,7 +53,8 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
             sInit: begin 
                 //Initialize all our variables
                 count = 0; 
-                i = 2;
+                i = 1;
+                primeTemp = 0; 
 
                 //Move states
                 stateNext = sCalc; 
@@ -80,9 +83,9 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
                     10'd811, 10'd821, 10'd823, 10'd827, 10'd829, 10'd839, 10'd853, 10'd857, 10'd859, 10'd863,
                     10'd877, 10'd881, 10'd883, 10'd887, 10'd907, 10'd911, 10'd919, 10'd929, 10'd937, 10'd941,
                     10'd947, 10'd953, 10'd967, 10'd971, 10'd977, 10'd983, 10'd991, 10'd997:
-                        primeTemp = 1;
+                        primeTemp = 1; 
                     //Make sure to always have a default case with case statements
-                    default: primeTemp = 0;
+                    default: primeTemp = 0; 
                 endcase
                
                 stateNext = sSet; 
@@ -95,15 +98,15 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
                     count++; 
                 end
 
-                 if (i == 2) begin 
-                    i++; 
+                if (i == 1 || i == 2) begin   
+                    i++;  
                 end 
                 else begin 
                     i = i + 2; 
                 end
 
                 //Now we do the logic for moving the states
-                if (i <= numMax) begin //Its important to make sure that we do equal to so we also check if the number inputted is a prime
+                if (i <= numMax + 1) begin //Its important to make sure that we do equal to so we also check if the number inputted is a prime
                     //Update State
                     stateNext = sCalc;  
 
@@ -126,15 +129,20 @@ module primeNumber(numMax, clk, rst, prime, numberChecked, numberOfPrimes);
     //Here we decide the outputs
     always @(state) begin 
         //outputs to determine
-        if (state == sCalc || stateNext == sCalc) begin 
-            numberChecked = i;
-            prime = primeTemp; 
-            numberOfPrimes = count; 
+        if (state == sSet || stateNext == sSet || state == sCalc || stateNext == sCalc) begin 
+            numberChecked = i; 
+            numberOfPrimes = count;
+            if (i == 2) begin 
+                prime = 1; 
+            end
+            else begin 
+                prime = primeTemp;
+            end
         end     
 
         if (state == sDone) begin 
             //Now we just need to update our last things 
-            prime = 0; 
+            $display("done");
         end
 
 
