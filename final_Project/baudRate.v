@@ -61,6 +61,10 @@ module baudRate(clk, outBaud, rst);
                 end
             end
 
+            default: 
+                stateNext = sIdle; 
+
+
         endcase
 
     end

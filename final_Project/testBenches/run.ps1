@@ -1,7 +1,8 @@
 
 
-iverilog -o test ./tb_baud.v
+iverilog -o test ./tb_uart_receiver.v
 
 vvp .\test
+
 
 gtkwave dump.vcd

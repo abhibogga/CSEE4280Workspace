@@ -25,7 +25,7 @@ module tb_baud();
         repeat(5) @(posedge clk);
         rst = 0;
 
-        repeat(10000) @(posedge clk);
+        repeat(6520) @(posedge clk);
 
         $display("Simulation complete at time %t", $time);
         $finish;
