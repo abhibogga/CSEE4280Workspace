@@ -41,7 +41,8 @@ module baudRate(clk, outBaud, rst);
                     outBaud = 0; 
                 end else begin
                     stateNext = sCount;
-                    outBaud = 0;  
+                    outBaud = 0; 
+                    counter = 0;  
                 end
             end
 

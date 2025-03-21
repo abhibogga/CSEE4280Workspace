@@ -76,7 +76,8 @@ module receiver_uart(baudRate, rst, bitStream, dataOut, readDone);
                 end 
 
                 //Next lets what would set our startCondition true: which is when the signal drops to a low
-                if (bit == 1 && prevBit == 0) begin 
+                if (bit == 0 && prevBit == 1) begin 
+                    $display("starting");
                     //This means the signal has dropped, so lets move the state onto the count phase
                     stateNext = sCount;
                     startCondition = 0; //This means the start condition has not been fulfilled
@@ -90,8 +91,7 @@ module receiver_uart(baudRate, rst, bitStream, dataOut, readDone);
                     //Lets set our dataOut output
                     dataOut = 8'b0; 
                 end else begin
-                    //Keep waiting and set the case back to what it needs to be (no inffered latches)
-                    stateNext = sWait; 
+                    
                 end
             end
 
@@ -104,13 +104,11 @@ module receiver_uart(baudRate, rst, bitStream, dataOut, readDone);
                 end 
 
                 //Now we need to check the data input for each baud increase
-                if (counter < 16) begin
-                    if (bit) begin 
-                        $display("recived one here");
+                if (counter < 7) begin
+                    if (bit) begin  
                         //Increment some sort of ones counter
                         highCounter = highCounter + 1; 
                     end else begin
-                        $display("recivied zero here");
                         lowCounter = lowCounter + 1; 
                     end
                     //Lets move the next state here; 
@@ -120,71 +118,67 @@ module receiver_uart(baudRate, rst, bitStream, dataOut, readDone);
                     counter = counter + 1; 
                 end else begin
                     //This means that we have got all the data we need and lets move on to the next phase
-                    stateNext = sCalc; 
-                end
-            end
 
-            sCalc: begin
-                //This is our calculating phase, this means that we need to set all our outputs and reset all our counters here
-
-                //First lets calc the bit that we have decided in the calc phase
-                if (highCounter > lowCounter) begin 
-                    insertBit = 1; 
-                end else begin
-                    insertBit = 0; 
-                end
-
-                if (datCounter < 9) begin 
-                    //First lets update the if we have fufilled the start condition 
-                    if (startCondition == 0 && insertBit == 1) begin
-                        //This means we have a problem for now lets display and error and exit program
-                        $display("there has been an error, exiting now");
-                        $finish;
-                    end
-                    
-                    else if (startCondition == 0 && insertBit == 0) begin
-                        //This means that everything is good
-                        startCondition = 1; 
-                        
-                        //Now lets reset the nesseary counters
-                        highCounter = 0; 
-                        lowCounter = 0; 
-                        counter = 0; 
- 
-                    end
-
-                    else if (startCondition == 1) begin 
-                        //This means we are actually collecting data so lets make sure we do that
-                        dataOut[datCounter] = insertBit; 
-                        datCounter = datCounter + 1; 
-
-                        //Lets reset nessary counters 
-                        highCounter = 0; 
-                        lowCounter = 0; 
-                        counter = 0; 
-
-                    end
-                    stateNext = sCount;
-                end else begin 
-                    //This means that the tranmission is done so we just need to count the stop bit 
-                    //Right now according to programming logic we should have the stop bit encoded arleady when it reaches this loop so lets just check for that 
-                    if (insertBit) begin
-                        $display("recived correct stop singal");
-
-                        stateNext = sWait; 
-                        //Reset nessecary counters: 
-                        datCounter = 0; 
-                        readDone = 1; 
+                    //First lets calc the bit that we have decided in the calc phase
+                    if (highCounter > lowCounter) begin 
+                        $display("recived one here");
+                        insertBit = 1; 
                     end else begin
-                        //THis means an error has happened or im just retarted
-                        $display("error has occured, fix the program"); 
-                        $finish; 
-                        datCounter = 0; 
-                        readDone = 0; 
+                        $display("recivied zero here");
+                        insertBit = 0; 
                     end
-                end
 
-               
+                    if (datCounter < 8) begin 
+                        //First lets update the if we have fufilled the start condition 
+                        if (startCondition == 0 && insertBit == 1) begin
+                            //This means we have a problem for now lets display and error and exit program
+                            $display("there has been an error, exiting now");
+                            $finish;
+                        end
+                        
+                        else if (startCondition == 0 && insertBit == 0) begin
+                            //This means that everything is good
+                            startCondition = 1; 
+                            
+                            //Now lets reset the nesseary counters
+                            highCounter = 0; 
+                            lowCounter = 0; 
+                            counter = 0; 
+
+    
+                        end
+
+                        else if (startCondition) begin 
+                            //This means we are actually collecting data so lets make sure we do that
+                            dataOut[datCounter] = insertBit; 
+                            datCounter = datCounter + 1; 
+
+                            //Lets reset nessary counters 
+                            highCounter = 0; 
+                            lowCounter = 0; 
+                            counter = 0; 
+
+                        end
+                        stateNext = sCount;
+                    end else begin 
+                        //This means that the tranmission is done so we just need to count the stop bit 
+                        //Right now according to programming logic we should have the stop bit encoded arleady when it reaches this loop so lets just check for that 
+                        if (insertBit) begin
+                            $display("recived correct stop singal");
+
+                            stateNext = sWait; 
+                            //Reset nessecary counters: 
+                            datCounter = 0; 
+                            readDone = 1; 
+                        end else begin
+                            //THis means an error has happened or im just retarted
+                            $display("error has occured, fix the program"); 
+                            $finish; 
+                            datCounter = 0; 
+                            readDone = 0; 
+                        end
+                    end 
+                end
             end
 
 

@@ -39,8 +39,8 @@ module tb_uart_receiver();
     );
 
     initial begin 
-        clk = 0; 
-        baudRate = 0; 
+        clk = 1; 
+        baudRate = 1; 
         bitStream = 1;
 
         rst_gen = 0; 
@@ -64,7 +64,7 @@ module tb_uart_receiver();
         @(posedge baudRate);
 
         //Data Bits (8)
-        bitStream = 0; 
+        bitStream = 1; 
         @(posedge baudRate);
 
         bitStream = 1; 
