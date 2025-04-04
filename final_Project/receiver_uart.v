@@ -128,7 +128,7 @@ module receiver_uart(baudRate, rst, bitStream, dataOut, readDone);
                         insertBit = 0; 
                     end
 
-                    if (datCounter < 8) begin 
+                    if (datCounter < 7) begin 
                         //First lets update the if we have fufilled the start condition 
                         if (startCondition == 0 && insertBit == 1) begin
                             //This means we have a problem for now lets display and error and exit program
