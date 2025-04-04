@@ -5,7 +5,7 @@ module transmit_fifo(writeIn, writeReady, writeDone, clk, writeOut, writeFinishe
     input clk; 
 
     output reg [7:0] writeOut; 
-    output writeFinished; 
+    output reg writeFinished; 
     
 
     always @(posedge clk) begin 
@@ -14,7 +14,7 @@ module transmit_fifo(writeIn, writeReady, writeDone, clk, writeOut, writeFinishe
             writeFinished = 1; 
         end
 
-        if (writeFinished) begin 
+        if (writeDone) begin 
             writeOut = 0; 
             writeFinished = 0; 
         end

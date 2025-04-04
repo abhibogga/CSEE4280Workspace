@@ -48,9 +48,9 @@ module transmit_uart(dataIn, rst, clk, bitStream, txDone);
                     counter = 0; 
 
                     //Setup input stream 
-                    inputStream[9] = 0;
+                    inputStream[9] = 1;
                     inputStream[8:1] = dataIn;
-                    inputStream[0] = 1; 
+                    inputStream[0] = 0; 
                     
                 end else begin
                     stateNext = sIdle; 
@@ -59,24 +59,24 @@ module transmit_uart(dataIn, rst, clk, bitStream, txDone);
             end
 
             sTransmit: begin 
-                if (datCounter < 10) begin 
+                if (datCounter < 10 ) begin 
                     //This means we need to keep going back to here
                     if (counter < 7) begin 
                         bitStream = inputStream[datCounter]; 
                         counter = counter + 1; 
                     end else begin 
+                        $display(inputStream[datCounter]);
                         datCounter = datCounter + 1; 
                         counter = 0; 
                     end 
                     stateNext = sTransmit; 
                 end else begin 
                     //This means that we are done with tranmission so we can let the FIFO know we are done
+                    $display("Reached here");
                     txDone = 1; 
                     stateNext = sIdle; 
+                    
                 end
-
-                
-
             end
 
             default: begin 

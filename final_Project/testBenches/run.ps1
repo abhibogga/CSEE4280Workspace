@@ -1,6 +1,6 @@
 
 
-iverilog -o test ./tb_uart_transmitter.v
+iverilog -o test ./tb_sendAtzTransmit.v
 
 vvp .\test
 

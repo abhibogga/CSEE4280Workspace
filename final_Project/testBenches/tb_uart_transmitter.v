@@ -46,16 +46,18 @@ module tb_uart_transmitter();
         $dumpvars(0, tb_uart_transmitter);  
         clk = 1; 
 
-        dataIn = 8'b10001001;
-
         clkRst = 1; // Assert reset
         rst = 1; 
-        #10;       // Hold reset for 10ns
+        dataIn = 8'b10001001;
+
 
         clkRst = 0; // Deassert reset
         rst = 0; 
 
-        #1000000; // Run for a while
+         @(posedge txDone) begin 
+            rst = 1; // Reassert reset after transmission is done
+         end
+        #2500000; // Run for a while
         $finish;
     end
 
