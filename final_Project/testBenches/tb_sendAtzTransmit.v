@@ -25,7 +25,7 @@ module tb_sendAtzTransmit();
     wire txDone; 
 
     //Now lets make the baudRate gen inputs and outputs
-    reg buadRst; 
+    reg baudRst; 
     wire outBaud; 
 
     //Now we need to make our modules
@@ -39,7 +39,7 @@ module tb_sendAtzTransmit();
 
     baudRate bd(
         .clk(clk),
-        .rst(buadRst),
+        .rst(baudRst),
         .outBaud(outBaud)
     );
 
@@ -72,10 +72,19 @@ module tb_sendAtzTransmit();
         #100;
 
         //now drop writeReady
-        writeIn = 8'b10001001;
+        writeIn =  8'b01100001;
         writeReady = 1; 
+        #50
+        writeReady = 0;
+        #2500000;
+         
+        #2500000;
+        writeReady = 1;
+        #50 
+        writeReady = 0; 
+        writeIn =  8'b01100001;
+        #2500000;
 
-        #2500000
         
 
         $finish;

@@ -53,6 +53,7 @@ module transmit_uart(dataIn, rst, clk, bitStream, txDone);
                     inputStream[0] = 0; 
                     
                 end else begin
+                    txDone = 0; 
                     stateNext = sIdle; 
                     bitStream = 1; 
                 end
