@@ -2,6 +2,7 @@
 `include "../transmit_uart.v"
 `include "../baudRate.v"
 `include "../transmit_fifo.v"
+`include "../fpgaMain_transmit.v"
 module tb_sendAtzTransmit();
     /**For this test bench what i want to aim for is to be able to use the transmit fifo to pass in the command 
         sequence for the initialization sequence for the ECU
@@ -28,7 +29,23 @@ module tb_sendAtzTransmit();
     reg baudRst; 
     wire outBaud; 
 
+    //Now lets make the transmit fpga module
+     // Inputs
+    reg [3:0] switchInputs;
+
+    wire fifoBlip;
+    wire [7:0] dataOut;
+
     //Now we need to make our modules
+
+    fpgaMain_transmit uut (
+        .switchInputs(switchInputs),
+        .clk(clk),
+        .listenTx(txDone),
+        .fifoBlip(fifoBlip),
+        .dataOut(dataOut)
+    );
+
     transmit_uart uartController(
         .dataIn(writeOut), 
         .rst(~writeFinished), 
@@ -44,8 +61,8 @@ module tb_sendAtzTransmit();
     );
 
     transmit_fifo fifo(
-        .writeIn(writeIn), 
-        .writeReady(writeReady),
+        .writeIn(dataOut), 
+        .writeReady(fifoBlip),
         .writeDone(txDone), 
         .writeOut(writeOut), 
         .writeFinished(writeFinished), 
@@ -66,24 +83,14 @@ module tb_sendAtzTransmit();
         clk = 1; 
 
         //Keep in mind that writeReady is controlling this whole process
-        writeReady = 0;
+        
 
         //Run the clock 
         #100;
+        switchInputs = 5'b00000;
+        switchInputs[3] = 1'b1;
+        #25000000
 
-        //now drop writeReady
-        writeIn =  8'b01100001;
-        writeReady = 1; 
-        #50
-        writeReady = 0;
-        #2500000;
-         
-        #2500000;
-        writeReady = 1;
-        #50 
-        writeReady = 0; 
-        writeIn =  8'b01100001;
-        #2500000;
 
         
 
