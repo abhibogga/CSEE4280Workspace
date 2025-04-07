@@ -10,7 +10,7 @@ module top_module (
 // Clock wizard instance
 wire pxl_clk;
 clk_wiz_0 clk_div_inst (
-    .clk_in1(CLK_I),     // <<== Make sure these match your clk_wiz_0 stub!
+    .clk_in1(CLK_I),
     .clk_out1(pxl_clk)
 );
 
@@ -26,26 +26,30 @@ localparam V_MAX = 1125;
 localparam H_POL = 1'b1;
 localparam V_POL = 1'b1;
 
-// Sync and counters
+// Horizontal and Vertical counters
 reg [11:0] h_cntr_reg = 0;
 reg [11:0] v_cntr_reg = 0;
 
+// Sync signals
 reg h_sync_reg = ~H_POL;
 reg v_sync_reg = ~V_POL;
 reg h_sync_dly_reg = ~H_POL;
 reg v_sync_dly_reg = ~V_POL;
 
-// Color logic
-wire active;
-reg [3:0] vga_red_reg   = 4'b0000;
-reg [3:0] vga_green_reg = 4'b0000;
-reg [3:0] vga_blue_reg  = 4'b0000;
+// Active video region
+wire active = (h_cntr_reg < FRAME_WIDTH) && (v_cntr_reg < FRAME_HEIGHT);
 
-wire [3:0] vga_red   = active ? 4'b1111 : 4'b0000;
-wire [3:0] vga_green = active ? 4'b1111 : 4'b0000;
-wire [3:0] vga_blue  = active ? 4'b1111 : 4'b0000;
+// AXIS CONDITIONS (centered)
+wire is_vert_axis = (h_cntr_reg >= 958 && h_cntr_reg <= 962); // X = 960 ±2
+wire is_horz_axis = (v_cntr_reg >= 538 && v_cntr_reg <= 542); // Y = 540 ±2
+wire axis_pixel = is_vert_axis || is_horz_axis;
 
-// ------------------------- Horizontal Counter -------------------------
+// COLOR OUTPUT (white unless on axis)
+assign VGA_R = (active && !axis_pixel) ? 4'b1111 : 4'b0000;
+assign VGA_G = (active && !axis_pixel) ? 4'b1111 : 4'b0000;
+assign VGA_B = (active && !axis_pixel) ? 4'b1111 : 4'b0000;
+
+// -------------------- Horizontal Counter --------------------
 always @(posedge pxl_clk) begin
     if (h_cntr_reg == H_MAX - 1)
         h_cntr_reg <= 0;
@@ -53,7 +57,7 @@ always @(posedge pxl_clk) begin
         h_cntr_reg <= h_cntr_reg + 1;
 end
 
-// ------------------------- Vertical Counter -------------------------
+// -------------------- Vertical Counter --------------------
 always @(posedge pxl_clk) begin
     if (h_cntr_reg == H_MAX - 1) begin
         if (v_cntr_reg == V_MAX - 1)
@@ -63,7 +67,7 @@ always @(posedge pxl_clk) begin
     end
 end
 
-// ------------------------- Sync Signal Generation -------------------------
+// -------------------- Horizontal Sync --------------------
 always @(posedge pxl_clk) begin
     if (h_cntr_reg >= (H_FP + FRAME_WIDTH - 1) &&
         h_cntr_reg <  (H_FP + FRAME_WIDTH + H_PW - 1))
@@ -72,6 +76,7 @@ always @(posedge pxl_clk) begin
         h_sync_reg <= ~H_POL;
 end
 
+// -------------------- Vertical Sync --------------------
 always @(posedge pxl_clk) begin
     if (v_cntr_reg >= (V_FP + FRAME_HEIGHT - 1) &&
         v_cntr_reg <  (V_FP + FRAME_HEIGHT + V_PW - 1))
@@ -80,22 +85,13 @@ always @(posedge pxl_clk) begin
         v_sync_reg <= ~V_POL;
 end
 
-assign active = (h_cntr_reg < FRAME_WIDTH) && (v_cntr_reg < FRAME_HEIGHT);
-
-// ------------------------- Delay Registers & Output -------------------------
+// -------------------- Sync Output Delay --------------------
 always @(posedge pxl_clk) begin
     h_sync_dly_reg <= h_sync_reg;
     v_sync_dly_reg <= v_sync_reg;
-
-    vga_red_reg   <= vga_red;
-    vga_green_reg <= vga_green;
-    vga_blue_reg  <= vga_blue;
 end
 
 assign VGA_HS_O = h_sync_dly_reg;
 assign VGA_VS_O = v_sync_dly_reg;
-assign VGA_R    = vga_red_reg;
-assign VGA_G    = vga_green_reg;
-assign VGA_B    = vga_blue_reg;
 
 endmodule
