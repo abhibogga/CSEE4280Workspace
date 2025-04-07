@@ -71,5 +71,3 @@ module transmit_fifo(writeIn, writeReady, writeDone, clk, writeOut, writeFinishe
         endcase
     end
 endmodule
-
-
