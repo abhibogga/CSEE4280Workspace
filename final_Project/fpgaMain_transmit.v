@@ -10,7 +10,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
 
     reg [5:0] state, stateNext, statePrev;
 
-    reg [7:0] sendAtz [3:0];
+    reg [7:0] sendAtz [9:0];
     reg [7:0] sendRpm [4:0];
 
     reg [5:0] blipCounter;
@@ -18,10 +18,16 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
 
     // Initialization
     initial begin
-        sendAtz[0] = 8'h41;
-        sendAtz[1] = 8'h54;
-        sendAtz[2] = 8'h5A;
-        sendAtz[3] = 8'h0D;
+        sendAtz[0] = "A";
+        sendAtz[1] = "T";
+        sendAtz[2] = "Z";
+        sendAtz[3] = 8'h0D; // '\r'
+        //Keep in mind that this next command is ate0 which is the turn off echo command
+        sendAtz[4] = "A";
+        sendAtz[5] = "T";
+        sendAtz[6] = "E";
+        sendAtz[7] = "0";
+        sendAtz[8] = 8'h0D; // '\r'
     end
 
     always @(posedge clk) begin
@@ -39,7 +45,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
             end
 
             sSendInit: begin
-                if (sendCommandCounter < 4) begin
+                if (sendCommandCounter < 9) begin
                     dataOut = sendAtz[sendCommandCounter];
                     statePrev = state;
                     stateNext = sSendBlip;

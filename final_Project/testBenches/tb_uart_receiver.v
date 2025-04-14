@@ -92,6 +92,40 @@ module tb_uart_receiver();
         bitStream = 1; 
         @(posedge baudRate);
 
+        
+        //Start Bit
+        bitStream = 0; 
+        @(posedge baudRate);
+
+        //Data Bits (8)
+        bitStream = 1; 
+        @(posedge baudRate);
+
+        bitStream = 1; 
+        @(posedge baudRate);
+
+        bitStream = 1; 
+        @(posedge baudRate);
+
+        bitStream = 0; 
+        @(posedge baudRate);
+
+        bitStream = 1; 
+        @(posedge baudRate);
+
+        bitStream = 0; 
+        @(posedge baudRate);
+
+        bitStream = 1; 
+        @(posedge baudRate);
+
+        bitStream = 1; 
+        @(posedge baudRate);
+
+        //Stop bit 
+        bitStream = 1; 
+        @(posedge baudRate);
+
         $finish; 
 
 
