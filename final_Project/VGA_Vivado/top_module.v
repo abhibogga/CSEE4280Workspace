@@ -39,17 +39,51 @@ reg v_sync_dly_reg = ~V_POL;
 // Active video region
 wire active = (h_cntr_reg < FRAME_WIDTH) && (v_cntr_reg < FRAME_HEIGHT);
 
-// AXIS CONDITIONS (centered)
-wire is_vert_axis = (h_cntr_reg >= 958 && h_cntr_reg <= 962); // X = 960 ±2
-wire is_horz_axis = (v_cntr_reg >= 538 && v_cntr_reg <= 542); // Y = 540 ±2
-wire axis_pixel = is_vert_axis || is_horz_axis;
+// Character grid dimensions for 8x16 font
+localparam CHAR_WIDTH = 8;
+localparam CHAR_HEIGHT = 16;
+localparam CHAR_COLS = FRAME_WIDTH / CHAR_WIDTH;
+localparam CHAR_ROWS = FRAME_HEIGHT / CHAR_HEIGHT;
 
-// COLOR OUTPUT (white unless on axis)
-assign VGA_R = (active && !axis_pixel) ? 4'b1111 : 4'b0000;
-assign VGA_G = (active && !axis_pixel) ? 4'b1111 : 4'b0000;
-assign VGA_B = (active && !axis_pixel) ? 4'b1111 : 4'b0000;
+// Current character cell
+wire [9:0] char_x = h_cntr_reg / CHAR_WIDTH;
+wire [9:0] char_y = v_cntr_reg / CHAR_HEIGHT;
+wire [3:0] row_in_char = v_cntr_reg % CHAR_HEIGHT;
+wire [2:0] col_in_char = h_cntr_reg % CHAR_WIDTH;
 
-// -------------------- Horizontal Counter --------------------
+// Font ROM and screen buffer
+reg [7:0] screen_buffer [0:CHAR_ROWS-1][0:CHAR_COLS-1];
+wire [7:0] char_code = screen_buffer[char_y][char_x];
+wire [7:0] font_row;
+
+font_rom font_rom_inst (
+    .char_code(char_code),
+    .row(row_in_char),
+    .row_pixels(font_row)
+);
+
+wire pixel_on = font_row[7 - col_in_char];
+
+// Graph axis (left and bottom only)
+localparam AXIS_MARGIN = 64;
+
+wire in_graph_area = (v_cntr_reg >= 32 && v_cntr_reg < 540);
+wire is_y_axis = in_graph_area && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < AXIS_MARGIN + 4);
+wire is_x_axis = (v_cntr_reg >= 536 && v_cntr_reg < 540) && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < FRAME_WIDTH - AXIS_MARGIN);
+
+// Second graph axis
+wire in_graph2_area = (v_cntr_reg >= 592 && v_cntr_reg < FRAME_HEIGHT);
+wire is_y2_axis = in_graph2_area && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < AXIS_MARGIN + 4);
+wire is_x2_axis = (v_cntr_reg >= FRAME_HEIGHT - 4 && v_cntr_reg < FRAME_HEIGHT) && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < FRAME_WIDTH - AXIS_MARGIN);
+
+wire axis_pixel = is_y_axis || is_x_axis || is_y2_axis || is_x2_axis;
+
+// Final color output
+assign VGA_R = (active && (pixel_on || axis_pixel)) ? 4'b1111 : 4'b0000;
+assign VGA_G = (active && (pixel_on || axis_pixel)) ? 4'b1111 : 4'b0000;
+assign VGA_B = (active && (pixel_on || axis_pixel)) ? 4'b1111 : 4'b0000;
+
+// Horizontal counter
 always @(posedge pxl_clk) begin
     if (h_cntr_reg == H_MAX - 1)
         h_cntr_reg <= 0;
@@ -57,7 +91,7 @@ always @(posedge pxl_clk) begin
         h_cntr_reg <= h_cntr_reg + 1;
 end
 
-// -------------------- Vertical Counter --------------------
+// Vertical counter
 always @(posedge pxl_clk) begin
     if (h_cntr_reg == H_MAX - 1) begin
         if (v_cntr_reg == V_MAX - 1)
@@ -67,7 +101,7 @@ always @(posedge pxl_clk) begin
     end
 end
 
-// -------------------- Horizontal Sync --------------------
+// Horizontal Sync
 always @(posedge pxl_clk) begin
     if (h_cntr_reg >= (H_FP + FRAME_WIDTH - 1) &&
         h_cntr_reg <  (H_FP + FRAME_WIDTH + H_PW - 1))
@@ -76,7 +110,7 @@ always @(posedge pxl_clk) begin
         h_sync_reg <= ~H_POL;
 end
 
-// -------------------- Vertical Sync --------------------
+// Vertical Sync
 always @(posedge pxl_clk) begin
     if (v_cntr_reg >= (V_FP + FRAME_HEIGHT - 1) &&
         v_cntr_reg <  (V_FP + FRAME_HEIGHT + V_PW - 1))
@@ -85,7 +119,7 @@ always @(posedge pxl_clk) begin
         v_sync_reg <= ~V_POL;
 end
 
-// -------------------- Sync Output Delay --------------------
+// Sync output delay
 always @(posedge pxl_clk) begin
     h_sync_dly_reg <= h_sync_reg;
     v_sync_dly_reg <= v_sync_reg;
@@ -93,5 +127,38 @@ end
 
 assign VGA_HS_O = h_sync_dly_reg;
 assign VGA_VS_O = v_sync_dly_reg;
+
+// Initialize text for both graphs
+integer i;
+initial begin
+    for (i = 0; i < CHAR_COLS; i = i + 1)
+        screen_buffer[0][i] = 8'h20; // Fill with spaces
+
+    // Top label
+    screen_buffer[1][1]  = "c";
+    screen_buffer[1][2]  = "o";
+    screen_buffer[1][3]  = "o";
+    screen_buffer[1][4]  = "l";
+    screen_buffer[1][5]  = "a";
+    screen_buffer[1][6]  = "n";
+    screen_buffer[1][7]  = "t";
+    screen_buffer[1][8]  = " ";
+    screen_buffer[1][9]  = "t";
+    screen_buffer[1][10] = "e";
+    screen_buffer[1][11] = "m";
+    screen_buffer[1][12] = "p";
+
+    // Bottom label moved to row 35
+    screen_buffer[35][1]  = "e";
+    screen_buffer[35][2]  = "n";
+    screen_buffer[35][3]  = "g";
+    screen_buffer[35][4]  = "i";
+    screen_buffer[35][5]  = "n";
+    screen_buffer[35][6]  = "e";
+    screen_buffer[35][7]  = " ";
+    screen_buffer[35][8]  = "r";
+    screen_buffer[35][9]  = "p";
+    screen_buffer[35][10] = "m";
+end
 
 endmodule
