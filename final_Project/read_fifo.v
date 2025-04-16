@@ -4,8 +4,8 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
     input readBegin;  
     input clk; 
 
-    output [31:0] dataOut; 
-    output rxDone; 
+    output reg [31:0] dataOut; 
+    output reg rxDone; 
 
     //Function for LUT
     function [3:0] ascii_to_hex;
@@ -34,7 +34,6 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                 8'h64: ascii_to_hex = 4'hD;  // 'd'
                 8'h65: ascii_to_hex = 4'hE;  // 'e'
                 8'h66: ascii_to_hex = 4'hF;  // 'f'
-                8'h20: ascii_to_hex = 4'hF;  // SPACE (optional: treat as filler or skip)
                 default: ascii_to_hex = 4'h0;
             endcase
         end
@@ -48,7 +47,8 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
     reg [5:0] counter; 
     reg [5:0] byteCounter;
 
-    reg [5:0] passoverCounter;  
+    reg [5:0] passoverCounter;
+    reg [5:0] insertCounter;   
 
     reg [3:0] topNibble; 
     reg [3:0] bottomNibble; 
@@ -103,7 +103,8 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
 
                         coolantFound = 0; 
                         rpmFound = 0; 
-                        passoverCounter = 0; 
+                        passoverCounter = 0;
+                        insertCounter = 0;  
                         byteCounter = 0; 
 
                     end else begin
@@ -130,28 +131,32 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                 //Now in the passover phase what we need to do is use a lookup table to find what things we need to send over
                 if (passoverCounter < counter) begin
                     stateNext = sPassover; 
-
+                    
                     //Now we need to build up our nibbles
                     if (fifoRegister[passoverCounter] != 8'h20 && fifoRegister[passoverCounter] != 8'h0D && fifoRegister[passoverCounter] != 8'h3E) begin 
-                        if (passoverCounter % 2 == 0) begin 
+                        $display("fifoReg:", fifoRegister[passoverCounter], " passoverCounter", passoverCounter);
+                        if (insertCounter % 2 == 0) begin 
                             //This means that it is even so it will go in firstNibble
-                            topNibble = ascii_to_hex(fifoCounter[passoverCounter]);
+                            topNibble = ascii_to_hex(fifoRegister[passoverCounter]);
+                            
+                            insertCounter = insertCounter + 1; 
                             passoverCounter = passoverCounter + 1; 
-                        end else if (passoverCounter % 2 == 1) begin 
+                        end else if (insertCounter % 2 == 1) begin 
                             //This means that it is odd so it should fill out the second nibble and analyze
-                            bottomNibble = ascii_to_hex(fifoCounter[passoverCounter]);
+                            bottomNibble = ascii_to_hex(fifoRegister[passoverCounter]);
+
+                            insertCounter = insertCounter + 1; 
                             passoverCounter = passoverCounter + 1; 
 
                             //Now lets build our byte
                             fullByte = {topNibble, bottomNibble}; 
+                            
                             byteRegister[byteCounter] = fullByte; 
                             byteCounter++; 
                         end
                     end else begin 
                         passoverCounter = passoverCounter + 1; 
-                    end
-
-                    stateNext = sPassover; 
+                    end 
 
                 end else begin 
                     stateNext = sCalc; 
@@ -161,16 +166,22 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
 
             sCalc: begin 
                 //Here we need to make sure that we have all the right numbers
+                
                 if (byteRegister[0] == 8'h41) begin 
-                    $display("success");
+                     
                     if (byteRegister[1] == 8'h0C) begin 
-                        dataOut = ((256 * byteRegister[2] * byteRegister[3]) >> 2)
-                    end else if (byteRegister[1] == 8'h05) begin 
+                        dataOut = ((256 * byteRegister[2] * byteRegister[3]) >> 2);
+                        rxDone = 1; 
+                    end else if (byteRegister[1] == 8'h05) begin
                         dataOut = byteRegister[2] - 40; 
                         dataOut[31] = 1; 
+
+                        rxDone = 1; 
                     end
                 end
 
+                rxDone = 1; 
+                stateNext = sIdle; 
             end
 
             default: begin 

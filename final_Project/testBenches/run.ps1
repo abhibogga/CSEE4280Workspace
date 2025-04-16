@@ -1,6 +1,6 @@
 
 
-iverilog -o test ./tb_uart_receiver.v
+iverilog -o test ./tb_read_fifo.v
 
 vvp .\test
 
