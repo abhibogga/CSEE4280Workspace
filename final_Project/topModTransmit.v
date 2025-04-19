@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module topMod(clk, rst, switchInputs, bitStream);
+module topModTransmit(clk, rst, switchInputs, bitStream);
 
     input wire clk;               // System clock
     input wire rst;                 // Active-high reset
