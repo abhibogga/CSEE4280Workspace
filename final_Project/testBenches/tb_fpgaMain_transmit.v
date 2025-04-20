@@ -1,4 +1,5 @@
 `include "../fpgaMain_transmit.v"
+`include "../singlePortRam.v"
 `timescale 1ns / 1ps
 
 module tb_fpgaMain_transmit();

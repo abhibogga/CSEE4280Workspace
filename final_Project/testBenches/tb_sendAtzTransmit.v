@@ -89,7 +89,8 @@ module tb_sendAtzTransmit();
         #100;
         switchInputs = 5'b00000;
         switchInputs[3] = 1'b1;
-        #25000000
+    #25000000
+        
 
 
         

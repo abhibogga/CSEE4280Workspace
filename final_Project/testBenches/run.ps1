@@ -1,6 +1,6 @@
 
 
-iverilog -o test ./tb_read_fifo.v
+iverilog -o test tb_fpgaMain_read.v
 
 vvp .\test
 
