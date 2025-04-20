@@ -6,13 +6,14 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
     output reg fifoBlip;
     output reg [7:0] dataOut;
 
-    parameter sIdle = 0, sSendInit = 1, sSendRpm = 2, sInitIdle = 3, sSendBlip = 4, sWaitForLowTx = 5, sSendTemp = 6, sWaitTwoSec = 7, sSendAte = 8, sSendAtsp = 9;
+    parameter sIdle = 0, sSendInit = 1, sSendRpm = 2, sInitIdle = 3, sSendBlip = 4, sWaitForLowTx = 5, sSendTemp = 6, sWaitTwoSec = 7, sSendAte = 8, sSendAtsp = 9, sSendStart = 10;
 
     reg [5:0] state, stateNext, statePrev;
 
     reg [7:0] sendAtz [3:0];
-    reg [7:0] sendAte [4:0];
+    reg [7:0] sendStart [4:0];
     reg [7:0] sendAtsp [5:0];
+    reg [7:0] sendAte [4:0];
     reg [7:0] sendRpm [4:0];
     reg [7:0] sendTemp [4:0];
 
@@ -37,6 +38,13 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                     sendAtz[2] = "Z";
                     sendAtz[3] = 8'h0D; // '\r'
                     
+                     //Keep in mind that this next command is ate0 which is the turn off echo command
+                    sendStart[0] = "0";
+                    sendStart[1] = "1";
+                    sendStart[2] = "0";
+                    sendStart[3] = "0";
+                    sendStart[4] = 8'h0D; // '\r'
+                    
                     //Keep in mind that this next command is ate0 which is the turn off echo command
                     sendAte[0] = "A";
                     sendAte[1] = "T";
@@ -44,12 +52,12 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                     sendAte[3] = "0";
                     sendAte[4] = 8'h0D; // '\r'
                     
-                    sendAte[0] = "A";
-                    sendAte[1] = "T";
-                    sendAte[2] = "S";
-                    sendAte[3] = "P";
-                    sendAte[4] = "6";
-                    sendAte[5] = 8'h0D; // '\r'
+                    sendAtsp[0] = "A";
+                    sendAtsp[1] = "T";
+                    sendAtsp[2] = "S";
+                    sendAtsp[3] = "P";
+                    sendAtsp[4] = "0";
+                    sendAtsp[5] = 8'h0D; // '\r'
                     
                     //Send Temp
                     sendTemp[0] = 8'h30;
@@ -80,7 +88,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                     blipCounter = 0;
                 end else begin
                     secondsCounter = 0; 
-                    stateNext = sSendAte;
+                    stateNext = sSendAtsp;
                 end
             end
             
@@ -110,7 +118,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
             
             sSendAte: begin 
                 secondsCounter = secondsCounter+1; 
-                if (secondsCounter < 200000000) begin 
+                if (secondsCounter < 1000000000) begin 
                     stateNext = sSendAte;
                     sendCommandCounter = 0; 
                 end else begin 
@@ -121,7 +129,26 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                         blipCounter = 0;
                     end else begin
                         secondsCounter = 0; 
-                        stateNext = sSendAtsp;
+                        stateNext = sInitIdle;
+                    end                 
+                    //stateNext = sSendAte; 
+                end
+            end
+            
+             sSendStart: begin 
+                secondsCounter = secondsCounter+1; 
+                if (secondsCounter < 200000000) begin 
+                    stateNext = sSendStart;
+                    sendCommandCounter = 0; 
+                end else begin 
+                     if (sendCommandCounter < 5) begin
+                        dataOut = sendStart[sendCommandCounter];
+                        statePrev = state;
+                        stateNext = sSendBlip;
+                        blipCounter = 0;
+                    end else begin
+                        secondsCounter = 0; 
+                        stateNext = sSendAte;
                     end                 
                     //stateNext = sSendAte; 
                 end
@@ -140,11 +167,11 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                         blipCounter = 0;
                     end else begin
                         secondsCounter = 0; 
-                        stateNext = sInitIdle;
+                        stateNext = sSendStart;
                     end                 
                     //stateNext = sSendAte; 
                 end
-            end
+             end
 
             sInitIdle: begin
                 fifoBlip = 0;
