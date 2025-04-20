@@ -69,12 +69,12 @@ localparam AXIS_MARGIN = 64;
 
 wire in_graph_area = (v_cntr_reg >= 32 && v_cntr_reg < 540);
 wire is_y_axis = in_graph_area && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < AXIS_MARGIN + 4);
-wire is_x_axis = (v_cntr_reg >= 536 && v_cntr_reg < 540) && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < FRAME_WIDTH - AXIS_MARGIN);
+wire is_x_axis = (v_cntr_reg >= 536 && v_cntr_reg < 540) && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < FRAME_WIDTH - 350);
 
 // Second graph axis
-wire in_graph2_area = (v_cntr_reg >= 592 && v_cntr_reg < FRAME_HEIGHT);
+wire in_graph2_area = (v_cntr_reg >= 592 && v_cntr_reg < FRAME_HEIGHT - 32);
 wire is_y2_axis = in_graph2_area && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < AXIS_MARGIN + 4);
-wire is_x2_axis = (v_cntr_reg >= FRAME_HEIGHT - 4 && v_cntr_reg < FRAME_HEIGHT) && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < FRAME_WIDTH - AXIS_MARGIN);
+wire is_x2_axis = (v_cntr_reg >= FRAME_HEIGHT - 36 && v_cntr_reg < FRAME_HEIGHT - 32) && (h_cntr_reg >= AXIS_MARGIN && h_cntr_reg < FRAME_WIDTH - 350);
 
 wire axis_pixel = is_y_axis || is_x_axis || is_y2_axis || is_x2_axis;
 
@@ -159,6 +159,36 @@ initial begin
     screen_buffer[35][8]  = "r";
     screen_buffer[35][9]  = "p";
     screen_buffer[35][10] = "m";
+    
+    // Average Temp Display
+    screen_buffer[15][212] = "a";
+    screen_buffer[15][213] = "v";
+    screen_buffer[15][214] = "g";
+    screen_buffer[15][215] = " ";
+    screen_buffer[15][216] = "t";
+    screen_buffer[15][217] = "e";
+    screen_buffer[15][218] = "m";
+    screen_buffer[15][219] = "p";
+    screen_buffer[16][213] = "-";
+    screen_buffer[16][214] = "-";
+    screen_buffer[16][215] = "-";
+    screen_buffer[16][216] = ".";
+    screen_buffer[16][217] = "-";
+    
+    
+    // Average RPM Display
+    screen_buffer[47][212] = "a";
+    screen_buffer[47][213] = "v";
+    screen_buffer[47][214] = "g";
+    screen_buffer[47][215] = " ";
+    screen_buffer[47][216] = "r";
+    screen_buffer[47][217] = "p";
+    screen_buffer[47][218] = "m";
+    screen_buffer[48][213] = "-";
+    screen_buffer[48][214] = "-";
+    screen_buffer[48][215] = "-";
+    screen_buffer[48][216] = "-";
+    screen_buffer[48][217] = "-";
 end
 
 endmodule
