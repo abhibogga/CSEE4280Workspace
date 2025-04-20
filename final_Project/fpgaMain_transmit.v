@@ -12,10 +12,11 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
 
     reg [7:0] sendAtz [9:0];
     reg [7:0] sendRpm [4:0];
+    reg [7:0] sendTemp [4:0];
 
     reg [5:0] blipCounter;
     reg [3:0] sendCommandCounter;
-    reg [15:0] secondsCounter; 
+    reg [31:0] secondsCounter; 
 
     // Initialization
     initial begin
@@ -83,6 +84,9 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                 fifoBlip = 0;
                 secondsCounter = secondsCounter + 1; 
                 if (secondsCounter < 200000000) begin 
+                    stateNext = sInitIdle;  
+                end else begin 
+                    secondsCounter = 0; 
                     if (switchInputs[0]) begin
                         stateNext = sSendRpm;
                         sendCommandCounter = 0;
@@ -93,9 +97,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
                         sendRpm[4] = 8'h0D;
                     end else begin
                         stateNext = sInitIdle;
-                    end
-                end else begin 
-                    stateNext = sInitIdle; 
+                    end 
                 end
                 
             end
@@ -113,16 +115,23 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
             end
 
             sWaitTwoSec: begin
+                secondsCounter = secondsCounter+1; 
                 if (secondsCounter < 200000000) begin 
                     stateNext = sWaitTwoSec; 
                 end else begin 
+                    sendCommandCounter = 0; 
+                    sendTemp[0] = 8'h30;
+                    sendTemp[1] = 8'h31;
+                    sendTemp[2] = 8'h30;
+                    sendTemp[3] = 8'h35;
+                    sendTemp[4] = 8'h0D;
                     stateNext = sSendTemp; 
                 end
             end
 
             sSendTemp: begin 
                 if (sendCommandCounter < 5) begin
-                    dataOut = sendRpm[sendCommandCounter];
+                    dataOut = sendTemp[sendCommandCounter];
                     statePrev = state;
                     stateNext = sSendBlip;
                     blipCounter = 0;
