@@ -1,4 +1,4 @@
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, firstDig, secondDig);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, firstDig, secondDig, rst);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
@@ -9,7 +9,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     output reg [0:6] segments; 
     output reg [3:0] firstDig; 
 
-    input reg [3:0] secondDig; 
+    output reg  [3:0] secondDig; 
 
     output reg [15:0] dataOut; 
     output reg rxDone; 
@@ -58,7 +58,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
         .hundreds(tempHundreds), 
         .thousands(tempThousands), 
         .seg(segments), 
-        digit(firstDig)
+        .digit(firstDig)
     );
 
     ssd ssdRpm (
@@ -69,7 +69,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
         .hundreds(rpmHundreds), 
         .thousands(rpmThousands), 
         .seg(segments), 
-        digit(secondDig)
+        .digit(secondDig)
     );
 
 
@@ -133,7 +133,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         
                         //This means that we can take the data from fifoRegister and start decoding it
                         fifoRegister[counter] = dataIn; 
-                        counter++; 
+                        counter = counter + 1; 
                         stateNext = sPassover; 
 
                         coolantFound = 0; 
@@ -188,7 +188,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                             fullByte = {topNibble, bottomNibble}; 
                             
                             byteRegister[byteCounter] = fullByte; 
-                            byteCounter++; 
+                            byteCounter = byteCounter + 1; 
                         end
                     end else begin 
                         passoverCounter = passoverCounter + 1; 
