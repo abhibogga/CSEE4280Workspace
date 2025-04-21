@@ -6,10 +6,10 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
 
     //Set up inputs for ssd
     input rst; 
-    output reg [0:6] segments; 
-    output reg [3:0] firstDig; 
+    output wire [0:6] segments; 
+    output wire [3:0] firstDig; 
 
-    output reg  [3:0] secondDig; 
+    output wire  [3:0] secondDig; 
 
     output reg [15:0] dataOut; 
     output reg rxDone; 
