@@ -8,7 +8,7 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     output wire bitStreamOut;           // UART output bit stream
     
     output wire [0:6] seg; 
-    output wire [3:0] digit;
+    output wire [3:0] digit; 
     
 
     wire [7:0] writeOut;

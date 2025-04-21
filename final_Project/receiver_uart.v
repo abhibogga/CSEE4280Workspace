@@ -72,7 +72,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
             end
 
             sData: begin
-                if (baudRate) begin
+                if (baudRate) begin 
                     if (tick == 4'd15) begin
                         tickNext = 0;
                         dataRegNext = {bitStream, dataReg[7:1]};
@@ -92,6 +92,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
                     if (tick == (SB_TICK - 1)) begin
                         stateNext = sIdle;
                         dataReady = 1;
+     
                     end else begin
                         tickNext = tick + 1;
                     end

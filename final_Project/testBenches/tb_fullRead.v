@@ -3,6 +3,7 @@
 `include "../fpgaMain_read.v"
 `include "../baudRateRead.v"
 `include "../singlePortRam.v"
+`include "../ssd.v"
 `timescale 1ns/1ns
 module tb_fullRead();
 
