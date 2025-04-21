@@ -1,8 +1,15 @@
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, firstDig, secondDig);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
-    input clk; 
+    input clk;
+
+    //Set up inputs for ssd
+    input rst; 
+    output reg [0:6] segments; 
+    output reg [3:0] firstDig; 
+
+    input reg [3:0] secondDig; 
 
     output reg [15:0] dataOut; 
     output reg rxDone; 
@@ -38,6 +45,32 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
             endcase
         end
     endfunction
+
+    reg [3:0] rpmOnes, rpmTens, rpmHundreds, rpmThousands;
+    reg [3:0] tempOnes, tempTens, tempHundreds, tempThousands;
+
+    //Initialize the ssd module
+    ssd ssdTemp (
+        .clk_100MHz(clk), 
+        .reset(rst), 
+        .ones(tempOnes), 
+        .tens(tempTens), 
+        .hundreds(tempHundreds), 
+        .thousands(tempThousands), 
+        .seg(segments), 
+        digit(firstDig)
+    );
+
+    ssd ssdRpm (
+        .clk_100MHz(clk), 
+        .reset(rst), 
+        .ones(rpmOnes), 
+        .tens(rpmTens), 
+        .hundreds(rpmHundreds), 
+        .thousands(rpmThousands), 
+        .seg(segments), 
+        digit(secondDig)
+    );
 
 
     //Make registers here: 
@@ -168,16 +201,26 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
             end
 
             sCalc: begin 
-                //Here we need to make sure that we have all the right numbers
-                
                 if (byteRegister[0] == 8'h41) begin 
-                     
                     if (byteRegister[1] == 8'h0C) begin 
                         dataOut = ((256 * byteRegister[2] * byteRegister[3]) >> 2);
+
+                        // Split RPM into decimal digits
+                        rpmThousands = (dataOut / 1000) % 10;
+                        rpmHundreds  = (dataOut / 100) % 10;
+                        rpmTens      = (dataOut / 10) % 10;
+                        rpmOnes      = (dataOut / 1) % 10;
+
                         rxDone = 1; 
                     end else if (byteRegister[1] == 8'h05) begin
                         dataOut = byteRegister[2] - 40; 
                         dataOut[15] = 1; 
+
+                        // Split temperature into decimal digits
+                        tempThousands = (dataOut / 1000) % 10;
+                        tempHundreds  = (dataOut / 100) % 10;
+                        tempTens      = (dataOut / 10) % 10;
+                        tempOnes      = (dataOut / 1) % 10;
 
                         rxDone = 1; 
                     end
@@ -186,6 +229,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                 rxDone = 1; 
                 stateNext = sIdle; 
             end
+
 
             default: begin 
                 stateNext = sIdle; 

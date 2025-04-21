@@ -6,3 +6,4 @@ vvp .\test
 
 
 gtkwave dump.vcd
+
