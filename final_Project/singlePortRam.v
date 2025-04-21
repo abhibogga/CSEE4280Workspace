@@ -16,6 +16,7 @@ module singlePortRam(clk, writeEnable, address, writeIn, writeOut);
 
     always @(posedge clk) begin 
         if (writeEnable) begin 
+            
             ram[address] <= writeIn;
         end
 

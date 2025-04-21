@@ -54,6 +54,7 @@ module tb_uart_receiver();
 
     initial begin
         $dumpvars(0, tb_uart_receiver); 
+        #1000320
         //Now lets run the clock for 5 cycles
         repeat (5) @(posedge baudRate);
 

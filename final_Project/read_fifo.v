@@ -4,7 +4,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
     input readBegin;  
     input clk; 
 
-    output reg [31:0] dataOut; 
+    output reg [15:0] dataOut; 
     output reg rxDone; 
 
     //Function for LUT
@@ -85,6 +85,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                 if (readBegin) begin 
                     //This means that we are ready to accept data and we need to move into the next state; 
                     counter = 0; 
+                    rxDone = 0; 
                     stateNext = sLoad; 
                 end else begin 
                     stateNext = sIdle; 
@@ -96,6 +97,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                 if (signalReady) begin 
                     //Now what we need to do is look for the dataOut
                     if (dataIn == 8'h3E) begin 
+                        
                         //This means that we can take the data from fifoRegister and start decoding it
                         fifoRegister[counter] = dataIn; 
                         counter++; 
@@ -108,6 +110,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                         byteCounter = 0; 
 
                     end else begin
+                        $display("dataIn", dataIn);
                         stateNext = sWait; 
                         //Now what we need to do is load in the data and send the fsm to a wait state
                         //Load the new data in 
@@ -174,7 +177,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone);
                         rxDone = 1; 
                     end else if (byteRegister[1] == 8'h05) begin
                         dataOut = byteRegister[2] - 40; 
-                        dataOut[31] = 1; 
+                        dataOut[15] = 1; 
 
                         rxDone = 1; 
                     end
