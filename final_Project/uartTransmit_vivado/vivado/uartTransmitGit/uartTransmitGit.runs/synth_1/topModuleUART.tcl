@@ -57,8 +57,9 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7k70tfbv676-1
+create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -67,6 +68,8 @@ set_property webtalk.parent_dir C:/CSEE4280Workpace/final_Project/uartTransmit_v
 set_property parent.project_path C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part_repo_paths {C:/Users/asb52284/AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part digilentinc.com:nexys-a7-100t:part0:1.2 [current_project]
 set_property ip_output_repo c:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -102,7 +105,7 @@ read_checkpoint -auto_incremental -incremental C:/CSEE4280Workpace/final_Project
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top topModuleUART -part xc7k70tfbv676-1
+synth_design -top topModuleUART -part xc7a100tcsg324-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

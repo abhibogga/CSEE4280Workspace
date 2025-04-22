@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
+module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut, led);
 
     // === Parameters === //
     parameter DBITS = 8; 
@@ -15,6 +15,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
     // === Outputs === //
     output reg dataReady;
     output [DBITS-1:0] dataOut;
+    output reg led; 
 
     // === Internal Registers === //
     reg [1:0] state, stateNext;
@@ -43,7 +44,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
         end
     end
 
-    // === Combinational FSM Logic === //
+    //Combinational FSM Logic
     always @* begin
         stateNext = state;
         tickNext = tick;
@@ -53,6 +54,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
 
         case (state)
             sIdle: begin
+                led = 0;
                 if (~bitStream) begin
                     stateNext = sStart;
                     tickNext = 0;
@@ -77,6 +79,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
                         tickNext = 0;
                         dataRegNext = {bitStream, dataReg[7:1]};
                         if (bitCount == (DBITS - 1)) begin
+                            led = 1;
                             stateNext = sStop;
                         end else begin
                             bitCountNext = bitCount + 1;
@@ -92,7 +95,7 @@ module receiver_uart(clk, rst, bitStream, baudRate, dataReady, dataOut);
                     if (tick == (SB_TICK - 1)) begin
                         stateNext = sIdle;
                         dataReady = 1;
-     
+                        led = 1;
                     end else begin
                         tickNext = tick + 1;
                     end

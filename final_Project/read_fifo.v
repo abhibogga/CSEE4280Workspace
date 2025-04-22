@@ -1,4 +1,4 @@
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, firstDig, secondDig, rst);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
@@ -7,9 +7,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     //Set up inputs for ssd
     input rst; 
     output wire [0:6] segments; 
-    output wire [3:0] firstDig; 
-
-    output wire  [3:0] secondDig; 
+    output wire [7:0] digits;
 
     output reg [15:0] dataOut; 
     output reg rxDone; 
@@ -47,29 +45,22 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     endfunction
 
     reg [3:0] rpmOnes, rpmTens, rpmHundreds, rpmThousands;
-    reg [3:0] tempOnes, tempTens, tempHundreds, tempThousands;
+    reg [3:0] tempOnes, tempTens;
 
     //Initialize the ssd module
-    ssd ssdTemp (
-        .clk_100MHz(clk), 
-        .reset(rst), 
-        .ones(tempOnes), 
-        .tens(tempTens), 
-        .hundreds(tempHundreds), 
-        .thousands(tempThousands), 
-        .seg(segments), 
-        .digit(firstDig)
-    );
 
-    ssd ssdRpm (
-        .clk_100MHz(clk), 
-        .reset(rst), 
-        .ones(rpmOnes), 
-        .tens(rpmTens), 
-        .hundreds(rpmHundreds), 
-        .thousands(rpmThousands), 
+    ssd ssd (
+        .clk(clk), 
+        .rst(rst), 
+        .rpmOnes(rpmOnes), 
+        .rpmTens(rpmTens), 
+        .rpmHundreds(rpmHundreds), 
+        .rpmThousands(rpmThousands), 
+        .tempOnes(tempOnes), 
+        .tempTens(tempTens),
         .seg(segments), 
-        .digit(secondDig)
+        .digit(digits)
+
     );
 
 
@@ -217,8 +208,6 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         dataOut[15] = 1; 
 
                         // Split temperature into decimal digits
-                        tempThousands = (dataOut / 1000) % 10;
-                        tempHundreds  = (dataOut / 100) % 10;
                         tempTens      = (dataOut / 10) % 10;
                         tempOnes      = (dataOut / 1) % 10;
 

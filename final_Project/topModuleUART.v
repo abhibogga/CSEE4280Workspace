@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn);
+module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led);
 
     input wire clk;               // System clock
     input wire rst;                 // Active-high reset
@@ -8,7 +8,9 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     output wire bitStreamOut;           // UART output bit stream
     
     output wire [0:6] seg; 
-    output wire [3:0] digit; 
+    output wire [7:0] digit;
+    
+    output wire led; 
     
 
     wire [7:0] writeOut;
@@ -64,7 +66,7 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .writeReady(fifoBlip),
         .writeDone(txDone),
         .writeOut(writeOut),
-        .writeFinished(writeFinished),
+        .writeFinished(writeFinished), 
         .clk(clk)
     );
     
@@ -85,7 +87,8 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .rst(rst), 
         .bitStream(bitStreamIn), 
         .dataOut(dOutEight), 
-        .dataReady(readDone)
+        .dataReady(readDone), 
+        .led(led)
     ); 
     
     // FIFO output handling
@@ -95,7 +98,10 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .readBegin(switchInputs[0]), 
         .clk(clk), 
         .dataOut(dOutSixteen), 
-        .rxDone(rxDone)
+        .rxDone(rxDone), 
+        .segments(seg), 
+        .digits(digit),
+        .rst(rst)
     );
     
     fpgaMain_read fpgaMain(
