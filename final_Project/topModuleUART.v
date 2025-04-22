@@ -74,6 +74,12 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     
     ////////////////////// Read Code: 
     
+    reg bs1, bs2;
+    always @(posedge clk) begin
+        bs1 <= bitStreamIn;
+        bs2 <= bs1;
+    end
+    
     baudRateRead bdr(
         .clk(clk), 
         .rst(rst),
@@ -85,7 +91,7 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .clk(clk),
         .baudRate(outBaudRead), 
         .rst(rst), 
-        .bitStream(bitStreamIn), 
+        .bitStream(bs2), 
         .dataOut(dOutEight), 
         .dataReady(readDone), 
         .led(led)
