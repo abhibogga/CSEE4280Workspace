@@ -1,0 +1,17 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:57
+C:/CSEE4280Workpace/final_Project/baudRate.v,1745190091,verilog,,C:/CSEE4280Workpace/final_Project/fpgaMain_transmit.v,,baudRate,,,,,,,,
+C:/CSEE4280Workpace/final_Project/baudRateRead.v,1745369580,verilog,,,,baudRateRead,,,,,,,,
+C:/CSEE4280Workpace/final_Project/fpgaMain_read.v,1745119039,verilog,,,,fpgaMain_read,,,,,,,,
+C:/CSEE4280Workpace/final_Project/fpgaMain_transmit.v,1745169144,verilog,,C:/CSEE4280Workpace/final_Project/testBenches/tb_fullRead.v,,fpgaMain_transmit,,,,,,,,
+C:/CSEE4280Workpace/final_Project/read_fifo.v,1745282839,verilog,,,,read_fifo,,,,,,,,
+C:/CSEE4280Workpace/final_Project/receiver_uart.v,1745376464,verilog,,,,receiver_uart,,,,,,,,
+C:/CSEE4280Workpace/final_Project/singlePortRam.v,1745092681,verilog,,,,singlePortRam,,,,,,,,
+C:/CSEE4280Workpace/final_Project/ssd.v,1745283012,verilog,,,,ssd,,,,,,,,
+C:/CSEE4280Workpace/final_Project/testBenches/tb_fullRead.v,1745244169,verilog,,C:/CSEE4280Workpace/final_Project/transmit_fifo.v,C:/CSEE4280Workpace/final_Project/receiver_uart.v;C:/CSEE4280Workpace/final_Project/read_fifo.v;C:/CSEE4280Workpace/final_Project/fpgaMain_read.v;C:/CSEE4280Workpace/final_Project/baudRateRead.v;C:/CSEE4280Workpace/final_Project/singlePortRam.v;C:/CSEE4280Workpace/final_Project/ssd.v,tb_fullRead,,,,,,,,
+C:/CSEE4280Workpace/final_Project/topModuleUART.v,1745375816,verilog,,,,topModuleUART,,,,,,,,
+C:/CSEE4280Workpace/final_Project/transmit_fifo.v,1743987862,verilog,,C:/CSEE4280Workpace/final_Project/transmit_uart.v,,transmit_fifo,,,,,,,,
+C:/CSEE4280Workpace/final_Project/transmit_uart.v,1743987862,verilog,,C:/CSEE4280Workpace/final_Project/topModuleUART.v,,transmit_uart,,,,,,,,
+C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,

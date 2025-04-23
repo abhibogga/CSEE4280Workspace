@@ -1,8 +1,8 @@
 -------------------------------------
 | Tool Version : Vivado v.2024.2
-| Date         : Tue Apr 22 13:17:19 2025
+| Date         : Wed Apr 23 01:43:29 2025
 | Host         : DESKTOP-191C9FV
-| Design       : checkpoint_topModuleUART
+| Design       : design_1
 | Device       : xc7a100t-csg324-1--
 -------------------------------------
 

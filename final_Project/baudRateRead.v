@@ -10,7 +10,7 @@ module baudRateRead(clk, outBaud, rst);
             counter <= 0;
             outBaud <= 0;
         end else begin
-            if (counter == 650) begin
+            if (counter == 651) begin
                 outBaud <= 1;   // emit 1-cycle pulse
                 counter <= 0;
             end else begin
