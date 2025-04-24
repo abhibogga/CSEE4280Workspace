@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Apr 23 20:47:50 2025
-# Process ID         : 34596
+# Start of session at: Thu Apr 24 15:08:05 2025
+# Process ID         : 41580
 # Current directory  : C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1
 # Command line       : vivado.exe -log topModuleUART.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModuleUART.tcl
 # Log file           : C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1/topModuleUART.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16856 MB
-# Swap memory        : 22030 MB
-# Total Virtual      : 38887 MB
-# Available Virtual  : 6396 MB
+# Swap memory        : 29180 MB
+# Total Virtual      : 46037 MB
+# Available Virtual  : 24414 MB
 #-----------------------------------------------------------
 source topModuleUART.tcl -notrace

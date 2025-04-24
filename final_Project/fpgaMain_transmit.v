@@ -137,7 +137,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
             
              sSendStart: begin 
                 secondsCounter = secondsCounter+1; 
-                if (secondsCounter < 200000000) begin 
+                if (secondsCounter < 100000000) begin //Change this value if the signals need more spaing 
                     stateNext = sSendStart;
                     sendCommandCounter = 0; 
                 end else begin 
@@ -156,7 +156,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
             
              sSendAtsp: begin 
                 secondsCounter = secondsCounter+1; 
-                if (secondsCounter < 200000000) begin 
+                if (secondsCounter < 50000000) begin //Change this value if the signals need more spacing 
                     stateNext = sSendAtsp;
                     sendCommandCounter = 0; 
                 end else begin 
@@ -176,7 +176,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
             sInitIdle: begin
                 fifoBlip = 0;
                 secondsCounter = secondsCounter + 1; 
-                if (secondsCounter < 200000000) begin 
+                if (secondsCounter < 50000000) begin //If we want to reduce the time spent reading data, we can change it here
                     stateNext = sInitIdle;  
                 end else begin 
                     secondsCounter = 0; 
@@ -205,7 +205,7 @@ module fpgaMain_transmit(switchInputs, clk, listenTx, fifoBlip, dataOut);
 
             sWaitTwoSec: begin
                 secondsCounter = secondsCounter+1; 
-                if (secondsCounter < 200000000) begin 
+                if (secondsCounter < 50000000) begin //If we want to reduce the time spent reading data, we can change it here
                     stateNext = sWaitTwoSec; 
                 end else begin 
                     sendCommandCounter = 0; 

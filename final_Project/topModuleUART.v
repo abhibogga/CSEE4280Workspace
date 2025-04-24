@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led, led2);
+module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led, led2, greenLed, redLed);
 
     input wire clk;               // System clock
     input wire rst;                 // Active-high reset
@@ -31,6 +31,10 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     wire rxDone; 
     
     wire [15:0] writeOutRam; 
+
+    output wire greenLed; 
+
+    output wire redLed; 
     
 
     // Instantiate the main logic controller
@@ -113,7 +117,8 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .dataInSignal(rxDone), 
         .dataIn(dOutSixteen), 
         .rst(rst), 
-        .writeOut(writeOutRam)
+        .greenLed(greenLed), 
+        .redLed(redLed)
     );
     
 

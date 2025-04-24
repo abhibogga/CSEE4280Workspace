@@ -1,6 +1,6 @@
 
 
-module fpgaMain_read(clk, dataInSignal, dataIn, writeOut, rst);
+module fpgaMain_read(clk, dataInSignal, dataIn, greenLed, redLed, rst);
     //Insert INputs here
     input clk;
     input dataInSignal; //This should be fifo blip
@@ -12,7 +12,8 @@ module fpgaMain_read(clk, dataInSignal, dataIn, writeOut, rst);
     reg writeEnable;
 
     //Outputs for RAM 
-    output [15:0] writeOut; 
+    output wire greenLed; 
+    output wire redLed; 
 
     //States
     parameter sIdle = 0, sLoad = 1, sBegin = 2; ; 
@@ -26,7 +27,8 @@ module fpgaMain_read(clk, dataInSignal, dataIn, writeOut, rst);
         .writeEnable(writeEnable), 
         .address(address), 
         .writeIn(dataIn), 
-        .writeOut(writeOut) 
+        .greenLed(greenLed), 
+        .redLed(redLed)
     ); 
 
    
