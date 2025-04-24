@@ -206,18 +206,17 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         rpmTens      = (dataOut / 10) % 10;
                         rpmOnes      = (dataOut / 1) % 10;
 
-                        rxDone = 1; 
+                        
                     end else if (byteRegister[1] == 8'h05) begin
                         dataOut = byteRegister[2] - 40; 
                         
 
                         // Split temperature into decimal digits
-                        tempTens      = (dataOut / 10) % 10;
-                        tempOnes      = (dataOut / 1) % 10;
+                        tempTens = (dataOut / 10) % 10;
+                        tempOnes = (dataOut / 1) % 10;
                         
                         dataOut[15] = 1; 
-
-                        rxDone = 1; 
+                         
                     end
                 end
 

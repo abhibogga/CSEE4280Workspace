@@ -1,6 +1,5 @@
 `include "../receiver_uart.v"
 `include "../read_fifo.v"
-`include "../fpgaMain_read.v"
 `include "../baudRateRead.v"
 `include "../singlePortRam.v"
 `include "../ssd.v"
@@ -27,6 +26,10 @@ module tb_fullRead();
     // Outputs from UART receiver
     wire [7:0] dOut; 
     wire readDone; 
+
+    wire greenLed; 
+    wire redLed; 
+    
 
     // Instantiate UART receiver
     receiver_uart recBit(
@@ -56,12 +59,12 @@ module tb_fullRead();
     wire [15:0] writeOut; 
 
     // Instantiate fpgaMain module
-    fpgaMain_read uut(
-        .clk(clk), 
-        .dataInSignal(dInSignal), 
-        .dataIn(bigDOut), 
-        .rst(rst), 
-        .writeOut(writeOut)
+    singlePortRam ramModule (
+        .clk(clk),
+        .writeEnable(dInSignal),
+        .dataIn(bigDOut),
+        .greenLed(greenLed),
+        .redLed(redLed)
     );
 
     // Testbench baud generator + simulation

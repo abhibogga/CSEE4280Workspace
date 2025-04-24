@@ -29,8 +29,6 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     wire readDone; 
     wire [15:0] dOutSixteen; 
     wire rxDone; 
-    
-    wire [15:0] writeOutRam; 
 
     output wire greenLed; 
 
@@ -112,14 +110,13 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .led(led2)
     );
     
-    fpgaMain_read fpgaMain(
-        .clk(clk), 
-        .dataInSignal(rxDone), 
-        .dataIn(dOutSixteen), 
-        .rst(rst), 
-        .greenLed(greenLed), 
+    singlePortRam ramModule (
+        .clk(clk),
+        .writeEnable(1),
+        .dataIn(dOutSixteen),
+        .greenLed(greenLed),
         .redLed(redLed)
-    );
+    );  
     
 
 endmodule

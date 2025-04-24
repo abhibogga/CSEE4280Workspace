@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -76,7 +77,6 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/CSEE4280Workpace/final_Project/baudRate.v
   C:/CSEE4280Workpace/final_Project/baudRateRead.v
-  C:/CSEE4280Workpace/final_Project/fpgaMain_read.v
   C:/CSEE4280Workpace/final_Project/fpgaMain_transmit.v
   C:/CSEE4280Workpace/final_Project/read_fifo.v
   C:/CSEE4280Workpace/final_Project/receiver_uart.v
