@@ -2,53 +2,53 @@ module receiver_uart(
     input clk,
     input rst,
     input bitStream,
-    input baudRate,                 // Should pulse at 16x baud (e.g., 153.6kHz for 9600 baud)
+    input baudRate,  // 3-cycle wide pulse
     output reg dataReady,
-    output [7:0] dataOut,
+    output reg [7:0] dataOut,
     output reg led
 );
 
-    // === Parameters === //
     parameter DBITS = 8;
     parameter SB_TICK = 16;
 
-    // === State Definitions === //
     parameter sIdle = 0, sStart = 1, sData = 2, sStop = 3;
 
-    // === Registers === //
     reg [1:0] state;
     reg [3:0] tick;
     reg [2:0] bitCount;
-    reg [7:0] dataReg;
 
-    assign dataOut = dataReg;
+    reg baudRatePrev;
+    reg baudRateRise;
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            state     <= sIdle;
-            tick      <= 0;
-            bitCount  <= 0;
-            dataReg   <= 0;
+            state <= sIdle;
+            tick <= 0;
+            bitCount <= 0;
             dataReady <= 0;
-            led       <= 0;
+            led <= 0;
+            baudRatePrev <= 0;
+            baudRateRise <= 0;
+            dataOut <= 0;
         end else begin
-            dataReady <= 0; // Default low, pulse for 1 clock on valid data
-                 // Pulse LED on final data bit or stop bit
+            // Edge detect baudRate
+            baudRateRise <= (~baudRatePrev) & baudRate;
+            baudRatePrev <= baudRate;
 
-            case (state)
-                sIdle: begin
-                    led <= 0; 
-                    if (~bitStream) begin // Start bit detected (falling edge)
-                        state <= sStart;
-                        tick <= 0;
-                        //led <= 1; 
+            dataReady <= 0; // default low
+
+            if (baudRateRise) begin
+                case (state)
+                    sIdle: begin
+                        led <= 0;
+                        if (~bitStream) begin
+                            state <= sStart;
+                            tick <= 0;
+                        end
                     end
-                end
 
-                sStart: begin
-                    if (baudRate) begin
-                     
-                        if (tick == 4'd7) begin // Midpoint of start bit
+                    sStart: begin
+                        if (tick == 4'd7) begin
                             state <= sData;
                             tick <= 0;
                             bitCount <= 0;
@@ -56,19 +56,13 @@ module receiver_uart(
                             tick <= tick + 1;
                         end
                     end
-                end
 
-                sData: begin
-                    if (baudRate) begin
-                        
-                        if (tick == 4'd15) begin // Sample at end of bit period
-                            
+                    sData: begin
+                        if (tick == 4'd15) begin
                             tick <= 0;
-                            dataReg <= {bitStream, dataReg[7:1]}; // LSB-first
+                            dataOut <= {bitStream, dataOut[7:1]}; // shift in LSB first
                             if (bitCount == (DBITS - 1)) begin
                                 state <= sStop;
-                                //led <= 1;
-                                tick <= 0;
                             end else begin
                                 bitCount <= bitCount + 1;
                             end
@@ -76,28 +70,20 @@ module receiver_uart(
                             tick <= tick + 1;
                         end
                     end
-                end
 
-                sStop: begin
-                    if (baudRate) begin
-                    
-                        if (tick == 15) begin
+                    sStop: begin
+                        led <= 1;
+                        if (tick >= 14) begin
                             state <= sIdle;
-                            dataReady <= 1; // Pulse ready
-                            led <= 1;
                             tick <= 0;
+                            dataReady <= 1;
                         end else begin
                             tick <= tick + 1;
-                            //led <= 1;
                         end
                     end
-                end
-                
-              
-            endcase
+                endcase
+            end
         end
     end
 
 endmodule
-
-

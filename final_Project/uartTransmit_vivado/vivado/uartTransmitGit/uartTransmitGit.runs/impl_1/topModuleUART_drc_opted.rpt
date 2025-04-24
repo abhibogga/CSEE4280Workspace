@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Wed Apr 23 01:43:21 2025
+| Date         : Wed Apr 23 20:49:59 2025
 | Host         : DESKTOP-191C9FV running 64-bit major release  (build 9200)
 | Command      : report_drc -file topModuleUART_drc_opted.rpt -pb topModuleUART_drc_opted.pb -rpx topModuleUART_drc_opted.rpx
 | Design       : topModuleUART

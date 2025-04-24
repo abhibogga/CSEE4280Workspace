@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Apr 23 01:40:09 2025
-# Process ID         : 40348
+# Start of session at: Wed Apr 23 20:47:50 2025
+# Process ID         : 34596
 # Current directory  : C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1
 # Command line       : vivado.exe -log topModuleUART.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModuleUART.tcl
 # Log file           : C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1/topModuleUART.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16856 MB
-# Swap memory        : 17835 MB
-# Total Virtual      : 34691 MB
-# Available Virtual  : 6430 MB
+# Swap memory        : 22030 MB
+# Total Virtual      : 38887 MB
+# Available Virtual  : 6396 MB
 #-----------------------------------------------------------
 source topModuleUART.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.srcs/utils_1/imports/synth_1/topModuleUART.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 75152
+INFO: [Synth 8-7075] Helper process launched with PID 55312
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1046.746 ; gain = 468.715
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1046.023 ; gain = 470.070
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-10714] extra semicolon is not allowed here in this dialect; use SystemVerilog mode instead [C:/CSEE4280Workpace/final_Project/fpgaMain_read.v:18]
 INFO: [Synth 8-6157] synthesizing module 'topModuleUART' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:3]
@@ -52,10 +52,10 @@ INFO: [Synth 8-6157] synthesizing module 'transmit_fifo' [C:/CSEE4280Workpace/fi
 INFO: [Synth 8-226] default block is never used [C:/CSEE4280Workpace/final_Project/transmit_fifo.v:44]
 INFO: [Synth 8-6155] done synthesizing module 'transmit_fifo' (0#1) [C:/CSEE4280Workpace/final_Project/transmit_fifo.v:25]
 INFO: [Synth 8-6157] synthesizing module 'baudRateRead' [C:/CSEE4280Workpace/final_Project/baudRateRead.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/CSEE4280Workpace/final_Project/baudRateRead.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'baudRateRead' (0#1) [C:/CSEE4280Workpace/final_Project/baudRateRead.v:1]
-INFO: [Synth 8-6157] synthesizing module 'receiver_uart' [C:/CSEE4280Workpace/final_Project/receiver_uart.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'receiver_uart' (0#1) [C:/CSEE4280Workpace/final_Project/receiver_uart.v:3]
-WARNING: [Synth 8-689] width (1) of port connection 'dataOut' does not match port width (8) of module 'receiver_uart' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:91]
+INFO: [Synth 8-6157] synthesizing module 'receiver_uart' [C:/CSEE4280Workpace/final_Project/receiver_uart.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'receiver_uart' (0#1) [C:/CSEE4280Workpace/final_Project/receiver_uart.v:1]
 INFO: [Synth 8-6157] synthesizing module 'read_fifo' [C:/CSEE4280Workpace/final_Project/read_fifo.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ssd' [C:/CSEE4280Workpace/final_Project/ssd.v:3]
 INFO: [Synth 8-226] default block is never used [C:/CSEE4280Workpace/final_Project/ssd.v:48]
@@ -67,97 +67,83 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/CSEE4280Wo
 INFO: [Synth 8-155] case statement is not full and has no default [C:/CSEE4280Workpace/final_Project/ssd.v:148]
 INFO: [Synth 8-6155] done synthesizing module 'ssd' (0#1) [C:/CSEE4280Workpace/final_Project/ssd.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'read_fifo' (0#1) [C:/CSEE4280Workpace/final_Project/read_fifo.v:1]
-WARNING: [Synth 8-689] width (1) of port connection 'dataIn' does not match port width (8) of module 'read_fifo' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:99]
-WARNING: [Synth 8-689] width (1) of port connection 'dataOut' does not match port width (16) of module 'read_fifo' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:102]
 INFO: [Synth 8-6157] synthesizing module 'fpgaMain_read' [C:/CSEE4280Workpace/final_Project/fpgaMain_read.v:3]
 INFO: [Synth 8-6157] synthesizing module 'singlePortRam' [C:/CSEE4280Workpace/final_Project/singlePortRam.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'singlePortRam' (0#1) [C:/CSEE4280Workpace/final_Project/singlePortRam.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'fpgaMain_read' (0#1) [C:/CSEE4280Workpace/final_Project/fpgaMain_read.v:3]
-WARNING: [Synth 8-689] width (1) of port connection 'dataIn' does not match port width (16) of module 'fpgaMain_read' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:112]
 INFO: [Synth 8-6155] done synthesizing module 'topModuleUART' (0#1) [C:/CSEE4280Workpace/final_Project/topModuleUART.v:3]
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/final_Project/fpgaMain_transmit.v:30]
-WARNING: [Synth 8-7137] Register stopTick_reg in module receiver_uart has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/CSEE4280Workpace/final_Project/receiver_uart.v:73]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:103]
-WARNING: [Synth 8-6014] Unused sequential element coolantFound_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:130]
-WARNING: [Synth 8-6014] Unused sequential element rpmFound_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:131]
-WARNING: [Synth 8-6014] Unused sequential element bottomNibble_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:173]
-WARNING: [Synth 8-6014] Unused sequential element fullByte_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:179]
-WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[4] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:181]
-WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[5] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:181]
-WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[6] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:181]
-WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[7] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:181]
-WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[8] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:181]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:104]
+WARNING: [Synth 8-6014] Unused sequential element coolantFound_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:134]
+WARNING: [Synth 8-6014] Unused sequential element rpmFound_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:135]
+WARNING: [Synth 8-6014] Unused sequential element bottomNibble_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:177]
+WARNING: [Synth 8-6014] Unused sequential element fullByte_reg was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:183]
+WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[4] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:185]
+WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[5] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:185]
+WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[6] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:185]
+WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[7] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:185]
+WARNING: [Synth 8-6014] Unused sequential element byteRegister_reg[8] was removed.  [C:/CSEE4280Workpace/final_Project/read_fifo.v:185]
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/CSEE4280Workpace/final_Project/fpgaMain_read.v:36]
 WARNING: [Synth 8-6014] Unused sequential element currBit_reg was removed.  [C:/CSEE4280Workpace/final_Project/fpgaMain_read.v:38]
 WARNING: [Synth 8-7129] Port rst in module fpgaMain_read is either unconnected or has no load
 WARNING: [Synth 8-7129] Port switchInputs[2] in module fpgaMain_transmit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port switchInputs[1] in module fpgaMain_transmit is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1165.242 ; gain = 587.211
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1164.469 ; gain = 588.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 1165.242 ; gain = 587.211
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1164.469 ; gain = 588.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 1165.242 ; gain = 587.211
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1164.469 ; gain = 588.516
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1165.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1164.469 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/CSEE4280Workpace/final_Project/master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'JB[3]'. [C:/CSEE4280Workpace/final_Project/master.xdc:99]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/final_Project/master.xdc:99]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JB[4]'. [C:/CSEE4280Workpace/final_Project/master.xdc:100]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/final_Project/master.xdc:100]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JB[7]'. [C:/CSEE4280Workpace/final_Project/master.xdc:101]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/final_Project/master.xdc:101]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JB[8]'. [C:/CSEE4280Workpace/final_Project/master.xdc:102]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/final_Project/master.xdc:102]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JB[9]'. [C:/CSEE4280Workpace/final_Project/master.xdc:103]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/final_Project/master.xdc:103]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'JB[10]'. [C:/CSEE4280Workpace/final_Project/master.xdc:104]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/CSEE4280Workpace/final_Project/master.xdc:104]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/CSEE4280Workpace/final_Project/master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/CSEE4280Workpace/final_Project/master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModuleUART_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/topModuleUART_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1233.055 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1253.992 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1233.055 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1253.992 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1233.055 ; gain = 655.023
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1253.992 ; gain = 678.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1233.055 ; gain = 655.023
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1253.992 ; gain = 678.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1233.055 ; gain = 655.023
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1253.992 ; gain = 678.039
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'baudRateRead'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'receiver_uart'
 INFO: [Synth 8-802] inferred FSM for state register 'stateNext_reg' in module 'fpgaMain_read'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   sWait |                                0 |                               00
+                  sPulse |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'baudRateRead'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -176,7 +162,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [C:/CSEE4280Workpa
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'stateNext_reg' using encoding 'sequential' in module 'fpgaMain_read'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:31 . Memory (MB): peak = 1233.055 ; gain = 655.023
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1253.992 ; gain = 678.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -188,7 +174,7 @@ Detailed RTL Component Info :
 	   2 Input   16 Bit       Adders := 2     
 	   2 Input   10 Bit       Adders := 2     
 	   2 Input    6 Bit       Adders := 5     
-	   2 Input    4 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 3     
 	   2 Input    3 Bit       Adders := 3     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
@@ -199,10 +185,10 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 21    
 	                6 Bit    Registers := 5     
 	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 11    
+	                4 Bit    Registers := 10    
 	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 17    
+	                1 Bit    Registers := 20    
 +---RAMs : 
 	               7K Bit	(500 X 16 bit)          RAMs := 1     
 	              256 Bit	(32 X 8 bit)          RAMs := 1     
@@ -217,21 +203,21 @@ Detailed RTL Component Info :
 	   2 Input    6 Bit        Muxes := 3     
 	  12 Input    6 Bit        Muxes := 1     
 	   6 Input    6 Bit        Muxes := 4     
-	   2 Input    4 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 7     
 	  12 Input    4 Bit        Muxes := 1     
 	   3 Input    4 Bit        Muxes := 2     
-	   4 Input    4 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 1     
 	   3 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 3     
 	   4 Input    3 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 51    
+	   2 Input    1 Bit        Muxes := 56    
 	  12 Input    1 Bit        Muxes := 5     
-	   4 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 6     
 	  11 Input    1 Bit        Muxes := 6     
-	   6 Input    1 Bit        Muxes := 14    
+	   6 Input    1 Bit        Muxes := 16    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -248,32 +234,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP dataOut1, operation Mode is: A2*B2.
-DSP Report: register byteRegister_reg[3] is absorbed into DSP dataOut1.
-DSP Report: register byteRegister_reg[2] is absorbed into DSP dataOut1.
-DSP Report: operator dataOut1 is absorbed into DSP dataOut1.
 WARNING: [Synth 8-7129] Port switchInputs[2] in module topModuleUART is either unconnected or has no load
 WARNING: [Synth 8-7129] Port switchInputs[1] in module topModuleUART is either unconnected or has no load
 WARNING: [Synth 8-6014] Unused sequential element fpgaMain/ram/ram_reg was removed. 
-WARNING: [Synth 8-3332] Sequential element (ssd/seg_reg[0]) is unused and will be removed from module read_fifo.
-WARNING: [Synth 8-3332] Sequential element (ssd/seg_reg[6]) is unused and will be removed from module read_fifo.
 WARNING: [Synth 8-3332] Sequential element (fpgaMain/FSM_sequential_stateNext_reg) is unused and will be removed from module topModuleUART.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:38 . Memory (MB): peak = 1233.055 ; gain = 655.023
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:49 . Memory (MB): peak = 1406.992 ; gain = 831.039
 ---------------------------------------------------------------------------------
- Sort Area is  dataOut1_0 : 0 0 : 956 956 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
-DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|read_fifo   | A2*B2       | 17     | 8      | -      | -      | 25     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object       | Inference | Size (Depth x Width) | Primitives  | 
++------------+------------------+-----------+----------------------+-------------+
+|rf          | fifoRegister_reg | Implied   | 32 x 8               | RAM32M x 2  | 
++------------+------------------+-----------+----------------------+-------------+
 
-Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -281,19 +260,33 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:50 . Memory (MB): peak = 1344.254 ; gain = 766.223
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:58 . Memory (MB): peak = 1411.621 ; gain = 835.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:51 . Memory (MB): peak = 1368.684 ; gain = 790.652
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:01:06 . Memory (MB): peak = 1477.016 ; gain = 901.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object       | Inference | Size (Depth x Width) | Primitives  | 
++------------+------------------+-----------+----------------------+-------------+
+|rf          | fifoRegister_reg | Implied   | 32 x 8               | RAM32M x 2  | 
++------------+------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:51 . Memory (MB): peak = 1381.062 ; gain = 803.031
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:01:08 . Memory (MB): peak = 1494.551 ; gain = 918.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -311,37 +304,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -354,46 +347,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    12|
-|3     |LUT1   |     4|
-|4     |LUT2   |    41|
-|5     |LUT3   |    36|
-|6     |LUT4   |    36|
-|7     |LUT5   |    35|
-|8     |LUT6   |    71|
-|9     |FDCE   |    30|
-|10    |FDRE   |   115|
-|11    |FDSE   |     1|
-|12    |IBUF   |     5|
-|13    |OBUF   |    17|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    32|
+|3     |LUT1     |     9|
+|4     |LUT2     |    82|
+|5     |LUT3     |    85|
+|6     |LUT4     |   107|
+|7     |LUT5     |    83|
+|8     |LUT6     |   154|
+|9     |RAM32M   |     1|
+|10    |RAM32X1D |     2|
+|11    |FDCE     |    41|
+|12    |FDRE     |   193|
+|13    |FDSE     |     2|
+|14    |LD       |     7|
+|15    |IBUF     |     5|
+|16    |OBUF     |    18|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:54 . Memory (MB): peak = 1573.344 ; gain = 927.500
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1573.344 ; gain = 995.312
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:01:10 . Memory (MB): peak = 1638.980 ; gain = 973.504
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:01:14 . Memory (MB): peak = 1638.980 ; gain = 1063.027
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1573.344 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1646.082 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1573.344 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1649.801 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 10 instances were transformed.
+  LD => LDCE: 7 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
 
-Synth Design complete | Checksum: e8a52fda
+Synth Design complete | Checksum: 712df272
 INFO: [Common 17-83] Releasing license: Synthesis
-57 Infos, 36 Warnings, 6 Critical Warnings and 0 Errors encountered.
+60 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:01:09 . Memory (MB): peak = 1573.344 ; gain = 1201.016
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1573.344 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:01:22 . Memory (MB): peak = 1649.801 ; gain = 1278.059
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1649.801 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1/topModuleUART.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file topModuleUART_utilization_synth.rpt -pb topModuleUART_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 23 01:41:30 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 23 20:49:23 2025...

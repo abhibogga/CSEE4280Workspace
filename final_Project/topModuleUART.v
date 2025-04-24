@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led);
+module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led, led2);
 
     input wire clk;               // System clock
     input wire rst;                 // Active-high reset
@@ -11,6 +11,7 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     output wire [7:0] digit;
     
     output wire led; 
+    output wire led2; 
     
 
     wire [7:0] writeOut;
@@ -24,9 +25,9 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     input wire bitStreamIn; 
     
     wire outBaudRead; 
-    wire dOutEight; 
+    wire [7:0] dOutEight; 
     wire readDone; 
-    wire dOutSixteen; 
+    wire [15:0] dOutSixteen; 
     wire rxDone; 
     
     wire [15:0] writeOutRam; 
@@ -103,7 +104,8 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .rxDone(rxDone), 
         .segments(seg), 
         .digits(digit),
-        .rst(rst)
+        .rst(rst), 
+        .led(led2)
     );
     
     fpgaMain_read fpgaMain(

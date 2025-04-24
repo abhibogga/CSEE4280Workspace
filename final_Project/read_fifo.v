@@ -1,4 +1,4 @@
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
@@ -11,6 +11,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
 
     output reg [15:0] dataOut; 
     output reg rxDone; 
+    output reg led; 
 
     //Function for LUT
     function [3:0] ascii_to_hex;
@@ -110,6 +111,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                     //This means that we are ready to accept data and we need to move into the next state; 
                     counter = 0; 
                     rxDone = 0; 
+                    led = 0; 
                     stateNext = sLoad; 
                 end else begin 
                     stateNext = sIdle; 
@@ -118,10 +120,12 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
             end
 
             sLoad: begin
-                if (signalReady) begin 
+                if (signalReady) begin
+                    led = 1; 
+                    
                     //Now what we need to do is look for the dataOut
                     if (dataIn == 8'h3E) begin 
-                        
+                        //rpmTens = 5; 
                         //This means that we can take the data from fifoRegister and start decoding it
                         fifoRegister[counter] = dataIn; 
                         counter = counter + 1; 
@@ -194,7 +198,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
             sCalc: begin 
                 if (byteRegister[0] == 8'h41) begin 
                     if (byteRegister[1] == 8'h0C) begin 
-                        dataOut = ((256 * byteRegister[2] * byteRegister[3]) >> 2);
+                        dataOut = (((byteRegister[2] << 8) | byteRegister[3]) >> 2);
 
                         // Split RPM into decimal digits
                         rpmThousands = (dataOut / 1000) % 10;

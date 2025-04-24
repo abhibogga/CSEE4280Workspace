@@ -10,20 +10,18 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="1,025"></ZoomEndTime>
+      <ZoomEndTime time="7"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="178"></NameColumnWidth>
-      <ValueColumnWidth column_width="137"></ValueColumnWidth>
+      <NameColumnWidth column_width="456"></NameColumnWidth>
+      <ValueColumnWidth column_width="432"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="1" />
-   <wave_markers>
-   </wave_markers>
-   <wvobject fp_name="recBit/tick" type="logic">
+   <wvobject fp_name="readDone" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">recBit/tick</obj_property>
-      <obj_property name="ObjectShortName">tick</obj_property>
+      <obj_property name="ElementShortName">readDone</obj_property>
+      <obj_property name="ObjectShortName">readDone</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
