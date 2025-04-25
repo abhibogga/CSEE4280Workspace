@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Fri Apr 25 03:22:47 2025
+| Date         : Fri Apr 25 06:28:49 2025
 | Host         : DESKTOP-191C9FV running 64-bit major release  (build 9200)
 | Command      : report_methodology -file topModuleUART_methodology_drc_routed.rpt -pb topModuleUART_methodology_drc_routed.pb -rpx topModuleUART_methodology_drc_routed.rpx
 | Design       : topModuleUART
@@ -23,17 +23,16 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 74
-+-----------+------------------+-----------------------------------------------------------+--------+
-| Rule      | Severity         | Description                                               | Checks |
-+-----------+------------------+-----------------------------------------------------------+--------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                               | 18     |
-| SYNTH-5   | Warning          | Mapped onto distributed RAM because of timing constraints | 16     |
-| TIMING-16 | Warning          | Large setup violation                                     | 15     |
-| TIMING-18 | Warning          | Missing input or output delay                             | 17     |
-| TIMING-20 | Warning          | Non-clocked latch                                         | 7      |
-| LATCH-1   | Advisory         | Existing latches in the design                            | 1      |
-+-----------+------------------+-----------------------------------------------------------+--------+
+             Checks found: 58
++-----------+------------------+--------------------------------+--------+
+| Rule      | Severity         | Description                    | Checks |
++-----------+------------------+--------------------------------+--------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell    | 18     |
+| TIMING-16 | Warning          | Large setup violation          | 15     |
+| TIMING-18 | Warning          | Missing input or output delay  | 17     |
+| TIMING-20 | Warning          | Non-clocked latch              | 7      |
+| LATCH-1   | Advisory         | Existing latches in the design | 1      |
++-----------+------------------+--------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -127,159 +126,79 @@ Non-clocked sequential cell
 The clock pin uartController/txDone_reg/C is not reached by a timing clock
 Related violations: <none>
 
-SYNTH-5#1 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_0_127_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#2 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1024_1151_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#3 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1152_1279_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#4 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1280_1407_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#5 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_128_255_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#6 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1408_1535_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#7 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1536_1663_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#8 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1664_1791_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#9 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1792_1919_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#10 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_1920_2047_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#11 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_256_383_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#12 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_384_511_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#13 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_512_639_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#14 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_640_767_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#15 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_768_895_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-5#16 Warning
-Mapped onto distributed RAM because of timing constraints  
-The instance ramModule/ram_reg_896_1023_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -10.344 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.727 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -10.617 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmOnes_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.747 ns between rf/byteRegister_reg[0][5]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -10.850 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.752 ns between rf/byteRegister_reg[0][5]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -11.251 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmOnes_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -17.127 ns between rf/byteRegister_reg[0][5]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -11.490 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmOnes_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -17.182 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -16.495 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -17.226 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -16.607 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -17.311 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -16.712 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -18.463 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -16.728 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -18.627 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -16.801 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -18.632 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -17.350 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -8.362 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmOnes_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -19.553 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.431 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmOnes_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -19.560 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.493 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -19.583 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmTens_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.602 ns between rf/byteRegister_reg[0][5]/C (clocked by sys_clk_pin) and rf/rpmHundreds_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -9.846 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmThousands_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.835 ns between recBit/dataOut_reg[4]/C (clocked by sys_clk_pin) and rf/rpmOnes_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

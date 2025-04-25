@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Fri Apr 25 03:22:42 2025
+| Date         : Fri Apr 25 06:28:44 2025
 | Host         : DESKTOP-191C9FV running 64-bit major release  (build 9200)
 | Command      : report_drc -file topModuleUART_drc_routed.rpt -pb topModuleUART_drc_routed.pb -rpx topModuleUART_drc_routed.rpx
 | Design       : topModuleUART
@@ -24,15 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 8
+             Checks found: 7
 +----------+----------+-----------------------------------------------------+--------+
 | Rule     | Severity | Description                                         | Checks |
 +----------+----------+-----------------------------------------------------+--------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
+| PDRC-132 | Warning  | SLICE_PairEqSame_A6A5_WARN                          | 1      |
+| PDRC-134 | Warning  | SLICE_PairEqSame_B6B5_WARN                          | 1      |
 | PDRC-136 | Warning  | SLICE_PairEqSame_C6C5_WARN                          | 2      |
-| PDRC-142 | Warning  | SLICE_PairEqSame_B6B5_WARN                          | 1      |
-| PDRC-144 | Warning  | SLICE_PairEqSame_C6C5_WARN                          | 2      |
-| PDRC-146 | Warning  | SLICE_PairEqSame_D6D5_WARN                          | 1      |
+| PDRC-138 | Warning  | SLICE_PairEqSame_D6D5_WARN                          | 1      |
 | PDRC-153 | Warning  | Gated clock check                                   | 1      |
 +----------+----------+-----------------------------------------------------+--------+
 
@@ -51,34 +51,29 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
 Refer to the device configuration user guide for more information.
 Related violations: <none>
 
+PDRC-132#1 Warning
+SLICE_PairEqSame_A6A5_WARN  
+Luts A6LUT and A5LUT in use in site SLICE_X0Y44 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-134#1 Warning
+SLICE_PairEqSame_B6B5_WARN  
+Luts B6LUT and B5LUT in use in site SLICE_X17Y42 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
 PDRC-136#1 Warning
 SLICE_PairEqSame_C6C5_WARN  
-Luts C6LUT and C5LUT in use in site SLICE_X11Y108 with different equations without A6 pin connected to Global Logic High.
+Luts C6LUT and C5LUT in use in site SLICE_X11Y41 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 PDRC-136#2 Warning
 SLICE_PairEqSame_C6C5_WARN  
-Luts C6LUT and C5LUT in use in site SLICE_X9Y110 with different equations without A6 pin connected to Global Logic High.
+Luts C6LUT and C5LUT in use in site SLICE_X17Y42 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
-PDRC-142#1 Warning
-SLICE_PairEqSame_B6B5_WARN  
-Luts B6LUT and B5LUT in use in site SLICE_X10Y102 with different equations without A6 pin connected to Global Logic High.
-Related violations: <none>
-
-PDRC-144#1 Warning
-SLICE_PairEqSame_C6C5_WARN  
-Luts C6LUT and C5LUT in use in site SLICE_X10Y102 with different equations without A6 pin connected to Global Logic High.
-Related violations: <none>
-
-PDRC-144#2 Warning
-SLICE_PairEqSame_C6C5_WARN  
-Luts C6LUT and C5LUT in use in site SLICE_X10Y111 with different equations without A6 pin connected to Global Logic High.
-Related violations: <none>
-
-PDRC-146#1 Warning
+PDRC-138#1 Warning
 SLICE_PairEqSame_D6D5_WARN  
-Luts D6LUT and D5LUT in use in site SLICE_X12Y98 with different equations without A6 pin connected to Global Logic High.
+Luts D6LUT and D5LUT in use in site SLICE_X16Y46 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 PDRC-153#1 Warning
