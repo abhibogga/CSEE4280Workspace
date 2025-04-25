@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Apr 25 02:24:46 2025
-# Process ID         : 66332
+# Start of session at: Fri Apr 25 03:15:10 2025
+# Process ID         : 53948
 # Current directory  : C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1
 # Command line       : vivado.exe -log topModuleUART.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModuleUART.tcl
 # Log file           : C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1/topModuleUART.vds
@@ -19,7 +19,7 @@
 # Host memory        : 16856 MB
 # Swap memory        : 29180 MB
 # Total Virtual      : 46037 MB
-# Available Virtual  : 19655 MB
+# Available Virtual  : 18602 MB
 #-----------------------------------------------------------
 source topModuleUART.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.srcs/utils_1/imports/synth_1/topModuleUART.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18740
+INFO: [Synth 8-7075] Helper process launched with PID 79480
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1046.195 ; gain = 469.152
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1046.156 ; gain = 468.746
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'readOut', assumed default net type 'wire' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:119]
 INFO: [Synth 8-6157] synthesizing module 'topModuleUART' [C:/CSEE4280Workpace/final_Project/topModuleUART.v:3]
@@ -89,18 +89,18 @@ WARNING: [Synth 8-7129] Port rst in module singlePortRam is either unconnected o
 WARNING: [Synth 8-7129] Port switchInputs[2] in module fpgaMain_transmit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port switchInputs[1] in module fpgaMain_transmit is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1165.684 ; gain = 588.641
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1165.855 ; gain = 588.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1165.684 ; gain = 588.641
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1165.855 ; gain = 588.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1165.684 ; gain = 588.641
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1165.855 ; gain = 588.445
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1165.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1165.855 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -111,28 +111,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/topModuleUART_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1255.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1255.504 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1255.727 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1255.504 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1255.727 ; gain = 678.684
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1255.504 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1255.727 ; gain = 678.684
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1255.504 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1255.727 ; gain = 678.684
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1255.504 ; gain = 678.094
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'baudRateRead'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'receiver_uart'
@@ -154,7 +154,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'receiver_uart'
 WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [C:/CSEE4280Workpace/final_Project/ssd.v:66]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1255.727 ; gain = 678.684
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1255.504 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -238,7 +238,7 @@ WARNING: [Synth 8-7129] Port switchInputs[2] in module topModuleUART is either u
 WARNING: [Synth 8-7129] Port switchInputs[1] in module topModuleUART is either unconnected or has no load
 WARNING: [Synth 8-3936] Found unconnected internal register 'ramModule/readOut_reg' and it is trimmed from '11' to '1' bits. [C:/CSEE4280Workpace/final_Project/singlePortRam.v:56]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:46 . Memory (MB): peak = 1532.125 ; gain = 955.082
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:01:14 . Memory (MB): peak = 1538.887 ; gain = 961.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -268,14 +268,14 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1532.125 ; gain = 955.082
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:01:23 . Memory (MB): peak = 1538.887 ; gain = 961.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5584] The signal "topModuleUART/ramModule/ram_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:33 . Memory (MB): peak = 1744.754 ; gain = 1167.711
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:02:36 . Memory (MB): peak = 1754.129 ; gain = 1176.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -295,7 +295,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:35 . Memory (MB): peak = 1762.840 ; gain = 1185.797
+Finished Technology Mapping : Time (s): cpu = 00:01:10 ; elapsed = 00:02:39 . Memory (MB): peak = 1772.230 ; gain = 1194.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -313,37 +313,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:14 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:14 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -380,19 +380,19 @@ Report Cell Usage:
 |19    |OBUF      |    20|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:39 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:02:46 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:01:37 . Memory (MB): peak = 1835.914 ; gain = 1168.828
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:40 . Memory (MB): peak = 1835.914 ; gain = 1258.871
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:02:42 . Memory (MB): peak = 1844.508 ; gain = 1177.449
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:02:47 . Memory (MB): peak = 1844.508 ; gain = 1267.098
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1845.082 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1854.688 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 420 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'topModuleUART' is not ideal for floorplanning, since the cellview 'read_fifo' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1848.770 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1858.375 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 26 instances were transformed.
   LD => LDCE: 7 instances
@@ -404,8 +404,8 @@ Synth Design complete | Checksum: 7d23a5b9
 INFO: [Common 17-83] Releasing license: Synthesis
 59 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:48 . Memory (MB): peak = 1848.770 ; gain = 1475.668
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1848.770 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:18 ; elapsed = 00:03:00 . Memory (MB): peak = 1858.375 ; gain = 1486.719
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1858.375 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/CSEE4280Workpace/final_Project/uartTransmit_vivado/vivado/uartTransmitGit/uartTransmitGit.runs/synth_1/topModuleUART.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file topModuleUART_utilization_synth.rpt -pb topModuleUART_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 02:26:41 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 03:18:17 2025...

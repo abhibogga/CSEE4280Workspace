@@ -236,6 +236,12 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         // Split temperature into decimal digits
                         tempTens = (dataOut / 10) % 10;
                         tempOnes = (dataOut / 1) % 10;
+
+                        if (ramCounter < 1024) begin //read 1024 values
+                            ramTotal = ramTotal + memoryReadData;  // Accumulate the sum
+                            memoryReadAddress = ramCounter + 1; // Go to the next address
+                            ramCounter = ramCounter + 1;
+                        end 
                         
                         stateNext = sIdle; 
                         rxDone = 1; 
@@ -262,10 +268,6 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                 ramCounter = 0;
                 ramTotal = 0;
                 memoryReadAddress = 0;
-            end else if (ramCounter < 1024) begin //read 1024 values
-                ramTotal = ramTotal + memoryReadData;  // Accumulate the sum
-                memoryReadAddress = ramCounter + 1; // Go to the next address
-                ramCounter = ramCounter + 1;
             end else begin
                 dataOut = ramTotal; // Output the total
             end
