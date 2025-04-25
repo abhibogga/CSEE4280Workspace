@@ -46,7 +46,7 @@ module tb_fullRead();
     wire dInSignal; 
 
     wire [10:0] readMemoryAddress;
-    wire [15:0] readOut; 
+    wire [10:0] readOut; 
 
     wire [15:0] readOutFifo;
     
@@ -60,8 +60,8 @@ module tb_fullRead();
         .clk(clk), 
         .dataOut(bigDOut), 
         .rxDone(dInSignal), 
-        .readMemoryData(readOut) //Input
-        .readMemoryAddress(readMemoryAddress) //Output
+        .memoryReadData(readOut), //Input
+        .memoryReadAddress(readMemoryAddress) //Output
     );
 
     // Final output from top module
@@ -114,7 +114,7 @@ module tb_fullRead();
 
         // ==== TRANSMISSION 1 ====
         // Send: "41 0C 0C 94\r"
-        send_uart_byte(8'h34);  // '4'
+        /*send_uart_byte(8'h34);  // '4'
         send_uart_byte(8'h31);  // '1'
         send_uart_byte(8'h20);  // ' '
         send_uart_byte(8'h30);  // '0'
@@ -130,7 +130,7 @@ module tb_fullRead();
         send_uart_byte(8'h0D);  // '\r'
         send_uart_byte(8'h3E);  // '>'
 
-        repeat (30) @(posedge baudRate);
+        repeat (30) @(posedge baudRate); */
 
         // ==== TRANSMISSION 2 ====
         // Send: "41 05 82\r" (Coolant Temp)

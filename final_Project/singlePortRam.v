@@ -1,15 +1,16 @@
-module singlePortRam(clk, writeEnable, dataIn, greenLed, redLed, readAddress, readOut);
+module singlePortRam(clk, writeEnable, dataIn, greenLed, redLed, readAddress, readOut, rst);
 
     //Lets define inputs here
     input clk;
     input writeEnable;
     input [15:0] dataIn;
     input [10:0] readAddress; // Changed to 11 bits
+    input rst; 
 
     //Lets define outputs here
     output reg greenLed;
     output reg redLed;
-    output reg [15:0] readOut;
+    output reg [10:0] readOut;
 
     //Constants in module
     parameter depth = 2048;         // 2K blocks

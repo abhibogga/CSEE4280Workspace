@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led, led2, greenLed, redLed);
+module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStreamIn, led, led2, greenLed, redLed, btnRight);
 
     input wire clk;               // System clock
     input wire rst;                 // Active-high reset
@@ -34,6 +34,11 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
 
     output wire redLed; 
     wire [15:0] addressOut;
+    
+    //Outputs for RAM init
+    input wire btnRight; 
+    wire [10:0] readout; 
+    wire [10:0] readMemoryAddress; 
     
     
 
@@ -109,7 +114,10 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .segments(seg), 
         .digits(digit),
         .rst(rst), 
-        .led(led2)
+        .led(led2), 
+        .btnRight(btnRight), 
+        .memoryReadData(readOut), 
+        .memoryReadAddress(readMemoryAddress)
     );
     
     //Ram Intialization
@@ -119,6 +127,8 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .dataIn(dOutSixteen),
         .greenLed(greenLed),
         .redLed(redLed),
+        .readAddress(readMemoryAddress), 
+        .readOut(readOut),
         .rst(rst)
     );  
     

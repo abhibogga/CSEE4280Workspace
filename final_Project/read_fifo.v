@@ -152,6 +152,10 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         passoverCounter = 0;
                         insertCounter = 0;  
                         byteCounter = 0; 
+                        //Ram resets
+                        ramCounter = 0;
+                        ramTotal = 0;
+                        memoryReadAddress = 0;
 
                     end else begin
                         $display("dataIn", dataIn);
@@ -233,7 +237,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         tempTens = (dataOut / 10) % 10;
                         tempOnes = (dataOut / 1) % 10;
                         
-                        stateNext = sRam; 
+                        stateNext = sIdle; 
                         rxDone = 1; 
                     end
                 end else begin 
@@ -244,42 +248,37 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                  
             end
 
-            sRam: begin  // State to read from memory
-                if (rst) begin
-                    ramCounter <= 0;
-                    ramTotal <= 0;
-                    memoryReadAddress <= 0;
-                    memoryReadEnable <= 1;
-                    totalValid <= 0;
-                end else if (ramCounter < 1024) begin //read 1024 values
-                    ramTotal <= ramTotal + memoryReadData;  // Accumulate the sum
-                    memoryReadAddress <= ramCounter + 1; // Go to the next address
-                    ramCounter <= ramCounter + 1;
-                    memoryReadEnable <= 1;
-                    totalValid <= 0;
-                end else begin
-                    dataOut <= ramTotal; // Output the total
-                    memoryReadEnable <= 0; // Stop reading
-                    totalValid <= 1; //indicate that the total is valid
-                    stateNext <= sIdle; // Go back to idle
-                end
-
-                if (btnRight) begin 
-                    rpmThousands = (ramTotal / 1000) % 10;
-                    rpmHundreds  = (ramTotal / 100) % 10;
-                    rpmTens      = (ramTotal / 10) % 10;
-                    rpmOnes      = (ramTotal / 1) % 10;
-                end
-            end
-
+           
 
             default: begin 
                 stateNext = sIdle; 
             end
         endcase
 
-    end
 
+
+        // State to read from memory
+            if (rst) begin
+                ramCounter = 0;
+                ramTotal = 0;
+                memoryReadAddress = 0;
+            end else if (ramCounter < 1024) begin //read 1024 values
+                ramTotal = ramTotal + memoryReadData;  // Accumulate the sum
+                memoryReadAddress = ramCounter + 1; // Go to the next address
+                ramCounter = ramCounter + 1;
+            end else begin
+                dataOut = ramTotal; // Output the total
+            end
+
+            if (btnRight) begin 
+                led = 1; 
+                rpmThousands = (ramTotal / 1000) % 10;
+                rpmHundreds  = (ramTotal / 100) % 10;
+                rpmTens      = (ramTotal / 10) % 10;
+                rpmOnes      = (ramTotal / 1) % 10;
+            end
+
+    end
    
 
 endmodule
