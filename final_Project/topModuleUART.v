@@ -27,12 +27,14 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     wire outBaudRead; 
     wire [7:0] dOutEight; 
     wire readDone; 
-    wire [15:0] dOutSixteen; 
-    wire rxDone; 
+    (* keep = "true" *) wire [15:0] dOutSixteen; 
+    (* keep = "true" *) wire rxDone; 
 
     output wire greenLed; 
 
     output wire redLed; 
+    wire [15:0] addressOut;
+    
     
 
     // Instantiate the main logic controller
@@ -78,7 +80,7 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
     ////////////////////// Read Code: 
     
    
-    
+    //Baud Rate Generator
     baudRateRead bdr(
         .clk(clk), 
         .rst(rst),
@@ -110,12 +112,14 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .led(led2)
     );
     
+    //Ram Intialization
     singlePortRam ramModule (
         .clk(clk),
-        .writeEnable(1),
+        .writeEnable(rxDone),
         .dataIn(dOutSixteen),
         .greenLed(greenLed),
-        .redLed(redLed)
+        .redLed(redLed),
+        .rst(rst)
     );  
     
 

@@ -45,6 +45,13 @@ module tb_fullRead();
     wire [15:0] bigDOut; 
     wire dInSignal; 
 
+    wire [10:0] readMemoryAddress;
+    wire [15:0] readOut; 
+
+    wire [15:0] readOutFifo;
+    
+
+
     // FIFO output handling
     read_fifo rf(
         .signalReady(readDone),
@@ -52,11 +59,14 @@ module tb_fullRead();
         .readBegin(1'b1), 
         .clk(clk), 
         .dataOut(bigDOut), 
-        .rxDone(dInSignal)
+        .rxDone(dInSignal), 
+        .readMemoryData(readOut) //Input
+        .readMemoryAddress(readMemoryAddress) //Output
     );
 
     // Final output from top module
-    wire [15:0] writeOut; 
+    wire [15:0] writeOut;
+    
 
     // Instantiate fpgaMain module
     singlePortRam ramModule (
@@ -64,7 +74,9 @@ module tb_fullRead();
         .writeEnable(dInSignal),
         .dataIn(bigDOut),
         .greenLed(greenLed),
-        .redLed(redLed)
+        .redLed(redLed), 
+        .readAddress(readMemoryAddress), //Input
+        .readOut(readOut) //Output
     );
 
     // Testbench baud generator + simulation

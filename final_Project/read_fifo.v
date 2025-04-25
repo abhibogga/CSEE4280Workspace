@@ -1,16 +1,25 @@
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led, btnRight, memoryReadData, memoryReadAddress);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
     input clk;
+
+    //Input for RAM
+    input btnRight; 
+    input [10:0] memoryReadData; 
+    
+
+    //Output for RAM 
+    output reg [10:0] memoryReadAddress; 
 
     //Set up inputs for ssd
     input rst; 
     output wire [0:6] segments; 
     output wire [7:0] digits;
 
-    output reg [15:0] dataOut; 
-    output reg rxDone; 
+    //output reg [15:0] dataOut; 
+    (* keep = "true" *) output  reg [15:0] dataOut;
+    (* keep = "true" *) output reg rxDone; 
     output reg led; 
 
     //Function for LUT
@@ -87,6 +96,10 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     reg nibbleFormed; 
     reg coolantFound; 
     reg rpmFound; 
+
+    //Register for ram
+    reg [10:0] ramCounter; 
+    reg [31:0] ramTotal;
     //Make the states
 
     //The idea for the states is that we should enter an idle state when we don't need to be reciving any data
@@ -94,7 +107,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     //The last state is the passover state where we will give all the data to the main code to decode and well worry about that later
     //We also might need a wait state to wait for signals to go low 
 
-    parameter sIdle = 0, sLoad = 1, sPassover = 2, sWait = 3, sCalc = 4;  
+    parameter sIdle = 0, sLoad = 1, sPassover = 2, sWait = 3, sCalc = 4, sRam = 5;  
 
     reg [2:0] state, stateNext; 
 
@@ -102,15 +115,18 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     always @(posedge clk) begin 
         //Default
         state = stateNext; 
+
         
         //Case statements
         case(state) 
-            sIdle: begin 
+            sIdle: begin
+                rxDone = 0;  
+                dataOut = 0; 
                 //For this we need to watch the signalReady input
                 if (readBegin) begin 
                     //This means that we are ready to accept data and we need to move into the next state; 
                     counter = 0; 
-                    rxDone = 0; 
+                    
                     led = 0; 
                     stateNext = sLoad; 
                 end else begin 
@@ -205,7 +221,9 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         rpmHundreds  = (dataOut / 100) % 10;
                         rpmTens      = (dataOut / 10) % 10;
                         rpmOnes      = (dataOut / 1) % 10;
-
+                        
+                        stateNext = sIdle; 
+                        rxDone = 0; 
                         
                     end else if (byteRegister[1] == 8'h05) begin
                         dataOut = byteRegister[2] - 40; 
@@ -215,13 +233,43 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         tempTens = (dataOut / 10) % 10;
                         tempOnes = (dataOut / 1) % 10;
                         
-                        dataOut[15] = 1; 
-                         
+                        stateNext = sRam; 
+                        rxDone = 1; 
                     end
+                end else begin 
+                    rxDone = 1; 
+                    stateNext = sIdle;
                 end
 
-                rxDone = 1; 
-                stateNext = sIdle; 
+                 
+            end
+
+            sRam: begin  // State to read from memory
+                if (rst) begin
+                    ramCounter <= 0;
+                    ramTotal <= 0;
+                    memoryReadAddress <= 0;
+                    memoryReadEnable <= 1;
+                    totalValid <= 0;
+                end else if (ramCounter < 1024) begin //read 1024 values
+                    ramTotal <= ramTotal + memoryReadData;  // Accumulate the sum
+                    memoryReadAddress <= ramCounter + 1; // Go to the next address
+                    ramCounter <= ramCounter + 1;
+                    memoryReadEnable <= 1;
+                    totalValid <= 0;
+                end else begin
+                    dataOut <= ramTotal; // Output the total
+                    memoryReadEnable <= 0; // Stop reading
+                    totalValid <= 1; //indicate that the total is valid
+                    stateNext <= sIdle; // Go back to idle
+                end
+
+                if (btnRight) begin 
+                    rpmThousands = (ramTotal / 1000) % 10;
+                    rpmHundreds  = (ramTotal / 100) % 10;
+                    rpmTens      = (ramTotal / 10) % 10;
+                    rpmOnes      = (ramTotal / 1) % 10;
+                end
             end
 
 
