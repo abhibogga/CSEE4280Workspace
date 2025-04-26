@@ -1,58 +1,33 @@
-module singlePortRam(clk, writeEnable, dataIn, greenLed, redLed, readAddress, readOut, rst);
+`timescale 1ns/1ns
 
-    //Lets define inputs here
-    input clk;
-    input writeEnable;
-    input [15:0] dataIn;
-    input [10:0] readAddress; // Changed to 11 bits
-    input rst; 
+module singlePortRam(
+    input wire clk,
+    input wire writeEnable,
+    input wire [15:0] address,         
+    input wire [15:0] writeIn,
+    output reg [15:0] writeOut
+);
 
-    //Lets define outputs here
-    output reg greenLed;
-    output reg redLed;
-    output reg [10:0] readOut;
+    // === Parameters ===
+    parameter DEPTH = 500;           // 500 memory locations
+    parameter WIDTH = 16;            // 16-bit words
 
-    //Constants in module
-    parameter depth = 2048;         // 2K blocks
-    parameter width = 16;           // 16 bits per word
+    // === RAM Declaration ===
+    reg [WIDTH-1:0] ram [0:DEPTH-1];
 
-    // Lets delcare the type of ram we are doing, this is a vivado directive
-    reg [width-1:0] ram [0:depth-1];
-
-    //Lets define states here:
-    reg state, stateNext;
-    reg [10:0] address; // Added address register
-    parameter sLoad = 0, sIdle = 1;
-
-    //State machine
+    // === RAM Logic ===
     always @(posedge clk) begin
-        state = stateNext;
-        case (state)
-            sIdle: begin
-                address = 0;
-                stateNext = sLoad;
+        if (writeEnable) begin
+            if (address < DEPTH) begin
+                ram[address] <= writeIn;    
             end
-            sLoad: begin
-                if (writeEnable) begin
-                    ram[address] <= dataIn; // Use address for writing
-                    address = address + 1;
-                end
-                if (address < depth) begin
-                    greenLed = 1;
-                    redLed = 0;
-                end else begin
-                    greenLed = 0;
-                    redLed = 1;
-                end
-            end
-            default: begin
-                stateNext = sIdle;
-            end
-        endcase
+        end
+
+        if (address < DEPTH) begin
+            writeOut <= ram[address];
+        end else begin
+            writeOut <= 0;
+        end
     end
 
-    //Read side
-    always @(posedge clk) begin
-        readOut <= ram [readAddress];
-    end
 endmodule

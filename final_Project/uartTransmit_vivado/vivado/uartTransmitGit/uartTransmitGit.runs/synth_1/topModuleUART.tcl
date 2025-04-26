@@ -56,10 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/asb52284/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-73184-DESKTOP-191C9FV/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -82,13 +80,17 @@ read_verilog -library xil_defaultlib {
   C:/CSEE4280Workpace/final_Project/baudRate.v
   C:/CSEE4280Workpace/final_Project/baudRateRead.v
   C:/CSEE4280Workpace/final_Project/fpgaMain_transmit.v
-  C:/CSEE4280Workpace/final_Project/read_fifo.v
   C:/CSEE4280Workpace/final_Project/receiver_uart.v
   C:/CSEE4280Workpace/final_Project/singlePortRam.v
-  C:/CSEE4280Workpace/final_Project/ssd.v
   C:/CSEE4280Workpace/final_Project/transmit_fifo.v
   C:/CSEE4280Workpace/final_Project/transmit_uart.v
   C:/CSEE4280Workpace/final_Project/topModuleUART.v
+  C:/CSEE4280Workpace/final_Project/read_fifo.v
+  C:/CSEE4280Workpace/final_Project/ssd.v
+  C:/CSEE4280Workpace/final_Project/topModuleTransmit.v
+  C:/CSEE4280Workpace/final_Project/fpgaMain_read.v
+  C:/CSEE4280Workpace/final_Project/topModuleSSD.v
+  C:/CSEE4280Workpace/final_Project/fpgaMain_ssd_read.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

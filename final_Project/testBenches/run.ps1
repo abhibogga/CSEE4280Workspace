@@ -1,6 +1,6 @@
 
 
-iverilog -o test tb_fullRead.v
+iverilog -o test tb_uart_transmitter.v
 
 vvp .\test
 

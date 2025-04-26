@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 `include "../read_fifo.v"
+`include "../singlePortRam.v"
+`include "../ssd.v"
 module read_fifo_tb;
 
     // Inputs
@@ -9,7 +11,7 @@ module read_fifo_tb;
     reg readBegin;
 
     // Outputs
-    wire [31:0] dataOut;
+    wire [15:0] dataOut;
     wire rxDone;
 
     // Instantiate the Unit Under Test (UUT)

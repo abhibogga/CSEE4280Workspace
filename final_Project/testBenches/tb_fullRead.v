@@ -59,25 +59,12 @@ module tb_fullRead();
         .readBegin(1'b1), 
         .clk(clk), 
         .dataOut(bigDOut), 
-        .rxDone(dInSignal), 
-        .memoryReadData(readOut), //Input
-        .memoryReadAddress(readMemoryAddress) //Output
+        .rxDone(dInSignal)
     );
 
     // Final output from top module
     wire [15:0] writeOut;
     
-
-    // Instantiate fpgaMain module
-    singlePortRam ramModule (
-        .clk(clk),
-        .writeEnable(dInSignal),
-        .dataIn(bigDOut),
-        .greenLed(greenLed),
-        .redLed(redLed), 
-        .readAddress(readMemoryAddress), //Input
-        .readOut(readOut) //Output
-    );
 
     // Testbench baud generator + simulation
     reg baudRate; 

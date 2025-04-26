@@ -1,17 +1,25 @@
 
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led, btnRight, memoryReadData, memoryReadAddress);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led, btnRight);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
     input clk;
+    input btnRight;
 
-    //Input for RAM
-    input btnRight; 
-    input [10:0] memoryReadData; 
-    
+    wire [15:0] memoryReadData;
+    reg wrEn;
+    reg [15:0] ramDataIn;
+    reg [15:0] ramCounter;
+    reg [31:0] ramTotal;
 
-    //Output for RAM 
-    output reg [10:0] memoryReadAddress; 
+    // Instantiate RAM module
+    singlePortRam ram(
+        .clk(clk),
+        .writeEnable(wrEn),
+        .address(ramCounter),
+        .writeIn(ramDataIn),
+        .writeOut(memoryReadData)
+    );
 
     //Set up inputs for ssd
     input rst; 
@@ -98,9 +106,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     reg coolantFound; 
     reg rpmFound; 
 
-    //Register for ram
-    reg [10:0] ramCounter; 
-    reg [31:0] ramTotal;
+    
     //Make the states
 
     //The idea for the states is that we should enter an idle state when we don't need to be reciving any data
@@ -123,6 +129,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
             sIdle: begin
                 rxDone = 0;  
                 dataOut = 0; 
+                wrEn = 0; 
                 //For this we need to watch the signalReady input
                 if (readBegin) begin 
                     //This means that we are ready to accept data and we need to move into the next state; 
@@ -152,11 +159,9 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         rpmFound = 0; 
                         passoverCounter = 0;
                         insertCounter = 0;  
-                        byteCounter = 0; 
-                        //Ram resets
-                        ramCounter = 0;
-                        ramTotal = 0;
-                        memoryReadAddress = 0;
+                        byteCounter = 0;
+
+                        
 
                     end else begin
                         $display("dataIn", dataIn);
@@ -241,16 +246,11 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         stateNext = sIdle; 
                         rxDone = 1; 
 
-                        // State to read from memory
-                        if (rst) begin
-                            ramCounter = 0;
-                            ramTotal = 0;
-                            memoryReadAddress = 0;
-                        end else if (ramCounter < 1024) begin //read 1024 values
-                            ramTotal = ramTotal + dataOut;  // Accumulate the sum
-                            memoryReadAddress = ramCounter + 1; // Go to the next address
-                            ramCounter = ramCounter + 1;
-                        end 
+                        ramTotal = ramTotal + dataOut;
+                        wrEn = 1; 
+                        ramDataIn = ramTotal; 
+                        ramCounter = ramCounter + 1; 
+                        
 
                          
                     end
@@ -265,14 +265,22 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
 
             default: begin 
                 stateNext = sIdle; 
+                //Ram resets
+                ramCounter = 0;
+                ramTotal = 0;
             end
         endcase
 
-        
+        if (btnRight) begin
+                 
+                led = 1; 
+                rpmThousands = (memoryReadData / 1000) % 10;
+                rpmHundreds  = (memoryReadData / 100) % 10;
+                rpmTens      = (memoryReadData / 10) % 10;
+                rpmOnes      = (memoryReadData / 1) % 10;
+        end 
 
-        
 
-       
 
     end
    

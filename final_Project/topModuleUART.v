@@ -115,22 +115,11 @@ module topModuleUART(clk, rst, switchInputs, bitStreamOut, seg, digit, bitStream
         .digits(digit),
         .rst(rst), 
         .led(led2), 
-        .btnRight(btnRight), 
-        .memoryReadData(readOut), 
-        .memoryReadAddress(readMemoryAddress)
+        .btnRight(btnRight) 
     );
     
     //Ram Intialization
-    singlePortRam ramModule (
-        .clk(clk),
-        .writeEnable(rxDone),
-        .dataIn(dOutSixteen),
-        .greenLed(greenLed),
-        .redLed(redLed),
-        .readAddress(readMemoryAddress), 
-        .readOut(readOut),
-        .rst(rst)
-    );  
+   
     
 
 endmodule
