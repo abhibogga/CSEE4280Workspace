@@ -1,36 +1,47 @@
 
-module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led, btnRight);
+module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments, digits, rst, led, greenLed, redLed);
     input signalReady; 
     input [7:0] dataIn;
     input readBegin;  
     input clk;
-    input btnRight;
 
-    wire [15:0] memoryReadData;
-    reg wrEn;
-    reg [15:0] ramDataIn;
-    reg [15:0] ramCounter;
-    reg [31:0] ramTotal;
-
-    // Instantiate RAM module
-    singlePortRam ram(
-        .clk(clk),
-        .writeEnable(wrEn),
-        .address(ramCounter),
-        .writeIn(ramDataIn),
-        .writeOut(memoryReadData)
-    );
-
+   
     //Set up inputs for ssd
     input rst; 
     output wire [0:6] segments; 
     output wire [7:0] digits;
+    
+    //Ouputs for RAM
+    output reg redLed; 
+    output reg greenLed; 
 
     //output reg [15:0] dataOut; 
     (* keep = "true" *) output  reg [15:0] dataOut;
     (* keep = "true" *) output reg rxDone; 
     output reg led; 
-
+    
+    //Lets define the RAM the right way!
+    //First we need to know what we need, the inputs are -> write enable, address, dataIn, clk | outputs are -> writeOut
+    //First lets define write enable, this only needs to be a register since its just turning on and off wheater we are adding to this array
+    reg writeEnable; 
+    
+    //Next we need to define our address, this also needs to be a register that moves up and down depending on what we want to write to the     
+    reg [15:0] addressCounter; 
+    
+    //Now we need some sort of wire to store read out  and readIn variable
+    wire [15:0] readOut; 
+    reg [15:0] readIn;
+    
+    //Now lets define the module
+    singlePortRam ram(
+        .clk(clk), 
+        .wren(writeEnable), 
+        .addressIn(addressCounter), 
+        .writeIn(readIn), 
+        .readOut(readOut)
+    );
+    
+    
     //Function for LUT
     function [3:0] ascii_to_hex;
         input [7:0] ascii_char;
@@ -114,14 +125,25 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
     //The last state is the passover state where we will give all the data to the main code to decode and well worry about that later
     //We also might need a wait state to wait for signals to go low 
 
-    parameter sIdle = 0, sLoad = 1, sPassover = 2, sWait = 3, sCalc = 4, sRam = 5;  
+    parameter sIdle = 0, sLoad = 1, sPassover = 2, sWait = 3, sCalc = 4, sRam = 5, sWaitRam = 6;  
 
     reg [2:0] state, stateNext; 
 
 
     always @(posedge clk) begin 
         //Default
-        state = stateNext; 
+        if (rst) begin
+            state <= sIdle;
+            addressCounter <= 0;
+            rxDone <= 0;
+            writeEnable <= 0;
+            led <= 0;
+            dataOut <= 0;
+            greenLed <= 0;
+            redLed <= 0;
+        end else begin
+            state <= stateNext; 
+        end 
 
         
         //Case statements
@@ -129,7 +151,11 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
             sIdle: begin
                 rxDone = 0;  
                 dataOut = 0; 
-                wrEn = 0; 
+                
+                
+                //Lets load in the ram Parameters
+                writeEnable = 0; 
+                
                 //For this we need to watch the signalReady input
                 if (readBegin) begin 
                     //This means that we are ready to accept data and we need to move into the next state; 
@@ -225,6 +251,12 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                 if (byteRegister[0] == 8'h41) begin 
                     if (byteRegister[1] == 8'h0C) begin 
                         dataOut = (((byteRegister[2] << 8) | byteRegister[3]) >> 2);
+                        
+                        //Now lets update Read in
+                        readIn = dataOut; 
+                        
+                        //Now lets turn writeEnable high: 
+                        writeEnable = 1; 
 
                         // Split RPM into decimal digits
                         rpmThousands = (dataOut / 1000) % 10;
@@ -232,8 +264,10 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         rpmTens      = (dataOut / 10) % 10;
                         rpmOnes      = (dataOut / 1) % 10;
                         
-                        stateNext = sIdle; 
-                        rxDone = 0; 
+                        stateNext = sWaitRam; 
+                        rxDone = 1; 
+                        
+                        //Now that we have our data in data Out
                         
                     end else if (byteRegister[1] == 8'h05) begin
                         dataOut = byteRegister[2] - 40; 
@@ -245,14 +279,7 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
                         
                         stateNext = sIdle; 
                         rxDone = 1; 
-
-                        ramTotal = ramTotal + dataOut;
-                        wrEn = 1; 
-                        ramDataIn = ramTotal; 
-                        ramCounter = ramCounter + 1; 
-                        
-
-                         
+                                                           
                     end
                 end else begin 
                     rxDone = 1; 
@@ -261,25 +288,38 @@ module read_fifo(signalReady, dataIn, readBegin, clk, dataOut, rxDone, segments,
 
                  
             end
+            
+            
+            sWaitRam: begin 
+                stateNext = sRam; 
+            end
+            
+            sRam: begin 
+                //Here we need to turn off write enable and update our counter
+                //Before we do all that we need to figure out what we need to do with that ram tho, so we need to read from it
+                
+                if (readOut > 5000) begin 
+                    greenLed = 0; 
+                    redLed = 1; 
+                end else begin 
+                    greenLed = 1; 
+                    redLed = 0; 
+                end
+                
+                //Now lets update address counter
+                addressCounter = addressCounter + 1; 
+                
+                stateNext = sIdle; 
+                
+            end
 
 
             default: begin 
                 stateNext = sIdle; 
                 //Ram resets
-                ramCounter = 0;
-                ramTotal = 0;
+                addressCounter = 0; 
             end
         endcase
-
-        if (btnRight) begin
-                 
-                led = 1; 
-                rpmThousands = (memoryReadData / 1000) % 10;
-                rpmHundreds  = (memoryReadData / 100) % 10;
-                rpmTens      = (memoryReadData / 10) % 10;
-                rpmOnes      = (memoryReadData / 1) % 10;
-        end 
-
 
 
     end
